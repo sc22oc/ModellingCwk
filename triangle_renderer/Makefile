@@ -56,20 +56,22 @@ SOURCES       = Ball.cpp \
 		BallAux.cpp \
 		BallMath.cpp \
 		Cartesian3.cpp \
-		face.cpp \
+		DirectedEdge.cpp \
+		Face.cpp \
 		GeometricSurfaceFaceDS.cpp \
 		GeometricWidget.cpp \
 		main.cpp \
-		vertex.cpp moc_GeometricWidget.cpp
+		Vertex.cpp moc_GeometricWidget.cpp
 OBJECTS       = Ball.o \
 		BallAux.o \
 		BallMath.o \
 		Cartesian3.o \
-		face.o \
+		DirectedEdge.o \
+		Face.o \
 		GeometricSurfaceFaceDS.o \
 		GeometricWidget.o \
 		main.o \
-		vertex.o \
+		Vertex.o \
 		moc_GeometricWidget.o
 DIST          = /usr/lib64/qt6/mkspecs/features/spec_pre.prf \
 		/usr/lib64/qt6/mkspecs/common/unix.conf \
@@ -231,18 +233,20 @@ DIST          = /usr/lib64/qt6/mkspecs/features/spec_pre.prf \
 		BallAux.h \
 		BallMath.h \
 		Cartesian3.h \
-		face.h \
+		DirectedEdge.h \
+		Face.h \
 		GeometricSurfaceFaceDS.h \
 		GeometricWidget.h \
-		vertex.h Ball.cpp \
+		Vertex.h Ball.cpp \
 		BallAux.cpp \
 		BallMath.cpp \
 		Cartesian3.cpp \
-		face.cpp \
+		DirectedEdge.cpp \
+		Face.cpp \
 		GeometricSurfaceFaceDS.cpp \
 		GeometricWidget.cpp \
 		main.cpp \
-		vertex.cpp
+		Vertex.cpp
 QMAKE_TARGET  = triangle_renderer
 DESTDIR       = 
 TARGET        = triangle_renderer
@@ -594,8 +598,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib64/qt6/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents Ball.h BallAux.h BallMath.h Cartesian3.h face.h GeometricSurfaceFaceDS.h GeometricWidget.h vertex.h $(DISTDIR)/
-	$(COPY_FILE) --parents Ball.cpp BallAux.cpp BallMath.cpp Cartesian3.cpp face.cpp GeometricSurfaceFaceDS.cpp GeometricWidget.cpp main.cpp vertex.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents Ball.h BallAux.h BallMath.h Cartesian3.h DirectedEdge.h Face.h GeometricSurfaceFaceDS.h GeometricWidget.h Vertex.h $(DISTDIR)/
+	$(COPY_FILE) --parents Ball.cpp BallAux.cpp BallMath.cpp Cartesian3.cpp DirectedEdge.cpp Face.cpp GeometricSurfaceFaceDS.cpp GeometricWidget.cpp main.cpp Vertex.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -670,8 +674,11 @@ BallMath.o: BallMath.cpp BallMath.h \
 Cartesian3.o: Cartesian3.cpp Cartesian3.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Cartesian3.o Cartesian3.cpp
 
-face.o: face.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o face.o face.cpp
+DirectedEdge.o: DirectedEdge.cpp DirectedEdge.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DirectedEdge.o DirectedEdge.cpp
+
+Face.o: Face.cpp Face.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Face.o Face.cpp
 
 GeometricSurfaceFaceDS.o: GeometricSurfaceFaceDS.cpp GeometricSurfaceFaceDS.h \
 		Cartesian3.h
@@ -691,9 +698,9 @@ main.o: main.cpp GeometricWidget.h \
 		BallAux.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-vertex.o: vertex.cpp vertex.h \
+Vertex.o: Vertex.cpp Vertex.h \
 		Cartesian3.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o vertex.o vertex.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Vertex.o Vertex.cpp
 
 moc_GeometricWidget.o: moc_GeometricWidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_GeometricWidget.o moc_GeometricWidget.cpp

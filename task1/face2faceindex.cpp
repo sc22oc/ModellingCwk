@@ -4,17 +4,14 @@
 #include <filesystem>
 #include <vector>
 
-// c string library (need this for strtok)
-#include <cstring>
-
 // libraries for data structure
-#include "../triangle_renderer/vertex.h"
-#include "../triangle_renderer/face.h"
+#include "../triangle_renderer/Vertex.h"
+#include "../triangle_renderer/Face.h"
 
 int main(int argc, char* argv[]){
   // no arguments provided
   if(argc != 2){
-    std::cout << "Usage: ./face2faceindex <directory>" << std::endl;
+    std::cout << "Usage: ./face2faceindex <filepath>" << std::endl;
     return 0;
   }
 
@@ -47,6 +44,7 @@ int main(int argc, char* argv[]){
       inputFile >> v1 >> v2 >> v3;
 
       // error checking for bad stuff in the ifstream
+
       /*
       if(inputFile.fail()){
 	std::cout << v1 << " " << v2 << " " << v3 << std::endl;

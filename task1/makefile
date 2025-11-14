@@ -6,10 +6,10 @@ TRIDIR = ../triangle_renderer
 
 all: face2faceindex faceindex2directedge
 
-face2faceindex: face2faceindex.o $(TRIDIR)/Cartesian3.o $(TRIDIR)/vertex.o $(TRIDIR)/face.o 
+face2faceindex: face2faceindex.o $(TRIDIR)/Cartesian3.o $(TRIDIR)/Vertex.o $(TRIDIR)/Face.o 
 	$(CC) $(CCFLAGS) $^ -o $@
 
-faceindex2directedge: faceindex2directedge.o
+faceindex2directedge: faceindex2directedge.o $(TRIDIR)/Cartesian3.o $(TRIDIR)/Vertex.o $(TRIDIR)/Face.o $(TRIDIR)/DirectedEdge.o
 	$(CC) $(CCFLAGS) $^ -o $@
 
 %.o: %.cpp
