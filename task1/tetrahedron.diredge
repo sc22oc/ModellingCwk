@@ -10,18 +10,10 @@ Vertex 0	-1 -1 -1
 Vertex 1	1 -1 1
 Vertex 2	-1 1 1
 Vertex 3	1 1 -1
-FirstDirectedEdge 0	0
-FirstDirectedEdge 1	1
-FirstDirectedEdge 2	2
-FirstDirectedEdge 3	0
-FirstDirectedEdge 4	2
-FirstDirectedEdge 5	3
-FirstDirectedEdge 6	0
-FirstDirectedEdge 7	3
-FirstDirectedEdge 8	1
-FirstDirectedEdge 9	3
-FirstDirectedEdge 10	2
-FirstDirectedEdge 11	1
+FirstDirectedEdge 0	1
+FirstDirectedEdge 1	2
+FirstDirectedEdge 2	0
+FirstDirectedEdge 3	3
 Face 0	0 1 2 
 Face 1	0 2 3 
 Face 2	0 3 1 

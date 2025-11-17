@@ -23,7 +23,6 @@ int main(int argc, char* argv[]){
 
   std::filesystem::path filePath(argv[1]);
   std::ifstream inputFile(filePath, std::ios::in);
-
   std::string inputType;
 
   // marking as i as we are checking for input of vertices and faces
@@ -50,9 +49,6 @@ int main(int argc, char* argv[]){
       else{
 	std::cout << "Error: invalid line format on line" << currentLine << std::endl;
       }
-
-      // std::cout << "id: " << id << std::endl;
-      // std::cout << i1 << " " << i2 << " " << i3 << std::endl;
 
       currentLine++;
     }
@@ -87,7 +83,7 @@ int main(int argc, char* argv[]){
 
   std::cout << "------------------------" << std::endl;
 
-  std::vector<DirectedEdge> fdeInput;
+  std::vector<Vertex> fdeInput;
 
   // first directed edge for each vertex
   for(auto &v : vertexInput){
@@ -119,7 +115,7 @@ int main(int argc, char* argv[]){
 
   std::cout << "------------------------" << std::endl;
 
-  // PHASE 2: take the store
+  // PHASE 2: take the stored data as file output
   std::string objectName = (std::string)filePath.stem();
   std::string outputFileName = objectName + ".diredge";
   std::ofstream outputFile(outputFileName, std::ios::out);
@@ -139,7 +135,7 @@ int main(int argc, char* argv[]){
     }
 
     for(auto fde : fdeInput){
-      outputFile << "FirstDirectedEdge " << fde.id << "\t" << fde.vertexID << std::endl;
+      outputFile << "FirstDirectedEdge " << fde.id << "\t" << fde.fdeID << std::endl;
     }
 
     for(auto f : faceInput){

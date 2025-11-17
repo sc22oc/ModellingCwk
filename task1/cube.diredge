@@ -14,42 +14,14 @@ Vertex 4	0 1 0
 Vertex 5	1 1 0
 Vertex 6	0 1 1
 Vertex 7	1 1 1
-FirstDirectedEdge 0	0
-FirstDirectedEdge 1	1
-FirstDirectedEdge 2	2
-FirstDirectedEdge 3	0
-FirstDirectedEdge 4	2
-FirstDirectedEdge 5	3
-FirstDirectedEdge 6	0
-FirstDirectedEdge 7	4
-FirstDirectedEdge 8	5
-FirstDirectedEdge 9	0
-FirstDirectedEdge 10	5
-FirstDirectedEdge 11	1
-FirstDirectedEdge 12	0
-FirstDirectedEdge 13	3
-FirstDirectedEdge 14	6
-FirstDirectedEdge 15	0
-FirstDirectedEdge 16	6
-FirstDirectedEdge 17	4
-FirstDirectedEdge 18	1
-FirstDirectedEdge 19	5
-FirstDirectedEdge 20	2
-FirstDirectedEdge 21	5
-FirstDirectedEdge 22	7
-FirstDirectedEdge 23	2
-FirstDirectedEdge 24	3
-FirstDirectedEdge 25	2
-FirstDirectedEdge 26	6
-FirstDirectedEdge 27	2
-FirstDirectedEdge 28	7
-FirstDirectedEdge 29	6
-FirstDirectedEdge 30	6
-FirstDirectedEdge 31	7
-FirstDirectedEdge 32	5
-FirstDirectedEdge 33	6
-FirstDirectedEdge 34	5
-FirstDirectedEdge 35	4
+FirstDirectedEdge 0	1
+FirstDirectedEdge 1	2
+FirstDirectedEdge 2	0
+FirstDirectedEdge 3	3
+FirstDirectedEdge 4	8
+FirstDirectedEdge 5	6
+FirstDirectedEdge 6	12
+FirstDirectedEdge 7	23
 Face 0	0 1 2 
 Face 1	0 2 3 
 Face 2	0 4 5 
