@@ -72,7 +72,7 @@ int pinchTest(std::vector<Vertex> vertexInput, std::vector<DirectedEdge> dirEdge
     // compare ring degree to vertex degree
     // if they are not equal, test fails
     if(ringDegree != v.degree){
-      std::cout << "bad vertex at Vertex " << v.id << std::endl;
+      // std::cout << "Error: bad vertex at Vertex " << v.id << std::endl;
       return v.id;
     }
   }
@@ -183,33 +183,37 @@ TestOutput manifoldTest(std::filesystem::path filePath){
 
   // PHASE 3: Perform each manifold test and return the result
   int e = 0;
-  for(auto& de : dirEdgeInput){
+  for(auto &de : dirEdgeInput){
     de.twinID = halfInput[e];
+
+    /*
+    if(halfInput[e] == -1){
+      std::cout << "Error: boundary found at edge " << e << std::endl;
+      return results;
+    }
+    */
+
+    e++;
   }
 
   e = 0;
   for(auto de : dirEdgeInput){
-    // EDGE TEST: twin is -1, implying that a half edge lies at the boundary
-    // EDGE TEST 2: the other halves both point at a different half edge (testing for shark fin)
-    if(de.twinID == -1){
-      std::cout << "Error: boundary found at edge " << e << std::endl;
+    // std::cout << "de: " << de.id << " | twin: " << dirEdgeInput[de.twinID].twinID << std::endl;
 
-      // set first violating edge if it occurs
+    // EDGE TEST: twin is -1, implying that a half edge lies at the boundary
+    if(de.twinID == -1){
+      // std::cout << "Error: boundary found at edge " << e << std::endl;
       results.edgeID = e;
       return results;
     }
-    /*
     else if(de.id != dirEdgeInput[de.twinID].twinID){
       std::cout << "Error: half edges point to different twins!" << std::endl;
-      std::cout << "Edge " << de.id << " | twin: " << dirEdgeInput[de.twinID].twinID << std::endl;
-      std::cout << "Edge " << de.id << " | twin: " << dirEdgeInput[de.twinID].id << std::endl;
-      std::cout << "Edge " << de.id << " | twin: " << dirEdgeInput[dirEdgeInput[de.twinID].twinID].twinID << std::endl;
-
+      std::cout << "de: " << de.id << " | twin: " << de.twinID << std::endl;
+      std::cout << "de: " << de.twinID << " | twin: " << dirEdgeInput[de.twinID].twinID << std::endl;
       results.twinID = e;
       return results;
     }
-    */
-    
+
     e++;
   }
 
