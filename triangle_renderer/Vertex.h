@@ -9,6 +9,9 @@ class Vertex
   // ID of the first directed edge
   int fdeID = -1;
 
+  // current vertex degree (good for pinch point test)
+  int degree = 0;
+
   Vertex();
   Vertex(int vertexID, float x, float y, float z);
   Vertex(float x, float y, float z);

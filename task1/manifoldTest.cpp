@@ -8,7 +8,7 @@
 #include "../triangle_renderer/Face.h"
 #include "../triangle_renderer/DirectedEdge.h"
 
-bool manifoldTest(){
+bool manifoldTest(std::string path){
   // this will take the filePath
 
   // PHASE 1: Parse the file
@@ -17,21 +17,51 @@ bool manifoldTest(){
 
   // 1) edge pairing
   // 2) pinch point
-
   return true;
 }
 
-bool edgePairTest(){
+int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID){
+  // to store the degree of the one ring
+  int degree = 0;
+
+  // return -1 if the test finds a boundary
   // check if each pair has a twin
   // if the twinID is -1, that implies that the edge does not have a twin
   // so, the test will fail
-  return true;
+  DirectedEdge currentEdge = dirEdgeInput[startID];
+  int currentID = -1;
+
+  while(currentID != startID){
+    DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
+    currentEdge = dirEdgeInput[prevEdge.twinID];
+
+    currentID = currentEdge.id;
+
+    degree++;
+  }
+
+  return degree;
 }
 
-bool pinchTest(){
-  // count one ring
-  // count the vertex degree
-  // if they are not equal, the test will fail
+
+bool pinchTest(std::vector<Vertex> vertexInput, std::vector<DirectedEdge> dirEdgeInput){
+
+  for(auto v : vertexInput){
+    // count one ring
+    int ringDegree = oneRing(dirEdgeInput, v.fdeID);
+    std::cout << "----------------------------" << std::endl;
+    std::cout << "Vertex: " << v.id << std::endl;
+    std::cout << "Ring degree: " << ringDegree << std::endl;
+    std::cout << "Vertex degree: " << v.degree << std::endl;
+
+    // compare ring degree to vertex degree
+    // if they are not equal, test fails
+    if(ringDegree != v.degree){
+      std::cout << "bad vertex at Vertex " << v.id << std::endl;
+      return false;
+    }
+  }
+
   return true;
 }
 
@@ -45,13 +75,12 @@ int genusTest(){
 int main(int argc, char* argv[]){
 
   if(argc != 2){
-    std::cout << "Usage: ./manifoldTest <filepath>" << std::endl;
+    std::cout << "Usage: ./manifoldTest <directory_path>" << std::endl;
     return 0;
   }
 
   // PHASE 1: Read the file and store the input
 
-  // NOTE: the FDE is implied by the vertex, no need to store that explicitly
   std::vector<Vertex> vertexInput;
   std::vector<Face> faceInput;
   std::vector<DirectedEdge> dirEdgeInput;
@@ -114,6 +143,13 @@ int main(int argc, char* argv[]){
   // PHASE 2: DATA CONSTRUCTION
   // making sure things are nice and tidy to do testing
 
+  // count vertex degree
+  for(auto f : faceInput){
+    for(auto vID : f.vertexIDs){
+      vertexInput[vID].degree++;
+    }
+  }
+
   // construct the directed edges
   int j = 0;
   for(int i = 0; i < faceInput.size(); i++){
@@ -144,6 +180,13 @@ int main(int argc, char* argv[]){
   int e = 0;
   for(auto &de : dirEdgeInput){
     de.twinID = halfInput[e];
+
+    // EDGE TEST: twin is -1, implying that a half edge lies at the boundary
+    if(halfInput[e] == -1){
+      std::cout << "Error: boundary found at edge " << e << std::endl;
+      return 1;
+    }
+
     e++;
   }
 
@@ -154,21 +197,10 @@ int main(int argc, char* argv[]){
     e++;
   }
 
-  /*
-  for(auto v : vertexInput){
-    std::cout << "Vertex: " << v.id << " | FDE: " << v.fdeID << std::endl;
-  }
-  for(auto de : dirEdgeInput){
-    std::cout << "DirEdge: " << de.id << " | Twin: " << de.twinID << std::endl;
-  }
-  */
-
-  // PHASE 3: MANIFOLD TESTING
-
-  // Edge pair : boundary test
-
   // One ring : pinch point test
-
+  if(!pinchTest(vertexInput, dirEdgeInput)){
+    std::cout << "Error: pinch point detected" << std::endl;
+  }
 
   // PHASE 4: take the stored data as file output
 
