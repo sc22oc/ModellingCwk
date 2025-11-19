@@ -1,12 +1,12 @@
-#include <fstream>
-#include <string>
-#include <iostream>
-#include <vector>
 #include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
 
-#include "../triangle_renderer/Vertex.h"
-#include "../triangle_renderer/Face.h"
 #include "../triangle_renderer/DirectedEdge.h"
+#include "../triangle_renderer/Face.h"
+#include "../triangle_renderer/Vertex.h"
 
 struct TestOutput {
   std::string meshName;
@@ -18,7 +18,7 @@ struct TestOutput {
   bool readSuccessful = true;
 };
 
-int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID){
+int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID) {
   // to store the degree of the one ring
   int degree = 0;
 
@@ -35,7 +35,7 @@ int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID){
   std::cout << "current id: " << currentID << std::endl;
   */
 
-  while(currentID != startID){
+  while (currentID != startID) {
 
     // std::cout << "----------------------------" << std::endl;
     // std::cout << "current id: " << currentID << std::endl;
@@ -47,7 +47,7 @@ int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID){
     currentEdge = dirEdgeInput[prevEdge.twinID];
     currentID = currentEdge.id;
 
-    //std::cout << "next (twin) id: " << currentID << std::endl;
+    // std::cout << "next (twin) id: " << currentID << std::endl;
 
     degree++;
   }
@@ -55,10 +55,10 @@ int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID){
   return degree;
 }
 
+int pinchTest(std::vector<Vertex> vertexInput,
+              std::vector<DirectedEdge> dirEdgeInput) {
 
-int pinchTest(std::vector<Vertex> vertexInput, std::vector<DirectedEdge> dirEdgeInput){
-
-  for(auto v : vertexInput){
+  for (auto v : vertexInput) {
     // count one ring
     int ringDegree = oneRing(dirEdgeInput, v.fdeID);
 
@@ -71,7 +71,7 @@ int pinchTest(std::vector<Vertex> vertexInput, std::vector<DirectedEdge> dirEdge
 
     // compare ring degree to vertex degree
     // if they are not equal, test fails
-    if(ringDegree != v.degree){
+    if (ringDegree != v.degree) {
       // std::cout << "Error: bad vertex at Vertex " << v.id << std::endl;
       return v.id;
     }
@@ -81,12 +81,12 @@ int pinchTest(std::vector<Vertex> vertexInput, std::vector<DirectedEdge> dirEdge
 }
 
 // TASK 3
-int genusTest(){
+int genusTest() {
   // set the return type of a failed genus to -1
   return 0;
 }
 
-TestOutput manifoldTest(std::filesystem::path filePath){
+TestOutput manifoldTest(std::filesystem::path filePath) {
 
   std::vector<Vertex> vertexInput;
   std::vector<Face> faceInput;
@@ -106,84 +106,91 @@ TestOutput manifoldTest(std::filesystem::path filePath){
   std::string strLine;
 
   // PHASE 1: Parse the file
-  if(inputFile.is_open()){
-    while(std::getline(inputFile, strLine)){
-      if(strLine[0] == '#') continue;
+  if (inputFile.is_open()) {
+    while (std::getline(inputFile, strLine)) {
+      if (strLine[0] == '#')
+        continue;
 
       std::stringstream ss(strLine);
       ss >> inputType >> id >> i1 >> i2 >> i3;
 
-      if(inputType.compare("Vertex") == 0){
-	vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
-	//std::cout << "Vertex " << id << " " << i1 << " " << i2 << " " << i3 << std::endl;
+      if (inputType.compare("Vertex") == 0) {
+        vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
+        // std::cout << "Vertex " << id << " " << i1 << " " << i2 << " " << i3
+        // << std::endl;
       }
-      else if(inputType.compare("FirstDirectedEdge") == 0){
-	fdeInput.push_back(i1);
-	// std::cout << "FirstDirectedEdge " << id << " " << i1 << std::endl;
+	  else if (inputType.compare("FirstDirectedEdge") == 0) {
+        fdeInput.push_back(i1);
+        // std::cout << "FirstDirectedEdge " << id << " " << i1 << std::endl;
       }
-      else if(inputType.compare("Face") == 0){
-	faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
-	// std::cout << "Face " << id << " " << i1 << " " << i2 << " " << i3 << std::endl;
+	  else if (inputType.compare("Face") == 0) {
+        faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
+        // std::cout << "Face " << id << " " << i1 << " " << i2 << " " << i3 <<
+        // std::endl;
       }
-      else if(inputType.compare("OtherHalf") == 0){
-	halfInput.push_back(i1);
-	// std::cout << "OtherHalf " << id << " " << i1 << std::endl;
+	  else if (inputType.compare("OtherHalf") == 0) {
+        halfInput.push_back(i1);
+        // std::cout << "OtherHalf " << id << " " << i1 << std::endl;
       }
-      else{
-	std::cout << "Error: invalid line format on line" << currentLine << std::endl;
-	results.readSuccessful = false;
-	return results;
+	  else {
+        std::cout << "Error: invalid line format on line" << currentLine
+                  << std::endl;
+        results.readSuccessful = false;
+        return results;
       }
       currentLine++;
     }
 
     inputFile.close();
   }
-  else{
-    std::cout << "Error: failed to read file <" << (std::string)filePath.filename() << ">" << std::endl;
+  else {
+    std::cout << "Error: failed to read file <"
+              << (std::string)filePath.filename() << ">" << std::endl;
     results.readSuccessful = false;
     return results;
   }
 
   // PHASE 2: DATA CONSTRUCTION
   // making sure things are nice and tidy to do testing
-  for(auto f : faceInput){
-    for(auto vID : f.vertexIDs){
+  for (auto f : faceInput) {
+    for (auto vID : f.vertexIDs) {
       vertexInput[vID].degree++;
     }
   }
 
   // construct the directed edges
   int j = 0;
-  for(int i = 0; i < faceInput.size(); i++){
+  for (int i = 0; i < faceInput.size(); i++) {
     std::vector<int> v = faceInput[i].vertexIDs;
 
     // number is respect the current face
     DirectedEdge e0(j + 0, v[0], i);
     DirectedEdge e1(j + 1, v[1], i);
     DirectedEdge e2(j + 2, v[2], i);
-    
+
     dirEdgeInput.push_back(e0);
     dirEdgeInput.push_back(e1);
     dirEdgeInput.push_back(e2);
     j += 3;
   }
 
-  if(dirEdgeInput.size() != halfInput.size()){
-    std::cout << "Error: insufficient number of edge pairings specified" << std::endl;
+  if (dirEdgeInput.size() != halfInput.size()) {
+    std::cout << "Error: insufficient number of edge pairings specified"
+              << std::endl;
     results.readSuccessful = false;
     return results;
   }
 
-  if(fdeInput.size() != vertexInput.size()){
-    std::cout << "Error: insufficient number of vertices or FDEs specified" << std::endl;
+  if (fdeInput.size() != vertexInput.size()) {
+    std::cout << "Error: insufficient number of vertices or FDEs specified"
+              << std::endl;
     results.readSuccessful = false;
     return results;
   }
 
   // PHASE 3: Perform each manifold test and return the result
   int e = 0;
-  for(auto &de : dirEdgeInput){
+  for (auto &de : dirEdgeInput) {
     de.twinID = halfInput[e];
 
     /*
@@ -197,19 +204,21 @@ TestOutput manifoldTest(std::filesystem::path filePath){
   }
 
   e = 0;
-  for(auto de : dirEdgeInput){
-    // std::cout << "de: " << de.id << " | twin: " << dirEdgeInput[de.twinID].twinID << std::endl;
+  for (auto de : dirEdgeInput) {
+    // std::cout << "de: " << de.id << " | twin: " <<
+    // dirEdgeInput[de.twinID].twinID << std::endl;
 
     // EDGE TEST: twin is -1, implying that a half edge lies at the boundary
-    if(de.twinID == -1){
+    if (de.twinID == -1) {
       // std::cout << "Error: boundary found at edge " << e << std::endl;
       results.edgeID = e;
       return results;
     }
-    else if(de.id != dirEdgeInput[de.twinID].twinID){
+	else if (de.id != dirEdgeInput[de.twinID].twinID) {
       std::cout << "Error: half edges point to different twins!" << std::endl;
       std::cout << "de: " << de.id << " | twin: " << de.twinID << std::endl;
-      std::cout << "de: " << de.twinID << " | twin: " << dirEdgeInput[de.twinID].twinID << std::endl;
+      std::cout << "de: " << de.twinID
+                << " | twin: " << dirEdgeInput[de.twinID].twinID << std::endl;
       results.twinID = e;
       return results;
     }
@@ -219,7 +228,7 @@ TestOutput manifoldTest(std::filesystem::path filePath){
 
   // assign the FDEs based on file input
   e = 0;
-  for(auto &v : vertexInput){
+  for (auto &v : vertexInput) {
     v.fdeID = fdeInput[e];
     e++;
   }
@@ -227,16 +236,16 @@ TestOutput manifoldTest(std::filesystem::path filePath){
   results.pinchID = pinchTest(vertexInput, dirEdgeInput);
 
   // if a pinch point has been found, then the result is not manifold
-  if(results.pinchID != -1) return results;
+  if (results.pinchID != -1)
+    return results;
 
   results.manifold = true;
   return results;
 }
 
+int main(int argc, char *argv[]) {
 
-int main(int argc, char* argv[]){
-
-  if(argc != 2){
+  if (argc != 2) {
     std::cout << "Usage: ./manifoldTest <directory_path>" << std::endl;
     return 0;
   }
@@ -244,13 +253,15 @@ int main(int argc, char* argv[]){
   std::vector<TestOutput> testResults;
 
   // PHASE 1: Read the file and store the input
-  for(auto testFile : std::filesystem::directory_iterator(argv[1])){
+  for (auto testFile : std::filesystem::directory_iterator(argv[1])) {
 
     std::string fileName = (std::string)testFile.path().filename();
 
-    if(testFile.path().extension().compare(".diredge") != 0){
-      std::cout << "Error: .diredge file type required for manifold test" << std::endl;
-      std::cout << "File: <" << fileName << "> does not fit this criteria" << std::endl;
+    if (testFile.path().extension().compare(".diredge") != 0) {
+      std::cout << "Error: .diredge file type required for manifold test"
+                << std::endl;
+      std::cout << "File: <" << fileName << "> does not fit this criteria"
+                << std::endl;
       return 1;
     }
 
@@ -258,8 +269,9 @@ int main(int argc, char* argv[]){
 
     // execute test on each of them and store the result
     TestOutput result = manifoldTest(testFile.path());
-    if(!result.readSuccessful){
-      std::cout << "Error: read failed on file: <" << fileName << ">" << std::endl;
+    if (!result.readSuccessful) {
+      std::cout << "Error: read failed on file: <" << fileName << ">"
+                << std::endl;
       return 1;
     }
 
@@ -267,26 +279,35 @@ int main(int argc, char* argv[]){
   }
 
   // PHASE 2: take the stored data as file output
-  for(auto t : testResults){
-    std::cout << "--------------------------" << std::endl;
-    std::cout << "File: " << t.meshName << std::endl;
+  std::string outputFileName = "manifold_results.txt";
+  std::ofstream outputFile(outputFileName, std::ios::out);
 
-    if(t.manifold){
-      std::cout << "Manifold: YES" << std::endl;
-    }
-    else{
-      std::cout << "Manifold: NO" << std::endl;
-      if(t.pinchID != -1)
-	std::cout << "<PINCH TEST FAILED> on Vertex: " << t.pinchID << std::endl;
-      if(t.edgeID != -1)
-	std::cout << "<BOUNDARY TEST FAILED> on Edge: " << t.edgeID << std::endl;
-      if(t.twinID != -1)
-	std::cout << "<TWIN TEST FAILED> on Edge: " << t.twinID << std::endl;
+  if (outputFile.is_open()) {
+
+    for (auto t : testResults) {
+      outputFile << "--------------------------" << std::endl;
+      outputFile << "File: " << t.meshName << std::endl;
+
+      if (t.manifold) {
+        outputFile << "Manifold: YES" << std::endl;
+      }
+	  else {
+        outputFile << "Manifold: NO" << std::endl;
+        if (t.pinchID != -1)
+          outputFile << "<PINCH TEST FAILED> on Vertex: " << t.pinchID
+                     << std::endl;
+        if (t.edgeID != -1)
+          outputFile << "<BOUNDARY TEST FAILED> on Edge: " << t.edgeID
+                     << std::endl;
+        if (t.twinID != -1)
+          outputFile << "<TWIN TEST FAILED> on Edge: " << t.twinID << std::endl;
+      }
+
+      outputFile << "Genus: " << t.genus << std::endl;
     }
 
-    std::cout << "Genus: " << t.genus << std::endl;
+    outputFile << "--------------------------" << std::endl;
   }
-  std::cout << "--------------------------" << std::endl;
 
   return 0;
 }
