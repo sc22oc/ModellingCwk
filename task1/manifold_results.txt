@@ -1,43 +1,47 @@
 --------------------------
-File: 2ballout
+File: many
 Manifold: YES
 Genus: 0
 --------------------------
 File: 2torus
 Manifold: YES
-Genus: 0
---------------------------
-File: 5bout
-Manifold: YES
-Genus: 0
---------------------------
-File: 747
-Manifold: NO
-<BOUNDARY TEST FAILED> on Edge: 31
-Genus: 0
---------------------------
-File: biplane
-Manifold: NO
-<BOUNDARY TEST FAILED> on Edge: 124
-Genus: 0
---------------------------
-File: bitorus
-Manifold: YES
-Genus: 0
---------------------------
-File: cherrytree
-Manifold: NO
-<BOUNDARY TEST FAILED> on Edge: 2
-Genus: 0
---------------------------
-File: cow
-Manifold: NO
-<BOUNDARY TEST FAILED> on Edge: 228
-Genus: 0
+Genus: 2
 --------------------------
 File: cube
 Manifold: YES
 Genus: 0
+--------------------------
+File: tetrahedron
+Manifold: YES
+Genus: 0
+--------------------------
+File: 2ballout
+Manifold: YES
+Genus: 0
+--------------------------
+File: 5bout
+Manifold: YES
+Genus: 1
+--------------------------
+File: 747
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 31
+--------------------------
+File: biplane
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 124
+--------------------------
+File: bitorus
+Manifold: YES
+Genus: 2
+--------------------------
+File: cherrytree
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 2
+--------------------------
+File: cow
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 228
 --------------------------
 File: dodecahedron
 Manifold: YES
@@ -46,17 +50,14 @@ Genus: 0
 File: fuelinject
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1430
-Genus: 0
 --------------------------
 File: hamish_40k_edit_2
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1164
-Genus: 0
 --------------------------
 File: Hamish
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 549
-Genus: 0
 --------------------------
 File: hexahedron
 Manifold: YES
@@ -73,11 +74,6 @@ Genus: 0
 File: legoman
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 148
-Genus: 0
---------------------------
-File: many
-Manifold: YES
-Genus: 0
 --------------------------
 File: octahedron
 Manifold: YES
@@ -86,36 +82,28 @@ Genus: 0
 File: pinchtetra
 Manifold: NO
 <PINCH TEST FAILED> on Vertex: 3
-Genus: 0
 --------------------------
 File: quadtorus
 Manifold: YES
-Genus: 0
+Genus: 4
 --------------------------
 File: skeleton
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1053
-Genus: 0
 --------------------------
 File: tetrahedron_bad
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1
-Genus: 0
---------------------------
-File: tetrahedron
-Manifold: YES
-Genus: 0
 --------------------------
 File: torus
 Manifold: YES
-Genus: 0
+Genus: 1
 --------------------------
 File: tritorus
 Manifold: YES
-Genus: 0
+Genus: 3
 --------------------------
 File: yoda
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1
-Genus: 0
 --------------------------

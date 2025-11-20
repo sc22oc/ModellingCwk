@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue>
+#include <unordered_set>
 
 #include "../triangle_renderer/DirectedEdge.h"
 #include "../triangle_renderer/Face.h"
@@ -81,9 +83,84 @@ int pinchTest(std::vector<Vertex> vertexInput,
 }
 
 // TASK 3
-int genusTest() {
-  // set the return type of a failed genus to -1
-  return 0;
+int genusTest(std::vector<DirectedEdge> dirEdgeInput, std::vector<Vertex> vertexInput, std::vector<Face> faceInput) {
+
+  std::vector<int> vertexCounts;
+  std::vector<int> faceCounts;
+
+  for(auto &v : vertexInput){
+    if(!v.isVisited){
+
+      int vertexCount = 0;
+      int faceCount = 0;
+
+      std::queue<Vertex> vertexQueue;
+      vertexQueue.push(v);
+
+      v.isVisited = true;
+      vertexCount++;
+
+      while(!vertexQueue.empty()){
+
+	// unqueue the current vertex (it has been visited)
+	Vertex startVertex = vertexQueue.front();
+	vertexQueue.pop();
+
+	// loop through vertices
+	DirectedEdge currentEdge = dirEdgeInput[startVertex.fdeID];
+	int currentID = -1;
+
+	while(currentID != startVertex.fdeID){
+
+	  DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
+	  currentEdge = dirEdgeInput[prevEdge.twinID];
+	  currentID = currentEdge.id;
+
+	  // check face
+	  Face currentFace = faceInput[prevEdge.face()];
+
+	  if(!currentFace.isVisited){
+	    currentFace.isVisited = true;
+	    faceInput[prevEdge.face()] = currentFace;
+	    faceCount++;
+	  }
+
+	  // add the neighbour vertices
+	  Vertex neighbourVertex = vertexInput[currentEdge.vertexID];
+	  if(!neighbourVertex.isVisited){
+	    neighbourVertex.isVisited = true;
+
+	    vertexQueue.push(neighbourVertex);
+	    vertexInput[currentEdge.vertexID] = neighbourVertex;
+	    vertexCount++;
+
+	    // std::cout << "Visited vertex: " << neighbourVertex.id << std::endl;
+	  }
+	}
+      }
+
+      vertexCounts.push_back(vertexCount);
+      faceCounts.push_back(faceCount);
+    }
+  }
+
+  int genus = 0;
+
+  // for each mesh, calculate the genus using Euler's formula (slide 22, meshes_euler_formula.pdf)
+  for(int i = 0; i < vertexCounts.size(); i++){
+    // 3f = 2e, so we can find the # of edges from the # of faces
+    genus += 1 - 0.5f * vertexCounts[i] + 0.25f * faceCounts[i];
+
+    /*
+    std::cout << "------------------------------" << std::endl;
+    std::cout << "mesh: " << i << std::endl;
+    std::cout << "vertex count: " << vertexCounts[i] << std::endl;
+    std::cout << "face count: " << faceCounts[i] << std::endl;
+    std::cout << "genus: " << genus << std::endl;
+    */
+  }
+
+  return genus;
 }
 
 TestOutput manifoldTest(std::filesystem::path filePath) {
@@ -234,6 +311,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
   }
 
   results.pinchID = pinchTest(vertexInput, dirEdgeInput);
+  results.genus = genusTest(dirEdgeInput, vertexInput, faceInput);
 
   // if a pinch point has been found, then the result is not manifold
   if (results.pinchID != -1)
@@ -290,8 +368,9 @@ int main(int argc, char *argv[]) {
 
       if (t.manifold) {
         outputFile << "Manifold: YES" << std::endl;
+	outputFile << "Genus: " << t.genus << std::endl;
       }
-	  else {
+      else {
         outputFile << "Manifold: NO" << std::endl;
         if (t.pinchID != -1)
           outputFile << "<PINCH TEST FAILED> on Vertex: " << t.pinchID
@@ -303,7 +382,6 @@ int main(int argc, char *argv[]) {
           outputFile << "<TWIN TEST FAILED> on Edge: " << t.twinID << std::endl;
       }
 
-      outputFile << "Genus: " << t.genus << std::endl;
     }
 
     outputFile << "--------------------------" << std::endl;

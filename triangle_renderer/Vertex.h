@@ -12,6 +12,8 @@ class Vertex
   // current vertex degree (good for pinch point test)
   int degree = 0;
 
+  bool isVisited = false;
+
   Vertex();
   Vertex(int vertexID, float x, float y, float z);
   Vertex(float x, float y, float z);
