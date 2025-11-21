@@ -32,24 +32,11 @@ int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID) {
 
   int currentID = -1;
 
-  /*
-  std::cout << "start id: " << startID << std::endl;
-  std::cout << "current id: " << currentID << std::endl;
-  */
-
   while (currentID != startID) {
 
-    // std::cout << "----------------------------" << std::endl;
-    // std::cout << "current id: " << currentID << std::endl;
-
     DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
-
-    // std::cout << "prev id: " << prevEdge.id << std::endl;
-
     currentEdge = dirEdgeInput[prevEdge.twinID];
     currentID = currentEdge.id;
-
-    // std::cout << "next (twin) id: " << currentID << std::endl;
 
     degree++;
   }
@@ -64,17 +51,9 @@ int pinchTest(std::vector<Vertex> vertexInput,
     // count one ring
     int ringDegree = oneRing(dirEdgeInput, v.fdeID);
 
-    /*
-    std::cout << "----------------------------" << std::endl;
-    std::cout << "Vertex: " << v.id << std::endl;
-    std::cout << "Ring degree: " << ringDegree << std::endl;
-    std::cout << "Vertex degree: " << v.degree << std::endl;
-    */
-
     // compare ring degree to vertex degree
     // if they are not equal, test fails
     if (ringDegree != v.degree) {
-      // std::cout << "Error: bad vertex at Vertex " << v.id << std::endl;
       return v.id;
     }
   }
@@ -134,7 +113,6 @@ int genusTest(std::vector<DirectedEdge> dirEdgeInput, std::vector<Vertex> vertex
 	    vertexInput[currentEdge.vertexID] = neighbourVertex;
 	    vertexCount++;
 
-	    // std::cout << "Visited vertex: " << neighbourVertex.id << std::endl;
 	  }
 	}
       }
@@ -147,17 +125,9 @@ int genusTest(std::vector<DirectedEdge> dirEdgeInput, std::vector<Vertex> vertex
   int genus = 0;
 
   // for each mesh, calculate the genus using Euler's formula (slide 22, meshes_euler_formula.pdf)
-  for(int i = 0; i < vertexCounts.size(); i++){
+  for(size_t i = 0; i < vertexCounts.size(); i++){
     // 3f = 2e, so we can find the # of edges from the # of faces
     genus += 1 - 0.5f * vertexCounts[i] + 0.25f * faceCounts[i];
-
-    /*
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "mesh: " << i << std::endl;
-    std::cout << "vertex count: " << vertexCounts[i] << std::endl;
-    std::cout << "face count: " << faceCounts[i] << std::endl;
-    std::cout << "genus: " << genus << std::endl;
-    */
   }
 
   return genus;
@@ -193,28 +163,23 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
 
       if (inputType.compare("Vertex") == 0) {
         vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
-        // std::cout << "Vertex " << id << " " << i1 << " " << i2 << " " << i3
-        // << std::endl;
       }
-	  else if (inputType.compare("FirstDirectedEdge") == 0) {
+      else if (inputType.compare("FirstDirectedEdge") == 0) {
         fdeInput.push_back(i1);
-        // std::cout << "FirstDirectedEdge " << id << " " << i1 << std::endl;
       }
-	  else if (inputType.compare("Face") == 0) {
+      else if (inputType.compare("Face") == 0) {
         faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
-        // std::cout << "Face " << id << " " << i1 << " " << i2 << " " << i3 <<
-        // std::endl;
       }
-	  else if (inputType.compare("OtherHalf") == 0) {
+      else if (inputType.compare("OtherHalf") == 0) {
         halfInput.push_back(i1);
-        // std::cout << "OtherHalf " << id << " " << i1 << std::endl;
       }
-	  else {
+      else {
         std::cout << "Error: invalid line format on line" << currentLine
                   << std::endl;
         results.readSuccessful = false;
         return results;
       }
+
       currentLine++;
     }
 
@@ -237,7 +202,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
 
   // construct the directed edges
   int j = 0;
-  for (int i = 0; i < faceInput.size(); i++) {
+  for (size_t i = 0; i < faceInput.size(); i++) {
     std::vector<int> v = faceInput[i].vertexIDs;
 
     // number is respect the current face
@@ -269,29 +234,18 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
   int e = 0;
   for (auto &de : dirEdgeInput) {
     de.twinID = halfInput[e];
-
-    /*
-    if(halfInput[e] == -1){
-      std::cout << "Error: boundary found at edge " << e << std::endl;
-      return results;
-    }
-    */
-
     e++;
   }
 
   e = 0;
   for (auto de : dirEdgeInput) {
-    // std::cout << "de: " << de.id << " | twin: " <<
-    // dirEdgeInput[de.twinID].twinID << std::endl;
-
     // EDGE TEST: twin is -1, implying that a half edge lies at the boundary
     if (de.twinID == -1) {
-      // std::cout << "Error: boundary found at edge " << e << std::endl;
+
       results.edgeID = e;
       return results;
     }
-	else if (de.id != dirEdgeInput[de.twinID].twinID) {
+    else if (de.id != dirEdgeInput[de.twinID].twinID) {
       std::cout << "Error: half edges point to different twins!" << std::endl;
       std::cout << "de: " << de.id << " | twin: " << de.twinID << std::endl;
       std::cout << "de: " << de.twinID
@@ -328,6 +282,8 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  // TODO: check if the filetype is a directory, and the user hasn't just specified a file
+
   std::vector<TestOutput> testResults;
 
   // PHASE 1: Read the file and store the input
@@ -342,8 +298,6 @@ int main(int argc, char *argv[]) {
                 << std::endl;
       return 1;
     }
-
-    // std::cout << testFile.path() << std::endl;
 
     // execute test on each of them and store the result
     TestOutput result = manifoldTest(testFile.path());

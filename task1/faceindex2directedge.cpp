@@ -61,7 +61,7 @@ int main(int argc, char* argv[]){
   
   // calculate the directed edges now from the stored face vertices
   int j = 0;
-  for(int i = 0; i < faceInput.size(); i++){
+  for(size_t i = 0; i < faceInput.size(); i++){
     std::vector<int> v = faceInput[i].vertexIDs;
 
     // number is respect the current face
@@ -101,15 +101,31 @@ int main(int argc, char* argv[]){
 
   // find the opposing / twin vertex
   for(auto &d1 : dirEdgeInput){
-    for(auto d2 : dirEdgeInput){
+
+    // we want to check whether d1 or d2 have been written to already
+    if(d1.twinID != -1)
+      continue;
+
+    for(auto &d2 : dirEdgeInput){
+
       if(dirEdgeInput[d1.prev()].vertexID == d2.vertexID
 	 &&
 	 dirEdgeInput[d2.prev()].vertexID == d1.vertexID
 	 ){
+
+	if(d2.twinID != -1){
+	  std::cout << "duplicate for: " << d1.id << std::endl;
+	  std::cout << d2.id << " already paired with: " << d2.twinID << std::endl;
+	  continue;
+	}
+
 	d1.twinID = d2.id;
+	d2.twinID = d1.id;
+
 	std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
 	break;
       }
+
     }
   }
 
