@@ -3,23 +3,21 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <queue>
-#include <unordered_set>
 
 #include "../triangle_renderer/DirectedEdge.h"
 #include "../triangle_renderer/Face.h"
 #include "../triangle_renderer/Vertex.h"
 
-int oneBoundary(std::vector<DirectedEdge> dirEdgeInput, int startID){
+int oneBoundary(std::vector<DirectedEdge> dirEdgeInput, int startID) {
 
   // traverse the one ring until we reach a boundary
   DirectedEdge currentEdge = dirEdgeInput[startID];
   int currentID = -1;
 
-  while (currentID != startID){
+  while (currentID != startID) {
     DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
 
-    if(prevEdge.twinID == -1){
+    if (prevEdge.twinID == -1) {
       // store the directed edge who has the boundary of its pair
       return prevEdge.id;
     }
@@ -32,8 +30,8 @@ int oneBoundary(std::vector<DirectedEdge> dirEdgeInput, int startID){
   return 0;
 }
 
-int main(int argc, char *argv[]){
-  if(argc != 2){
+int main(int argc, char *argv[]) {
+  if (argc != 2) {
     std::cout << "Usage: ./meshRepair <filepath>" << std::endl;
     return 0;
   }
@@ -46,9 +44,9 @@ int main(int argc, char *argv[]){
 
   std::filesystem::path filePath(argv[1]);
 
-  if(filePath.extension().compare(".diredge") != 0){
+  if (filePath.extension().compare(".diredge") != 0) {
     std::cout << "Error: .diredge file type required for manifold test"
-	      << std::endl;
+              << std::endl;
     return 1;
   }
 
@@ -73,17 +71,13 @@ int main(int argc, char *argv[]){
 
       if (inputType.compare("Vertex") == 0) {
         vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
-      }
-      else if (inputType.compare("FirstDirectedEdge") == 0) {
+      } else if (inputType.compare("FirstDirectedEdge") == 0) {
         fdeInput.push_back(i1);
-      }
-      else if (inputType.compare("Face") == 0) {
+      } else if (inputType.compare("Face") == 0) {
         faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
-      }
-      else if (inputType.compare("OtherHalf") == 0) {
+      } else if (inputType.compare("OtherHalf") == 0) {
         halfInput.push_back(i1);
-      }
-      else {
+      } else {
         std::cout << "Error: invalid line format on line" << currentLine
                   << std::endl;
 
@@ -94,8 +88,7 @@ int main(int argc, char *argv[]){
     }
 
     inputFile.close();
-  }
-  else {
+  } else {
     std::cout << "Error: failed to read file <"
               << (std::string)filePath.filename() << ">" << std::endl;
     return 1;
@@ -128,7 +121,7 @@ int main(int argc, char *argv[]){
   if (dirEdgeInput.size() != halfInput.size()) {
     std::cout << "Error: insufficient number of edge pairings specified"
               << std::endl;
-    return 1; 
+    return 1;
   }
 
   if (fdeInput.size() != vertexInput.size()) {
@@ -150,28 +143,28 @@ int main(int argc, char *argv[]){
 
   std::vector<std::vector<int>> holes;
 
-  for(auto &d : dirEdgeInput){
+  for (auto &d : dirEdgeInput) {
     std::vector<int> boundaryEdgeIDs;
 
     // we've found another half
-    if(d.twinID == -1 && !d.isVisited){
+    if (d.twinID == -1 && !d.isVisited) {
 
       int startID = d.id;
       int nextStartID = -1;
 
-      while(nextStartID != startID){
-	if(nextStartID != -1)
-	  nextStartID = oneBoundary(dirEdgeInput, nextStartID);
-	else
-	  nextStartID = oneBoundary(dirEdgeInput, startID);
+      while (nextStartID != startID) {
+        if (nextStartID != -1)
+          nextStartID = oneBoundary(dirEdgeInput, nextStartID);
+        else
+          nextStartID = oneBoundary(dirEdgeInput, startID);
 
-	boundaryEdgeIDs.push_back(nextStartID);
+        boundaryEdgeIDs.push_back(nextStartID);
       }
 
       std::cout << "found hole: [ ";
-      for(auto e : boundaryEdgeIDs){
-	dirEdgeInput[e].isVisited = true;
-	std::cout << e << " ";
+      for (auto e : boundaryEdgeIDs) {
+        dirEdgeInput[e].isVisited = true;
+        std::cout << e << " ";
       }
       std::cout << "]" << std::endl;
 
@@ -180,90 +173,141 @@ int main(int argc, char *argv[]){
   }
 
   // if there are holes, find the central vertex and perform insertion
-  if(!holes.empty()){ 
+  if (!holes.empty()) {
 
-    for(auto h : holes){
+    for (auto h : holes) {
 
       // take the position of each vertex to calculate the center
       int holeDegree = 0;
       Cartesian3 vertexTotal{};
 
-      for(auto e : h){
-	vertexTotal = vertexTotal + vertexInput[dirEdgeInput[e].vertexID].point;
-	std::cout << "Boundary point: " << vertexInput[dirEdgeInput[e].vertexID].point << std::endl;
-	holeDegree++;
+      for (auto e : h) {
+        vertexTotal = vertexTotal + vertexInput[dirEdgeInput[e].vertexID].point;
+        std::cout << "Boundary point: "
+                  << vertexInput[dirEdgeInput[e].vertexID].point << std::endl;
+        holeDegree++;
       }
 
       Cartesian3 centreVertex = vertexTotal / holeDegree;
 
       int centreID = vertexInput.size();
 
-      vertexInput.push_back(Vertex(centreID,
-				   centreVertex.x,
-				   centreVertex.y,
-				   centreVertex.z
-				   ));
+      vertexInput.push_back(
+          Vertex(centreID, centreVertex.x, centreVertex.y, centreVertex.z));
 
       std::cout << "Average center: " << centreVertex << std::endl;
 
-      // when checking pairs for directed edges, we only want to pair edges that haven't been paired yet
+	  // check the start point of the new directed edges
+	  // we'll need this to set the FDE of the new vertex
       int startEdgeID = dirEdgeInput.size();
 
       // construct # faces equal to the whole degree
-      for(int i = 0; i < holeDegree; i++){
+      for (int i = 0; i < holeDegree; i++) {
 
-	// form the vertices of the triangle
-	int v0 = vertexInput[dirEdgeInput[e].prev()].id;
-	int v1 = centreID;
-	int v2 = vertexInput[dirEdgeInput[e].vertexID].id;
+        // form the vertices of the triangle (question: how do we access the new vertices?)
+        int v0 = dirEdgeInput[dirEdgeInput[h[i]].prev()].vertexID;
+        int v1 = centreID;
+        int v2 = dirEdgeInput[h[i]].vertexID;
 
-	// note, we can't push this back yet as we still need the halfEdgeID?
-	int faceID = faceInput.size();
-	int edgeID = dirEdgeInput.size();
+        // note, we can't push this back yet as we still need the halfEdgeID?
+        int faceID = faceInput.size();
+        int edgeID = dirEdgeInput.size();
 
-	// after finding the average center, compute faces
-	// generate a face with its respective directed edges
-	Face insertFace(faceID, std::vector<int>{v0, v1, v2});
-	faceInput.push_back(insertFace);
+        // after finding the average center, compute faces
+        // generate a face with its respective directed edges
+        Face insertFace(faceID, std::vector<int>{v0, v1, v2});
+        faceInput.push_back(insertFace);
 
-	DirectedEdge e0(edgeID, v0, faceID);
-	DirectedEdge e1(edgeID+1, v1, faceID);
-	DirectedEdge e2(edgeID+2, v2, faceID);
+        DirectedEdge e0(edgeID, v0, faceID);
+        DirectedEdge e1(edgeID + 1, v1, faceID);
+        DirectedEdge e2(edgeID + 2, v2, faceID);
 
-	dirEdgeInput.push_back(e0);
-	dirEdgeInput.push_back(e1);
-	dirEdgeInput.push_back(e2);
+        dirEdgeInput.push_back(e0);
+        dirEdgeInput.push_back(e1);
+        dirEdgeInput.push_back(e2);
       }
 
-      // std::cout << "works" << std::endl;
+	  // set the twins for each of the new edges
+      for (auto &d1 : dirEdgeInput) {
 
-      for(size_t i = (size_t)startEdgeID; i < dirEdgeInput.size(); i++){
+        if (d1.twinID != -1)
+          continue;
 
-	if(dirEdgeInput[i].twinID != -1)
-	  continue;
+        for (auto &d2 : dirEdgeInput) {
 
-	for(size_t j = (size_t)startEdgeID; j < dirEdgeInput.size(); j++){
-	  if(dirEdgeInput[dirEdgeInput[i].prev()].vertexID == dirEdgeInput[j].vertexID
-	     &&
-	     dirEdgeInput[dirEdgeInput[j].prev()].vertexID == dirEdgeInput[i].vertexID){
+          if (dirEdgeInput[d1.prev()].vertexID == d2.vertexID &&
+              dirEdgeInput[d2.prev()].vertexID == d1.vertexID) {
 
-	    if(dirEdgeInput[j].twinID != -1){
-	      continue;
-	    }
+            if (d2.twinID != -1) {
+              continue;
+            }
 
-	    dirEdgeInput[i].twinID = dirEdgeInput[j].id;
-	    dirEdgeInput[j].twinID = dirEdgeInput[i].id;
-	    std::cout << "OtherHalf " << dirEdgeInput[i].id << " " << dirEdgeInput[j].id << std::endl;
-	    break;
+            d1.twinID = d2.id;
+            d2.twinID = d1.id;
+
+            std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
+            break;
+          }
+        }
+      }
+
+	  // set the new FDE for the added vertex
+	  // vertexInput.back().fdeID 
+	  for(size_t i = startEdgeID; i < dirEdgeInput.size(); i++){
+		int currentVertexTo = dirEdgeInput[dirEdgeInput[i].prev()].vertexID;
+		if(currentVertexTo == centreID){
+		  vertexInput.back().fdeID = dirEdgeInput[i].id;
+		  break;
+		}
 	  }
-
-	}
-
-      }
-
     }
   }
-  
+
+  std::string objectName = (std::string)filePath.stem();
+  std::string outputFileName = objectName + "_fixed.diredge";
+  std::ofstream outputFile(outputFileName, std::ios::out);
+
+  if (outputFile.is_open()) {
+    outputFile << "# University of Leeds 2022-2023" << std::endl;
+    outputFile << "# COMP 5812 Assignment 1" << std::endl;
+    outputFile << "# Oliver Cheung " << std::endl;
+    outputFile << "# 201597566" << std::endl;
+    outputFile << "#" << std::endl;
+    outputFile << "# Object Name: " << objectName << std::endl;
+    outputFile << "# Vertices=" << vertexInput.size()
+               << " Faces=" << faceInput.size() << std::endl;
+    outputFile << "#" << std::endl;
+
+    for (auto v : vertexInput) {
+      outputFile << "Vertex " << v.id << "\t" << v.point << std::endl;
+    }
+
+	for (auto v : vertexInput) {
+	  outputFile << "FirstDirectedEdge " << v.id << "\t" << v.fdeID
+				 << std::endl;
+	}
+
+    for (auto f : faceInput) {
+      outputFile << "Face " << f.id << "\t";
+      for (int i = 0; i < 3; i++) {
+        outputFile << f.vertexIDs[i] << " ";
+      }
+      outputFile << std::endl;
+    }
+
+    for (auto de : dirEdgeInput) {
+      outputFile << "OtherHalf " << de.id << "\t" << de.twinID << std::endl;
+    }
+
+    outputFile.close();
+
+    std::cout << "File <" << outputFileName << "> written to successfully!"
+              << std::endl;
+  } else {
+    std::cout << "Error: failed to write to a file: " << outputFileName
+              << std::endl;
+    return 1;
+  }
 
   return 0;
 }

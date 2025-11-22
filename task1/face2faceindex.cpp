@@ -1,23 +1,23 @@
-#include <fstream>
-#include <string>
-#include <iostream>
 #include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <string>
 #include <vector>
 
 // libraries for data structure
-#include "../triangle_renderer/Vertex.h"
 #include "../triangle_renderer/Face.h"
+#include "../triangle_renderer/Vertex.h"
 
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[]) {
   // no arguments provided
-  if(argc != 2){
+  if (argc != 2) {
     std::cout << "Usage: ./face2faceindex <filepath>" << std::endl;
     return 0;
   }
 
-  // PHASE 1: Reading the file and storing the data, we'll want these as their own structs / classes most likely
-  // Error checks: not a .tri file 
-  
+  // PHASE 1: Reading the file and storing the data, we'll want these as their
+  // own structs / classes most likely Error checks: not a .tri file
+
   // Required data:
   // - Vertex
   // - Face
@@ -30,9 +30,10 @@ int main(int argc, char* argv[]){
   std::vector<Vertex> vertexOutput;
   std::vector<Face> faceOutput;
 
-  if(inputFile.is_open()){
-    // taken the first line to be the number of faces, we can just read the first input on the stream
-    if(!(inputFile >> faces)){
+  if (inputFile.is_open()) {
+    // taken the first line to be the number of faces, we can just read the
+    // first input on the stream
+    if (!(inputFile >> faces)) {
       std::cout << "invalid start line!" << std::endl;
     }
 
@@ -40,16 +41,16 @@ int main(int argc, char* argv[]){
     int currentLine = 1;
     float v1, v2, v3;
 
-    while(!inputFile.eof()){
+    while (!inputFile.eof()) {
       inputFile >> v1 >> v2 >> v3;
 
       // error checking for bad stuff in the ifstream
 
       /*
       if(inputFile.fail()){
-	std::cout << v1 << " " << v2 << " " << v3 << std::endl;
-	std::cerr << "Error: invalid vertex found on raw vertex: " << currentLine << std::endl;
-	return 1;
+        std::cout << v1 << " " << v2 << " " << v3 << std::endl;
+        std::cerr << "Error: invalid vertex found on raw vertex: " <<
+      currentLine << std::endl; return 1;
       }
       */
 
@@ -59,19 +60,19 @@ int main(int argc, char* argv[]){
       Cartesian3 currentVertex(v1, v2, v3);
 
       bool vertexUnique = true;
-      for(auto v : vertexOutput){
-	if(v.point == currentVertex)
-	  vertexUnique = false;
+      for (auto v : vertexOutput) {
+        if (v.point == currentVertex)
+          vertexUnique = false;
       }
 
-      if(vertexUnique){
-	Vertex vertexBuffer;
+      if (vertexUnique) {
+        Vertex vertexBuffer;
 
-	vertexBuffer.point = currentVertex;
-	vertexBuffer.id = vertices;
-	vertices++;
+        vertexBuffer.point = currentVertex;
+        vertexBuffer.id = vertices;
+        vertices++;
 
-	vertexOutput.push_back(vertexBuffer);
+        vertexOutput.push_back(vertexBuffer);
       }
     }
 
@@ -87,22 +88,22 @@ int main(int argc, char* argv[]){
 
     Face faceBuffer;
 
-    while(!inputFile.eof()){
+    while (!inputFile.eof()) {
       inputFile >> v1 >> v2 >> v3;
       Cartesian3 currentVertex(v1, v2, v3);
 
-      for(auto v : vertexOutput){
-	if(v.point == currentVertex){
-	  faceBuffer.vertexIDs.push_back(v.id);
-	}
+      for (auto v : vertexOutput) {
+        if (v.point == currentVertex) {
+          faceBuffer.vertexIDs.push_back(v.id);
+        }
       }
 
-      if(currentFace % 3 == 0){
-	faceBuffer.id = faces;
-	faceOutput.push_back(faceBuffer);
+      if (currentFace % 3 == 0) {
+        faceBuffer.id = faces;
+        faceOutput.push_back(faceBuffer);
 
-	faces++;
-	faceBuffer.vertexIDs.clear();
+        faces++;
+        faceBuffer.vertexIDs.clear();
       }
 
       currentFace++;
@@ -110,9 +111,9 @@ int main(int argc, char* argv[]){
 
     // close file stream afterwards
     inputFile.close();
-  }
-  else{
-    std::cout << "Error: failed to read file <" << (std::string)filePath.filename() << ">" << std::endl;
+  } else {
+    std::cout << "Error: failed to read file <"
+              << (std::string)filePath.filename() << ">" << std::endl;
     return 1;
   }
 
@@ -121,7 +122,7 @@ int main(int argc, char* argv[]){
   std::string outputFileName = objectName + ".face";
   std::ofstream outputFile(outputFileName, std::ios::out);
 
-  if(outputFile.is_open()){
+  if (outputFile.is_open()) {
     // output file header
     outputFile << "# University of Leeds 2022-2023" << std::endl;
     outputFile << "# COMP 5812 Assignment 1" << std::endl;
@@ -129,19 +130,19 @@ int main(int argc, char* argv[]){
     outputFile << "# 201597566" << std::endl;
     outputFile << "#" << std::endl;
     outputFile << "# Object Name: " << objectName << std::endl;
-    outputFile << "# Vertices=" << vertices << " Faces=" << faces << std::endl; 
+    outputFile << "# Vertices=" << vertices << " Faces=" << faces << std::endl;
     outputFile << "#" << std::endl;
 
     // for loop for vertices
-    for(auto v : vertexOutput){
+    for (auto v : vertexOutput) {
       outputFile << "Vertex " << v.id << "\t" << v.point << std::endl;
     }
-      
+
     // for loop for faces
-    for(auto f : faceOutput){
-      outputFile << "Face " << f.id << "\t"; 
-      for(int i = 0; i < 3; i++){
-	outputFile << f.vertexIDs[i] << " ";
+    for (auto f : faceOutput) {
+      outputFile << "Face " << f.id << "\t";
+      for (int i = 0; i < 3; i++) {
+        outputFile << f.vertexIDs[i] << " ";
       }
       outputFile << std::endl;
     }
@@ -149,10 +150,11 @@ int main(int argc, char* argv[]){
     // close file when we're done writing
     outputFile.close();
 
-    std::cout << "File <" << outputFileName << "> written to successfully!" << std::endl;
-  }
-  else{
-    std::cout << "Error: failed to write to a file: " << outputFileName << std::endl;
+    std::cout << "File <" << outputFileName << "> written to successfully!"
+              << std::endl;
+  } else {
+    std::cout << "Error: failed to write to a file: " << outputFileName
+              << std::endl;
     return 1;
   }
 
