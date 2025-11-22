@@ -1,10 +1,10 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-#include <string>
-#include <vector>
 #include <queue>
+#include <string>
 #include <unordered_set>
+#include <vector>
 
 #include "../triangle_renderer/DirectedEdge.h"
 #include "../triangle_renderer/Face.h"
@@ -62,13 +62,14 @@ int pinchTest(std::vector<Vertex> vertexInput,
 }
 
 // TASK 3
-int genusTest(std::vector<DirectedEdge> dirEdgeInput, std::vector<Vertex> vertexInput, std::vector<Face> faceInput) {
+int genusTest(std::vector<DirectedEdge> dirEdgeInput,
+              std::vector<Vertex> vertexInput, std::vector<Face> faceInput) {
 
   std::vector<int> vertexCounts;
   std::vector<int> faceCounts;
 
-  for(auto &v : vertexInput){
-    if(!v.isVisited){
+  for (auto &v : vertexInput) {
+    if (!v.isVisited) {
 
       int vertexCount = 0;
       int faceCount = 0;
@@ -79,42 +80,41 @@ int genusTest(std::vector<DirectedEdge> dirEdgeInput, std::vector<Vertex> vertex
       v.isVisited = true;
       vertexCount++;
 
-      while(!vertexQueue.empty()){
+      while (!vertexQueue.empty()) {
 
-	// unqueue the current vertex (it has been visited)
-	Vertex startVertex = vertexQueue.front();
-	vertexQueue.pop();
+        // unqueue the current vertex (it has been visited)
+        Vertex startVertex = vertexQueue.front();
+        vertexQueue.pop();
 
-	// loop through vertices
-	DirectedEdge currentEdge = dirEdgeInput[startVertex.fdeID];
-	int currentID = -1;
+        // loop through vertices
+        DirectedEdge currentEdge = dirEdgeInput[startVertex.fdeID];
+        int currentID = -1;
 
-	while(currentID != startVertex.fdeID){
+        while (currentID != startVertex.fdeID) {
 
-	  DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
-	  currentEdge = dirEdgeInput[prevEdge.twinID];
-	  currentID = currentEdge.id;
+          DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
+          currentEdge = dirEdgeInput[prevEdge.twinID];
+          currentID = currentEdge.id;
 
-	  // check face
-	  Face currentFace = faceInput[prevEdge.face()];
+          // check face
+          Face currentFace = faceInput[prevEdge.face()];
 
-	  if(!currentFace.isVisited){
-	    currentFace.isVisited = true;
-	    faceInput[prevEdge.face()] = currentFace;
-	    faceCount++;
-	  }
+          if (!currentFace.isVisited) {
+            currentFace.isVisited = true;
+            faceInput[prevEdge.face()] = currentFace;
+            faceCount++;
+          }
 
-	  // add the neighbour vertices
-	  Vertex neighbourVertex = vertexInput[currentEdge.vertexID];
-	  if(!neighbourVertex.isVisited){
-	    neighbourVertex.isVisited = true;
+          // add the neighbour vertices
+          Vertex neighbourVertex = vertexInput[currentEdge.vertexID];
+          if (!neighbourVertex.isVisited) {
+            neighbourVertex.isVisited = true;
 
-	    vertexQueue.push(neighbourVertex);
-	    vertexInput[currentEdge.vertexID] = neighbourVertex;
-	    vertexCount++;
-
-	  }
-	}
+            vertexQueue.push(neighbourVertex);
+            vertexInput[currentEdge.vertexID] = neighbourVertex;
+            vertexCount++;
+          }
+        }
       }
 
       vertexCounts.push_back(vertexCount);
@@ -124,8 +124,9 @@ int genusTest(std::vector<DirectedEdge> dirEdgeInput, std::vector<Vertex> vertex
 
   int genus = 0;
 
-  // for each mesh, calculate the genus using Euler's formula (slide 22, meshes_euler_formula.pdf)
-  for(size_t i = 0; i < vertexCounts.size(); i++){
+  // for each mesh, calculate the genus using Euler's formula (slide 22,
+  // meshes_euler_formula.pdf)
+  for (size_t i = 0; i < vertexCounts.size(); i++) {
     // 3f = 2e, so we can find the # of edges from the # of faces
     genus += 1 - 0.5f * vertexCounts[i] + 0.25f * faceCounts[i];
   }
@@ -163,17 +164,13 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
 
       if (inputType.compare("Vertex") == 0) {
         vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
-      }
-      else if (inputType.compare("FirstDirectedEdge") == 0) {
+      } else if (inputType.compare("FirstDirectedEdge") == 0) {
         fdeInput.push_back(i1);
-      }
-      else if (inputType.compare("Face") == 0) {
+      } else if (inputType.compare("Face") == 0) {
         faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
-      }
-      else if (inputType.compare("OtherHalf") == 0) {
+      } else if (inputType.compare("OtherHalf") == 0) {
         halfInput.push_back(i1);
-      }
-      else {
+      } else {
         std::cout << "Error: invalid line format on line" << currentLine
                   << std::endl;
         results.readSuccessful = false;
@@ -184,8 +181,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
     }
 
     inputFile.close();
-  }
-  else {
+  } else {
     std::cout << "Error: failed to read file <"
               << (std::string)filePath.filename() << ">" << std::endl;
     results.readSuccessful = false;
@@ -244,8 +240,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
 
       results.edgeID = e;
       return results;
-    }
-    else if (de.id != dirEdgeInput[de.twinID].twinID) {
+    } else if (de.id != dirEdgeInput[de.twinID].twinID) {
       std::cout << "Error: half edges point to different twins!" << std::endl;
       std::cout << "de: " << de.id << " | twin: " << de.twinID << std::endl;
       std::cout << "de: " << de.twinID
@@ -282,7 +277,8 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
-  // TODO: check if the filetype is a directory, and the user hasn't just specified a file
+  // TODO: check if the filetype is a directory, and the user hasn't just
+  // specified a file
 
   std::vector<TestOutput> testResults;
 
@@ -322,9 +318,8 @@ int main(int argc, char *argv[]) {
 
       if (t.manifold) {
         outputFile << "Manifold: YES" << std::endl;
-	outputFile << "Genus: " << t.genus << std::endl;
-      }
-      else {
+        outputFile << "Genus: " << t.genus << std::endl;
+      } else {
         outputFile << "Manifold: NO" << std::endl;
         if (t.pinchID != -1)
           outputFile << "<PINCH TEST FAILED> on Vertex: " << t.pinchID
@@ -335,7 +330,6 @@ int main(int argc, char *argv[]) {
         if (t.twinID != -1)
           outputFile << "<TWIN TEST FAILED> on Edge: " << t.twinID << std::endl;
       }
-
     }
 
     outputFile << "--------------------------" << std::endl;

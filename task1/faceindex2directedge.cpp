@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
   std::string inputType;
 
   // marking as i as we are checking for input of vertices and faces
-  int i1, i2, i3;
+  float i1, i2, i3;
   int id;
   int currentLine = 0;
 
@@ -42,9 +42,12 @@ int main(int argc, char *argv[]) {
       ss >> inputType >> id >> i1 >> i2 >> i3;
 
       if (inputType.compare("Vertex") == 0) {
-        vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
+        vertexInput.push_back(Vertex(id, i1, i2, i3));
+		
+		// std::cout << id << " " << i1 << " " << i2 << " " << i3 << std::endl;
+
       } else if (inputType.compare("Face") == 0) {
-        faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
+        faceInput.push_back(Face(id, (std::vector<int>){(int)i1, (int)i2, (int)i3}));
       } else {
         std::cout << "Error: invalid line format on line" << currentLine
                   << std::endl;
@@ -75,32 +78,36 @@ int main(int argc, char *argv[]) {
     j += 3;
   }
 
-  std::cout << "------------------------" << std::endl;
+  // std::cout << "------------------------" << std::endl;
 
+  /*
   for (auto d : dirEdgeInput) {
     std::cout << "DirEdge " << d.id
               << " | from: " << dirEdgeInput[d.prev()].vertexID
               << " | to: " << d.vertexID << std::endl;
   }
+  */
 
-  std::cout << "------------------------" << std::endl;
+  // std::cout << "------------------------" << std::endl;
 
   std::vector<Vertex> fdeInput;
+  std::cout << "calculating fdes..." << std::endl;
 
   // first directed edge for each vertex
   for (auto &v : vertexInput) {
     for (auto d : dirEdgeInput) {
       if (dirEdgeInput[d.prev()].vertexID == v.id) {
         v.fdeID = d.id;
-        std::cout << "FirstDirectedEdge " << v.id << " " << v.fdeID
-                  << std::endl;
+        // std::cout << "FirstDirectedEdge " << v.id << " " << v.fdeID
+        //          << std::endl;
         fdeInput.push_back(v);
         break;
       }
     }
   }
 
-  std::cout << "------------------------" << std::endl;
+  // std::cout << "------------------------" << std::endl;
+  std::cout << "calculating other halves..." << std::endl;
 
   // find the opposing / twin vertex
   for (auto &d1 : dirEdgeInput) {
@@ -115,22 +122,22 @@ int main(int argc, char *argv[]) {
           dirEdgeInput[d2.prev()].vertexID == d1.vertexID) {
 
         if (d2.twinID != -1) {
-          std::cout << "duplicate for: " << d1.id << std::endl;
-          std::cout << d2.id << " already paired with: " << d2.twinID
-                    << std::endl;
+          // std::cout << "duplicate for: " << d1.id << std::endl;
+          // std::cout << d2.id << " already paired with: " << d2.twinID
+          //          << std::endl;
           continue;
         }
 
         d1.twinID = d2.id;
         d2.twinID = d1.id;
 
-        std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
+        // std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
         break;
       }
     }
   }
 
-  std::cout << "------------------------" << std::endl;
+  // std::cout << "------------------------" << std::endl;
 
   // PHASE 2: take the stored data as file output
   std::string objectName = (std::string)filePath.stem();
@@ -149,7 +156,7 @@ int main(int argc, char *argv[]) {
     outputFile << "#" << std::endl;
 
     for (auto v : vertexInput) {
-      outputFile << "Vertex " << v.id << "\t" << v.point << std::endl;
+      outputFile << "Vertex " << v.id << "\t" << v.point.x << " " << v.point.y << " " << v.point.z << std::endl;
     }
 
     for (auto fde : fdeInput) {

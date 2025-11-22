@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
   std::ifstream inputFile(filePath, std::ios::in);
   std::string inputType;
 
-  int i1, i2, i3;
+  float i1, i2, i3;
   int id;
   int currentLine = 0;
 
@@ -70,11 +70,11 @@ int main(int argc, char *argv[]) {
       ss >> inputType >> id >> i1 >> i2 >> i3;
 
       if (inputType.compare("Vertex") == 0) {
-        vertexInput.push_back(Vertex(id, (float)i1, (float)i2, (float)i3));
+        vertexInput.push_back(Vertex(id, i1, i2, i3));
       } else if (inputType.compare("FirstDirectedEdge") == 0) {
         fdeInput.push_back(i1);
       } else if (inputType.compare("Face") == 0) {
-        faceInput.push_back(Face(id, (std::vector<int>){i1, i2, i3}));
+        faceInput.push_back(Face(id, (std::vector<int>){(int)i1, (int)i2, (int)i3}));
       } else if (inputType.compare("OtherHalf") == 0) {
         halfInput.push_back(i1);
       } else {
@@ -183,19 +183,19 @@ int main(int argc, char *argv[]) {
 
       for (auto e : h) {
         vertexTotal = vertexTotal + vertexInput[dirEdgeInput[e].vertexID].point;
-        std::cout << "Boundary point: "
-                  << vertexInput[dirEdgeInput[e].vertexID].point << std::endl;
+        //std::cout << "Boundary point: "
+        //          << vertexInput[dirEdgeInput[e].vertexID].point << std::endl;
         holeDegree++;
       }
 
-      Cartesian3 centreVertex = vertexTotal / holeDegree;
+      Cartesian3 centreVertex = vertexTotal / (float)holeDegree;
 
       int centreID = vertexInput.size();
 
       vertexInput.push_back(
           Vertex(centreID, centreVertex.x, centreVertex.y, centreVertex.z));
 
-      std::cout << "Average center: " << centreVertex << std::endl;
+      // std::cout << "Average center: " << centreVertex << std::endl;
 
 	  // check the start point of the new directed edges
 	  // we'll need this to set the FDE of the new vertex
@@ -245,7 +245,7 @@ int main(int argc, char *argv[]) {
             d1.twinID = d2.id;
             d2.twinID = d1.id;
 
-            std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
+            // std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
             break;
           }
         }
@@ -279,7 +279,7 @@ int main(int argc, char *argv[]) {
     outputFile << "#" << std::endl;
 
     for (auto v : vertexInput) {
-      outputFile << "Vertex " << v.id << "\t" << v.point << std::endl;
+      outputFile << "Vertex " << v.id << "\t" << v.point.x << " " << v.point.y << " " << v.point.z << std::endl;
     }
 
 	for (auto v : vertexInput) {

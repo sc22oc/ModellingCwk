@@ -52,6 +52,7 @@ GeometricWidget::~GeometricWidget()
 void GeometricWidget::initializeGL()
 	{ // GeometricWidget::initializeGL()
 	// enable Z-buffering
+
 	glEnable(GL_DEPTH_TEST);
 	
 	// set lighting parameters

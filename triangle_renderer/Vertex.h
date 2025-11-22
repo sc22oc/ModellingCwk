@@ -4,6 +4,7 @@ class Vertex
 {
  public:
   int id = -1;
+
   Cartesian3 point;
 
   // ID of the first directed edge
