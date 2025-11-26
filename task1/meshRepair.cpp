@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
   }
 
   // PHASE 2: DATA CONSTRUCTION
-  // making sure things are nice and tidy to do testing
+  // assign the degree for each vertex
   for (auto f : faceInput) {
     for (auto vID : f.vertexIDs) {
       vertexInput[vID].degree++;
@@ -183,8 +183,6 @@ int main(int argc, char *argv[]) {
 
       for (auto e : h) {
         vertexTotal = vertexTotal + vertexInput[dirEdgeInput[e].vertexID].point;
-        //std::cout << "Boundary point: "
-        //          << vertexInput[dirEdgeInput[e].vertexID].point << std::endl;
         holeDegree++;
       }
 
@@ -195,10 +193,9 @@ int main(int argc, char *argv[]) {
       vertexInput.push_back(
           Vertex(centreID, centreVertex.x, centreVertex.y, centreVertex.z));
 
-      // std::cout << "Average center: " << centreVertex << std::endl;
 
-	  // check the start point of the new directed edges
-	  // we'll need this to set the FDE of the new vertex
+      // check the start point of the new directed edges
+      // we'll need this to set the FDE of the new vertex
       int startEdgeID = dirEdgeInput.size();
 
       // construct # faces equal to the whole degree
@@ -245,21 +242,19 @@ int main(int argc, char *argv[]) {
             d1.twinID = d2.id;
             d2.twinID = d1.id;
 
-            // std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
+            std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
             break;
           }
         }
       }
 
-	  // set the new FDE for the added vertex
-	  // vertexInput.back().fdeID 
-	  for(size_t i = startEdgeID; i < dirEdgeInput.size(); i++){
-		int currentVertexTo = dirEdgeInput[dirEdgeInput[i].prev()].vertexID;
-		if(currentVertexTo == centreID){
-		  vertexInput.back().fdeID = dirEdgeInput[i].id;
-		  break;
-		}
-	  }
+      for(size_t i = startEdgeID; i < dirEdgeInput.size(); i++){
+	int currentVertexTo = dirEdgeInput[dirEdgeInput[i].prev()].vertexID;
+	if(currentVertexTo == centreID){
+	  vertexInput.back().fdeID = dirEdgeInput[i].id;
+	  break;
+	}
+      }
     }
   }
 
@@ -282,10 +277,10 @@ int main(int argc, char *argv[]) {
       outputFile << "Vertex " << v.id << "\t" << v.point.x << " " << v.point.y << " " << v.point.z << std::endl;
     }
 
-	for (auto v : vertexInput) {
-	  outputFile << "FirstDirectedEdge " << v.id << "\t" << v.fdeID
-				 << std::endl;
-	}
+    for (auto v : vertexInput) {
+      outputFile << "FirstDirectedEdge " << v.id << "\t" << v.fdeID
+		 << std::endl;
+    }
 
     for (auto f : faceInput) {
       outputFile << "Face " << f.id << "\t";

@@ -4,7 +4,7 @@
 # 201597566
 #
 # Object Name: fuelinject
-# Vertices=1420 Faces=2498
+# Vertices=1421 Faces=2522
 #
 Vertex 0	0.5104 1.20073 -19.1933
 Vertex 1	1.1891 0.52203 -19.1933
@@ -1426,6 +1426,7 @@ Vertex 1416	0.5104 2.52203 3.87049
 Vertex 1417	-0.4896 1.58583 4.80669
 Vertex 1418	-0.8953 2.52203 4.80669
 Vertex 1419	-0.4896 2.52203 3.87049
+Vertex 1420	0.0104024 0.02203 -42.1933
 FirstDirectedEdge 0	1
 FirstDirectedEdge 1	2
 FirstDirectedEdge 2	0
@@ -2846,6 +2847,7 @@ FirstDirectedEdge 1416	7458
 FirstDirectedEdge 1417	7462
 FirstDirectedEdge 1418	7469
 FirstDirectedEdge 1419	7470
+FirstDirectedEdge 1420	7496
 Face 0	0 1 2 
 Face 1	3 2 4 
 Face 2	0 2 3 
@@ -5344,6 +5346,30 @@ Face 2494	1419 1415 1417
 Face 2495	1416 1415 1419 
 Face 2496	1413 1419 1418 
 Face 2497	1418 1419 1417 
+Face 2498	262 1420 251 
+Face 2499	273 1420 262 
+Face 2500	270 1420 273 
+Face 2501	271 1420 270 
+Face 2502	268 1420 271 
+Face 2503	267 1420 268 
+Face 2504	280 1420 267 
+Face 2505	284 1420 280 
+Face 2506	285 1420 284 
+Face 2507	286 1420 285 
+Face 2508	287 1420 286 
+Face 2509	283 1420 287 
+Face 2510	276 1420 283 
+Face 2511	275 1420 276 
+Face 2512	277 1420 275 
+Face 2513	278 1420 277 
+Face 2514	279 1420 278 
+Face 2515	266 1420 279 
+Face 2516	256 1420 266 
+Face 2517	255 1420 256 
+Face 2518	253 1420 255 
+Face 2519	254 1420 253 
+Face 2520	252 1420 254 
+Face 2521	251 1420 252 
 OtherHalf 0	7
 OtherHalf 1	11
 OtherHalf 2	25
@@ -6774,7 +6800,7 @@ OtherHalf 1426	1394
 OtherHalf 1427	1494
 OtherHalf 1428	1498
 OtherHalf 1429	1433
-OtherHalf 1430	-1
+OtherHalf 1430	7563
 OtherHalf 1431	1390
 OtherHalf 1432	1473
 OtherHalf 1433	1429
@@ -6783,13 +6809,13 @@ OtherHalf 1435	1437
 OtherHalf 1436	1501
 OtherHalf 1437	1435
 OtherHalf 1438	1440
-OtherHalf 1439	-1
+OtherHalf 1439	7557
 OtherHalf 1440	1438
 OtherHalf 1441	1391
 OtherHalf 1442	1497
 OtherHalf 1443	1495
 OtherHalf 1444	1448
-OtherHalf 1445	-1
+OtherHalf 1445	7551
 OtherHalf 1446	1397
 OtherHalf 1447	1500
 OtherHalf 1448	1444
@@ -6819,7 +6845,7 @@ OtherHalf 1471	1406
 OtherHalf 1472	1416
 OtherHalf 1473	1432
 OtherHalf 1474	1478
-OtherHalf 1475	-1
+OtherHalf 1475	7494
 OtherHalf 1476	1414
 OtherHalf 1477	1530
 OtherHalf 1478	1474
@@ -6837,20 +6863,20 @@ OtherHalf 1489	1424
 OtherHalf 1490	1560
 OtherHalf 1491	1561
 OtherHalf 1492	1496
-OtherHalf 1493	-1
+OtherHalf 1493	7548
 OtherHalf 1494	1427
 OtherHalf 1495	1443
 OtherHalf 1496	1492
 OtherHalf 1497	1442
 OtherHalf 1498	1428
-OtherHalf 1499	-1
+OtherHalf 1499	7560
 OtherHalf 1500	1447
 OtherHalf 1501	1436
-OtherHalf 1502	-1
+OtherHalf 1502	7554
 OtherHalf 1503	1567
 OtherHalf 1504	1508
 OtherHalf 1505	1449
-OtherHalf 1506	-1
+OtherHalf 1506	7509
 OtherHalf 1507	1569
 OtherHalf 1508	1504
 OtherHalf 1509	1565
@@ -6864,7 +6890,7 @@ OtherHalf 1516	1518
 OtherHalf 1517	1578
 OtherHalf 1518	1516
 OtherHalf 1519	1521
-OtherHalf 1520	-1
+OtherHalf 1520	7503
 OtherHalf 1521	1519
 OtherHalf 1522	1453
 OtherHalf 1523	1571
@@ -6876,7 +6902,7 @@ OtherHalf 1528	1457
 OtherHalf 1529	1467
 OtherHalf 1530	1477
 OtherHalf 1531	1535
-OtherHalf 1532	-1
+OtherHalf 1532	7497
 OtherHalf 1533	1465
 OtherHalf 1534	1580
 OtherHalf 1535	1531
@@ -6888,7 +6914,7 @@ OtherHalf 1540	1469
 OtherHalf 1541	1479
 OtherHalf 1542	1591
 OtherHalf 1543	1547
-OtherHalf 1544	-1
+OtherHalf 1544	7533
 OtherHalf 1545	1481
 OtherHalf 1546	1593
 OtherHalf 1547	1543
@@ -6897,24 +6923,24 @@ OtherHalf 1549	1551
 OtherHalf 1550	1594
 OtherHalf 1551	1549
 OtherHalf 1552	1554
-OtherHalf 1553	-1
+OtherHalf 1553	7539
 OtherHalf 1554	1552
 OtherHalf 1555	1487
 OtherHalf 1556	1596
 OtherHalf 1557	1597
 OtherHalf 1558	1562
-OtherHalf 1559	-1
+OtherHalf 1559	7545
 OtherHalf 1560	1490
 OtherHalf 1561	1491
 OtherHalf 1562	1558
 OtherHalf 1563	1603
 OtherHalf 1564	1568
 OtherHalf 1565	1509
-OtherHalf 1566	-1
+OtherHalf 1566	7512
 OtherHalf 1567	1503
 OtherHalf 1568	1564
 OtherHalf 1569	1507
-OtherHalf 1570	-1
+OtherHalf 1570	7506
 OtherHalf 1571	1523
 OtherHalf 1572	1601
 OtherHalf 1573	1575
@@ -6923,7 +6949,7 @@ OtherHalf 1575	1573
 OtherHalf 1576	1511
 OtherHalf 1577	1524
 OtherHalf 1578	1517
-OtherHalf 1579	-1
+OtherHalf 1579	7500
 OtherHalf 1580	1534
 OtherHalf 1581	1612
 OtherHalf 1582	1584
@@ -6933,20 +6959,20 @@ OtherHalf 1585	1526
 OtherHalf 1586	1536
 OtherHalf 1587	1618
 OtherHalf 1588	1592
-OtherHalf 1589	-1
+OtherHalf 1589	7530
 OtherHalf 1590	1538
 OtherHalf 1591	1542
 OtherHalf 1592	1588
 OtherHalf 1593	1546
 OtherHalf 1594	1550
-OtherHalf 1595	-1
+OtherHalf 1595	7536
 OtherHalf 1596	1556
 OtherHalf 1597	1557
-OtherHalf 1598	-1
+OtherHalf 1598	7542
 OtherHalf 1599	1620
 OtherHalf 1600	1604
 OtherHalf 1601	1572
-OtherHalf 1602	-1
+OtherHalf 1602	7515
 OtherHalf 1603	1563
 OtherHalf 1604	1600
 OtherHalf 1605	1574
@@ -6954,22 +6980,22 @@ OtherHalf 1606	1608
 OtherHalf 1607	1621
 OtherHalf 1608	1606
 OtherHalf 1609	1611
-OtherHalf 1610	-1
+OtherHalf 1610	7521
 OtherHalf 1611	1609
 OtherHalf 1612	1581
 OtherHalf 1613	1623
 OtherHalf 1614	1624
 OtherHalf 1615	1619
-OtherHalf 1616	-1
+OtherHalf 1616	7527
 OtherHalf 1617	1583
 OtherHalf 1618	1587
 OtherHalf 1619	1615
 OtherHalf 1620	1599
 OtherHalf 1621	1607
-OtherHalf 1622	-1
+OtherHalf 1622	7518
 OtherHalf 1623	1613
 OtherHalf 1624	1614
-OtherHalf 1625	-1
+OtherHalf 1625	7524
 OtherHalf 1626	1631
 OtherHalf 1627	1634
 OtherHalf 1628	1639
@@ -12838,3 +12864,75 @@ OtherHalf 7490	7492
 OtherHalf 7491	7481
 OtherHalf 7492	7490
 OtherHalf 7493	7482
+OtherHalf 7494	1475
+OtherHalf 7495	7499
+OtherHalf 7496	7564
+OtherHalf 7497	1532
+OtherHalf 7498	7502
+OtherHalf 7499	7495
+OtherHalf 7500	1579
+OtherHalf 7501	7505
+OtherHalf 7502	7498
+OtherHalf 7503	1520
+OtherHalf 7504	7508
+OtherHalf 7505	7501
+OtherHalf 7506	1570
+OtherHalf 7507	7511
+OtherHalf 7508	7504
+OtherHalf 7509	1506
+OtherHalf 7510	7514
+OtherHalf 7511	7507
+OtherHalf 7512	1566
+OtherHalf 7513	7517
+OtherHalf 7514	7510
+OtherHalf 7515	1602
+OtherHalf 7516	7520
+OtherHalf 7517	7513
+OtherHalf 7518	1622
+OtherHalf 7519	7523
+OtherHalf 7520	7516
+OtherHalf 7521	1610
+OtherHalf 7522	7526
+OtherHalf 7523	7519
+OtherHalf 7524	1625
+OtherHalf 7525	7529
+OtherHalf 7526	7522
+OtherHalf 7527	1616
+OtherHalf 7528	7532
+OtherHalf 7529	7525
+OtherHalf 7530	1589
+OtherHalf 7531	7535
+OtherHalf 7532	7528
+OtherHalf 7533	1544
+OtherHalf 7534	7538
+OtherHalf 7535	7531
+OtherHalf 7536	1595
+OtherHalf 7537	7541
+OtherHalf 7538	7534
+OtherHalf 7539	1553
+OtherHalf 7540	7544
+OtherHalf 7541	7537
+OtherHalf 7542	1598
+OtherHalf 7543	7547
+OtherHalf 7544	7540
+OtherHalf 7545	1559
+OtherHalf 7546	7550
+OtherHalf 7547	7543
+OtherHalf 7548	1493
+OtherHalf 7549	7553
+OtherHalf 7550	7546
+OtherHalf 7551	1445
+OtherHalf 7552	7556
+OtherHalf 7553	7549
+OtherHalf 7554	1502
+OtherHalf 7555	7559
+OtherHalf 7556	7552
+OtherHalf 7557	1439
+OtherHalf 7558	7562
+OtherHalf 7559	7555
+OtherHalf 7560	1499
+OtherHalf 7561	7565
+OtherHalf 7562	7558
+OtherHalf 7563	1430
+OtherHalf 7564	7496
+OtherHalf 7565	7561

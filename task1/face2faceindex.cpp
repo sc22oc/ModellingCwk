@@ -27,8 +27,12 @@ int main(int argc, char *argv[]) {
   std::filesystem::path filePath(argv[1]);
   std::ifstream inputFile(filePath, std::ios::in);
 
-  std::vector<Vertex> vertexOutput;
-  std::vector<Face> faceOutput;
+  if(inputFile.fail()){
+    std::cout << "Error: invalid file" << std::endl;
+  }
+
+  std::vector<Vertex> vertexInput;
+  std::vector<Face> faceInput;
 
   if (inputFile.is_open()) {
     // taken the first line to be the number of faces, we can just read the
@@ -44,23 +48,13 @@ int main(int argc, char *argv[]) {
     while (!inputFile.eof()) {
       inputFile >> v1 >> v2 >> v3;
 
-      // error checking for bad stuff in the ifstream
-
-      /*
-      if(inputFile.fail()){
-        std::cout << v1 << " " << v2 << " " << v3 << std::endl;
-        std::cerr << "Error: invalid vertex found on raw vertex: " <<
-      currentLine << std::endl; return 1;
-      }
-      */
-
       // for error checking
       currentLine++;
 
       Cartesian3 currentVertex(v1, v2, v3);
 
       bool vertexUnique = true;
-      for (auto v : vertexOutput) {
+      for (auto v : vertexInput) {
         if (v.point == currentVertex)
           vertexUnique = false;
       }
@@ -72,7 +66,7 @@ int main(int argc, char *argv[]) {
         vertexBuffer.id = vertices;
         vertices++;
 
-        vertexOutput.push_back(vertexBuffer);
+        vertexInput.push_back(vertexBuffer);
       }
     }
 
@@ -90,9 +84,10 @@ int main(int argc, char *argv[]) {
 
     while (!inputFile.eof()) {
       inputFile >> v1 >> v2 >> v3;
+
       Cartesian3 currentVertex(v1, v2, v3);
 
-      for (auto v : vertexOutput) {
+      for (auto v : vertexInput) {
         if (v.point == currentVertex) {
           faceBuffer.vertexIDs.push_back(v.id);
         }
@@ -100,7 +95,7 @@ int main(int argc, char *argv[]) {
 
       if (currentFace % 3 == 0) {
         faceBuffer.id = faces;
-        faceOutput.push_back(faceBuffer);
+        faceInput.push_back(faceBuffer);
 
         faces++;
         faceBuffer.vertexIDs.clear();
@@ -134,12 +129,12 @@ int main(int argc, char *argv[]) {
     outputFile << "#" << std::endl;
 
     // for loop for vertices
-    for (auto v : vertexOutput) {
+    for (auto v : vertexInput) {
       outputFile << "Vertex " << v.id << "\t" << v.point << std::endl;
     }
 
     // for loop for faces
-    for (auto f : faceOutput) {
+    for (auto f : faceInput) {
       outputFile << "Face " << f.id << "\t";
       for (int i = 0; i < 3; i++) {
         outputFile << f.vertexIDs[i] << " ";

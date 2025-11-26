@@ -1,23 +1,11 @@
 --------------------------
-File: many
+File: 2ballout
 Manifold: YES
 Genus: 0
 --------------------------
 File: 2torus
 Manifold: YES
 Genus: 2
---------------------------
-File: cube
-Manifold: YES
-Genus: 0
---------------------------
-File: tetrahedron
-Manifold: YES
-Genus: 0
---------------------------
-File: 2ballout
-Manifold: YES
-Genus: 0
 --------------------------
 File: 5bout
 Manifold: YES
@@ -26,6 +14,10 @@ Genus: 1
 File: 747
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 31
+--------------------------
+File: Hamish
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 549
 --------------------------
 File: biplane
 Manifold: NO
@@ -43,6 +35,10 @@ File: cow
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 228
 --------------------------
+File: cube
+Manifold: YES
+Genus: 0
+--------------------------
 File: dodecahedron
 Manifold: YES
 Genus: 0
@@ -54,10 +50,6 @@ Manifold: NO
 File: hamish_40k_edit_2
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1164
---------------------------
-File: Hamish
-Manifold: NO
-<BOUNDARY TEST FAILED> on Edge: 549
 --------------------------
 File: hexahedron
 Manifold: YES
@@ -75,6 +67,10 @@ File: legoman
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 148
 --------------------------
+File: many
+Manifold: YES
+Genus: 0
+--------------------------
 File: octahedron
 Manifold: YES
 Genus: 0
@@ -91,6 +87,10 @@ File: skeleton
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1053
 --------------------------
+File: tetrahedron
+Manifold: YES
+Genus: 0
+--------------------------
 File: tetrahedron_bad
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1
@@ -106,4 +106,60 @@ Genus: 3
 File: yoda
 Manifold: NO
 <BOUNDARY TEST FAILED> on Edge: 1
+--------------------------
+File: cube_bad
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 8
+--------------------------
+File: cube_bad_fixed
+Manifold: YES
+Genus: 0
+--------------------------
+File: tetrahedron_hole
+Manifold: NO
+<BOUNDARY TEST FAILED> on Edge: 0
+--------------------------
+File: tetrahedron_hole_fixed
+Manifold: YES
+Genus: 0
+--------------------------
+File: hamish_40k_edit_2_fixed
+Manifold: YES
+Genus: 0
+--------------------------
+File: Hamish_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 287
+--------------------------
+File: tetrahedron_bad_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 2
+--------------------------
+File: 747_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 41
+--------------------------
+File: biplane_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 2295
+--------------------------
+File: cow_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 635
+--------------------------
+File: fuelinject_fixed
+Manifold: YES
+Genus: 0
+--------------------------
+File: skeleton_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 219
+--------------------------
+File: yoda_fixed
+Manifold: YES
+Genus: 0
+--------------------------
+File: legoman_fixed
+Manifold: NO
+<PINCH TEST FAILED> on Vertex: 103
 --------------------------

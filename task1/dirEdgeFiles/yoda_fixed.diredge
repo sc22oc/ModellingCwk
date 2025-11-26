@@ -4,7 +4,7 @@
 # 201597566
 #
 # Object Name: yoda
-# Vertices=2245 Faces=4090
+# Vertices=2271 Faces=4466
 #
 Vertex 0	1390 -450 -0.00092
 Vertex 1	1390 550 -0.00122
@@ -2251,6 +2251,32 @@ Vertex 2241	-20.5924 -68.7105 477.309
 Vertex 2242	-21.8321 -66.5633 477.309
 Vertex 2243	-20.5924 -64.416 477.309
 Vertex 2244	-18.1129 -64.416 477.309
+Vertex 2245	890 50 -0.00107
+Vertex 2246	890 50.009 999.999
+Vertex 2247	896.145 32.8312 816.534
+Vertex 2248	1201.96 -449.996 500
+Vertex 2249	893.836 -449.996 500
+Vertex 2250	603.835 -449.996 500
+Vertex 2251	890 50.0073 2561.12
+Vertex 2252	-62.5691 1.17186 511.423
+Vertex 2253	62.5237 0.283717 511.298
+Vertex 2254	6.93581e-07 -70.8236 481.888
+Vertex 2255	0.00348246 -40.8004 440.012
+Vertex 2256	2.38419e-06 2e-05 601.016
+Vertex 2257	29.6022 -64.395 519.857
+Vertex 2258	-29.6022 -64.395 519.857
+Vertex 2259	0.000467046 5.80428 436.924
+Vertex 2260	0 -68.6591 481.645
+Vertex 2261	0.0324 -71.8653 485.105
+Vertex 2262	6.74005 -69.9211 485.105
+Vertex 2263	14.1281 -67.8796 485.105
+Vertex 2264	-7.93901 -69.435 485.105
+Vertex 2265	-14.2578 -67.8796 485.105
+Vertex 2266	3.20285 -70.8945 476.041
+Vertex 2267	10.8119 -68.8783 476.766
+Vertex 2268	18.8739 -66.4886 476.766
+Vertex 2269	-11.0189 -68.8036 476.313
+Vertex 2270	-19.3526 -66.5633 477.309
 FirstDirectedEdge 0	1
 FirstDirectedEdge 1	2
 FirstDirectedEdge 2	0
@@ -4496,6 +4522,32 @@ FirstDirectedEdge 2241	12241
 FirstDirectedEdge 2242	12247
 FirstDirectedEdge 2243	12253
 FirstDirectedEdge 2244	12259
+FirstDirectedEdge 2245	12272
+FirstDirectedEdge 2246	12284
+FirstDirectedEdge 2247	12296
+FirstDirectedEdge 2248	12416
+FirstDirectedEdge 2249	12440
+FirstDirectedEdge 2250	12476
+FirstDirectedEdge 2251	12512
+FirstDirectedEdge 2252	12734
+FirstDirectedEdge 2253	12830
+FirstDirectedEdge 2254	12926
+FirstDirectedEdge 2255	12992
+FirstDirectedEdge 2256	13004
+FirstDirectedEdge 2257	13016
+FirstDirectedEdge 2258	13064
+FirstDirectedEdge 2259	13112
+FirstDirectedEdge 2260	13202
+FirstDirectedEdge 2261	13220
+FirstDirectedEdge 2262	13238
+FirstDirectedEdge 2263	13256
+FirstDirectedEdge 2264	13274
+FirstDirectedEdge 2265	13292
+FirstDirectedEdge 2266	13310
+FirstDirectedEdge 2267	13328
+FirstDirectedEdge 2268	13346
+FirstDirectedEdge 2269	13364
+FirstDirectedEdge 2270	13382
 Face 0	0 1 2 
 Face 1	0 2 3 
 Face 2	4 5 6 
@@ -8586,157 +8638,533 @@ Face 4086	2244 2243 2237
 Face 4087	2238 2244 2237 
 Face 4088	2240 2244 2238 
 Face 4089	2234 2240 2238 
+Face 4090	7 2245 0 
+Face 4091	6 2245 7 
+Face 4092	1 2245 6 
+Face 4093	0 2245 1 
+Face 4094	5 2246 2 
+Face 4095	4 2246 5 
+Face 4096	3 2246 4 
+Face 4097	2 2246 3 
+Face 4098	12 2247 8 
+Face 4099	13 2247 12 
+Face 4100	21 2247 13 
+Face 4101	22 2247 21 
+Face 4102	27 2247 22 
+Face 4103	26 2247 27 
+Face 4104	19 2247 26 
+Face 4105	17 2247 19 
+Face 4106	16 2247 17 
+Face 4107	15 2247 16 
+Face 4108	14 2247 15 
+Face 4109	18 2247 14 
+Face 4110	25 2247 18 
+Face 4111	24 2247 25 
+Face 4112	28 2247 24 
+Face 4113	29 2247 28 
+Face 4114	43 2247 29 
+Face 4115	45 2247 43 
+Face 4116	47 2247 45 
+Face 4117	39 2247 47 
+Face 4118	37 2247 39 
+Face 4119	36 2247 37 
+Face 4120	35 2247 36 
+Face 4121	34 2247 35 
+Face 4122	33 2247 34 
+Face 4123	38 2247 33 
+Face 4124	32 2247 38 
+Face 4125	31 2247 32 
+Face 4126	30 2247 31 
+Face 4127	40 2247 30 
+Face 4128	46 2247 40 
+Face 4129	44 2247 46 
+Face 4130	42 2247 44 
+Face 4131	41 2247 42 
+Face 4132	23 2247 41 
+Face 4133	20 2247 23 
+Face 4134	11 2247 20 
+Face 4135	10 2247 11 
+Face 4136	9 2247 10 
+Face 4137	8 2247 9 
+Face 4138	55 2248 50 
+Face 4139	54 2248 55 
+Face 4140	53 2248 54 
+Face 4141	51 2248 53 
+Face 4142	52 2248 51 
+Face 4143	48 2248 52 
+Face 4144	49 2248 48 
+Face 4145	50 2248 49 
+Face 4146	69 2249 57 
+Face 4147	67 2249 69 
+Face 4148	68 2249 67 
+Face 4149	65 2249 68 
+Face 4150	66 2249 65 
+Face 4151	62 2249 66 
+Face 4152	61 2249 62 
+Face 4153	59 2249 61 
+Face 4154	60 2249 59 
+Face 4155	58 2249 60 
+Face 4156	56 2249 58 
+Face 4157	57 2249 56 
+Face 4158	79 2250 64 
+Face 4159	78 2250 79 
+Face 4160	77 2250 78 
+Face 4161	76 2250 77 
+Face 4162	75 2250 76 
+Face 4163	74 2250 75 
+Face 4164	73 2250 74 
+Face 4165	72 2250 73 
+Face 4166	71 2250 72 
+Face 4167	70 2250 71 
+Face 4168	63 2250 70 
+Face 4169	64 2250 63 
+Face 4170	88 2251 80 
+Face 4171	91 2251 88 
+Face 4172	93 2251 91 
+Face 4173	95 2251 93 
+Face 4174	97 2251 95 
+Face 4175	98 2251 97 
+Face 4176	100 2251 98 
+Face 4177	102 2251 100 
+Face 4178	103 2251 102 
+Face 4179	105 2251 103 
+Face 4180	106 2251 105 
+Face 4181	107 2251 106 
+Face 4182	122 2251 107 
+Face 4183	123 2251 122 
+Face 4184	153 2251 123 
+Face 4185	150 2251 153 
+Face 4186	149 2251 150 
+Face 4187	148 2251 149 
+Face 4188	146 2251 148 
+Face 4189	145 2251 146 
+Face 4190	143 2251 145 
+Face 4191	141 2251 143 
+Face 4192	140 2251 141 
+Face 4193	138 2251 140 
+Face 4194	136 2251 138 
+Face 4195	134 2251 136 
+Face 4196	131 2251 134 
+Face 4197	126 2251 131 
+Face 4198	125 2251 126 
+Face 4199	124 2251 125 
+Face 4200	132 2251 124 
+Face 4201	133 2251 132 
+Face 4202	135 2251 133 
+Face 4203	137 2251 135 
+Face 4204	139 2251 137 
+Face 4205	142 2251 139 
+Face 4206	144 2251 142 
+Face 4207	147 2251 144 
+Face 4208	151 2251 147 
+Face 4209	121 2251 151 
+Face 4210	152 2251 121 
+Face 4211	117 2251 152 
+Face 4212	112 2251 117 
+Face 4213	129 2251 112 
+Face 4214	128 2251 129 
+Face 4215	127 2251 128 
+Face 4216	130 2251 127 
+Face 4217	116 2251 130 
+Face 4218	113 2251 116 
+Face 4219	111 2251 113 
+Face 4220	110 2251 111 
+Face 4221	109 2251 110 
+Face 4222	114 2251 109 
+Face 4223	115 2251 114 
+Face 4224	84 2251 115 
+Face 4225	83 2251 84 
+Face 4226	86 2251 83 
+Face 4227	85 2251 86 
+Face 4228	87 2251 85 
+Face 4229	118 2251 87 
+Face 4230	120 2251 118 
+Face 4231	119 2251 120 
+Face 4232	108 2251 119 
+Face 4233	104 2251 108 
+Face 4234	101 2251 104 
+Face 4235	99 2251 101 
+Face 4236	96 2251 99 
+Face 4237	94 2251 96 
+Face 4238	92 2251 94 
+Face 4239	90 2251 92 
+Face 4240	89 2251 90 
+Face 4241	82 2251 89 
+Face 4242	81 2251 82 
+Face 4243	80 2251 81 
+Face 4244	216 2252 154 
+Face 4245	214 2252 216 
+Face 4246	212 2252 214 
+Face 4247	210 2252 212 
+Face 4248	208 2252 210 
+Face 4249	206 2252 208 
+Face 4250	204 2252 206 
+Face 4251	202 2252 204 
+Face 4252	200 2252 202 
+Face 4253	198 2252 200 
+Face 4254	196 2252 198 
+Face 4255	194 2252 196 
+Face 4256	192 2252 194 
+Face 4257	190 2252 192 
+Face 4258	188 2252 190 
+Face 4259	186 2252 188 
+Face 4260	184 2252 186 
+Face 4261	182 2252 184 
+Face 4262	180 2252 182 
+Face 4263	178 2252 180 
+Face 4264	176 2252 178 
+Face 4265	174 2252 176 
+Face 4266	172 2252 174 
+Face 4267	170 2252 172 
+Face 4268	168 2252 170 
+Face 4269	166 2252 168 
+Face 4270	164 2252 166 
+Face 4271	162 2252 164 
+Face 4272	160 2252 162 
+Face 4273	158 2252 160 
+Face 4274	155 2252 158 
+Face 4275	154 2252 155 
+Face 4276	548 2253 544 
+Face 4277	550 2253 548 
+Face 4278	552 2253 550 
+Face 4279	554 2253 552 
+Face 4280	556 2253 554 
+Face 4281	558 2253 556 
+Face 4282	560 2253 558 
+Face 4283	562 2253 560 
+Face 4284	564 2253 562 
+Face 4285	566 2253 564 
+Face 4286	568 2253 566 
+Face 4287	570 2253 568 
+Face 4288	572 2253 570 
+Face 4289	574 2253 572 
+Face 4290	576 2253 574 
+Face 4291	578 2253 576 
+Face 4292	580 2253 578 
+Face 4293	582 2253 580 
+Face 4294	584 2253 582 
+Face 4295	586 2253 584 
+Face 4296	588 2253 586 
+Face 4297	590 2253 588 
+Face 4298	592 2253 590 
+Face 4299	594 2253 592 
+Face 4300	596 2253 594 
+Face 4301	598 2253 596 
+Face 4302	600 2253 598 
+Face 4303	602 2253 600 
+Face 4304	604 2253 602 
+Face 4305	606 2253 604 
+Face 4306	545 2253 606 
+Face 4307	544 2253 545 
+Face 4308	1417 2254 1138 
+Face 4309	1415 2254 1417 
+Face 4310	1413 2254 1415 
+Face 4311	1411 2254 1413 
+Face 4312	1409 2254 1411 
+Face 4313	1826 2254 1409 
+Face 4314	1827 2254 1826 
+Face 4315	1828 2254 1827 
+Face 4316	1831 2254 1828 
+Face 4317	1583 2254 1831 
+Face 4318	1552 2254 1583 
+Face 4319	1818 2254 1552 
+Face 4320	1820 2254 1818 
+Face 4321	1822 2254 1820 
+Face 4322	1823 2254 1822 
+Face 4323	1538 2254 1823 
+Face 4324	1407 2254 1538 
+Face 4325	1405 2254 1407 
+Face 4326	1403 2254 1405 
+Face 4327	1401 2254 1403 
+Face 4328	1105 2254 1401 
+Face 4329	1138 2254 1105 
+Face 4330	1603 2255 1165 
+Face 4331	2081 2255 1603 
+Face 4332	1158 2255 2081 
+Face 4333	1165 2255 1158 
+Face 4334	2014 2256 1207 
+Face 4335	1644 2256 2014 
+Face 4336	1217 2256 1644 
+Face 4337	1207 2256 1217 
+Face 4338	1486 2257 1313 
+Face 4339	1424 2257 1486 
+Face 4340	1346 2257 1424 
+Face 4341	1345 2257 1346 
+Face 4342	1496 2257 1345 
+Face 4343	1497 2257 1496 
+Face 4344	1366 2257 1497 
+Face 4345	1522 2257 1366 
+Face 4346	1535 2257 1522 
+Face 4347	1429 2257 1535 
+Face 4348	1353 2257 1429 
+Face 4349	1341 2257 1353 
+Face 4350	1340 2257 1341 
+Face 4351	1536 2257 1340 
+Face 4352	1314 2257 1536 
+Face 4353	1313 2257 1314 
+Face 4354	1946 2258 1741 
+Face 4355	1767 2258 1946 
+Face 4356	1766 2258 1767 
+Face 4357	1781 2258 1766 
+Face 4358	1841 2258 1781 
+Face 4359	1945 2258 1841 
+Face 4360	1934 2258 1945 
+Face 4361	1793 2258 1934 
+Face 4362	1908 2258 1793 
+Face 4363	1906 2258 1908 
+Face 4364	1774 2258 1906 
+Face 4365	1773 2258 1774 
+Face 4366	1836 2258 1773 
+Face 4367	1897 2258 1836 
+Face 4368	1742 2258 1897 
+Face 4369	1741 2258 1742 
+Face 4370	2077 2259 2073 
+Face 4371	2076 2259 2077 
+Face 4372	2075 2259 2076 
+Face 4373	2078 2259 2075 
+Face 4374	2079 2259 2078 
+Face 4375	2080 2259 2079 
+Face 4376	2082 2259 2080 
+Face 4377	2097 2259 2082 
+Face 4378	2096 2259 2097 
+Face 4379	2095 2259 2096 
+Face 4380	2092 2259 2095 
+Face 4381	2093 2259 2092 
+Face 4382	2094 2259 2093 
+Face 4383	2089 2259 2094 
+Face 4384	2090 2259 2089 
+Face 4385	2091 2259 2090 
+Face 4386	2098 2259 2091 
+Face 4387	2099 2259 2098 
+Face 4388	2100 2259 2099 
+Face 4389	2101 2259 2100 
+Face 4390	2102 2259 2101 
+Face 4391	2088 2259 2102 
+Face 4392	2087 2259 2088 
+Face 4393	2086 2259 2087 
+Face 4394	2085 2259 2086 
+Face 4395	2084 2259 2085 
+Face 4396	2083 2259 2084 
+Face 4397	2074 2259 2083 
+Face 4398	2072 2259 2074 
+Face 4399	2073 2259 2072 
+Face 4400	2108 2260 2106 
+Face 4401	2110 2260 2108 
+Face 4402	2114 2260 2110 
+Face 4403	2112 2260 2114 
+Face 4404	2103 2260 2112 
+Face 4405	2106 2260 2103 
+Face 4406	2127 2261 2122 
+Face 4407	2126 2261 2127 
+Face 4408	2125 2261 2126 
+Face 4409	2124 2261 2125 
+Face 4410	2123 2261 2124 
+Face 4411	2122 2261 2123 
+Face 4412	2140 2262 2135 
+Face 4413	2139 2262 2140 
+Face 4414	2138 2262 2139 
+Face 4415	2137 2262 2138 
+Face 4416	2136 2262 2137 
+Face 4417	2135 2262 2136 
+Face 4418	2153 2263 2148 
+Face 4419	2152 2263 2153 
+Face 4420	2151 2263 2152 
+Face 4421	2150 2263 2151 
+Face 4422	2149 2263 2150 
+Face 4423	2148 2263 2149 
+Face 4424	2166 2264 2161 
+Face 4425	2165 2264 2166 
+Face 4426	2164 2264 2165 
+Face 4427	2163 2264 2164 
+Face 4428	2162 2264 2163 
+Face 4429	2161 2264 2162 
+Face 4430	2179 2265 2174 
+Face 4431	2178 2265 2179 
+Face 4432	2177 2265 2178 
+Face 4433	2176 2265 2177 
+Face 4434	2175 2265 2176 
+Face 4435	2174 2265 2175 
+Face 4436	2189 2266 2187 
+Face 4437	2190 2266 2189 
+Face 4438	2191 2266 2190 
+Face 4439	2192 2266 2191 
+Face 4440	2188 2266 2192 
+Face 4441	2187 2266 2188 
+Face 4442	2202 2267 2200 
+Face 4443	2203 2267 2202 
+Face 4444	2204 2267 2203 
+Face 4445	2205 2267 2204 
+Face 4446	2201 2267 2205 
+Face 4447	2200 2267 2201 
+Face 4448	2215 2268 2213 
+Face 4449	2216 2268 2215 
+Face 4450	2217 2268 2216 
+Face 4451	2218 2268 2217 
+Face 4452	2214 2268 2218 
+Face 4453	2213 2268 2214 
+Face 4454	2228 2269 2226 
+Face 4455	2229 2269 2228 
+Face 4456	2230 2269 2229 
+Face 4457	2231 2269 2230 
+Face 4458	2227 2269 2231 
+Face 4459	2226 2269 2227 
+Face 4460	2241 2270 2239 
+Face 4461	2242 2270 2241 
+Face 4462	2243 2270 2242 
+Face 4463	2244 2270 2243 
+Face 4464	2240 2270 2244 
+Face 4465	2239 2270 2240 
 OtherHalf 0	4
-OtherHalf 1	-1
+OtherHalf 1	12279
 OtherHalf 2	17
 OtherHalf 3	133
 OtherHalf 4	0
-OtherHalf 5	-1
+OtherHalf 5	12291
 OtherHalf 6	10
-OtherHalf 7	-1
+OtherHalf 7	12285
 OtherHalf 8	13
 OtherHalf 9	220
 OtherHalf 10	6
-OtherHalf 11	-1
+OtherHalf 11	12273
 OtherHalf 12	16
 OtherHalf 13	8
-OtherHalf 14	-1
-OtherHalf 15	-1
+OtherHalf 14	12282
+OtherHalf 15	12276
 OtherHalf 16	12
 OtherHalf 17	2
 OtherHalf 18	22
-OtherHalf 19	-1
-OtherHalf 20	-1
+OtherHalf 19	12411
+OtherHalf 20	12408
 OtherHalf 21	26
 OtherHalf 22	18
-OtherHalf 23	-1
+OtherHalf 23	12405
 OtherHalf 24	29
-OtherHalf 25	-1
+OtherHalf 25	12294
 OtherHalf 26	21
 OtherHalf 27	43
-OtherHalf 28	-1
+OtherHalf 28	12297
 OtherHalf 29	24
 OtherHalf 30	34
-OtherHalf 31	-1
-OtherHalf 32	-1
+OtherHalf 31	12324
+OtherHalf 32	12321
 OtherHalf 33	36
 OtherHalf 34	30
-OtherHalf 35	-1
+OtherHalf 35	12318
 OtherHalf 36	33
 OtherHalf 37	40
-OtherHalf 38	-1
+OtherHalf 38	12327
 OtherHalf 39	59
 OtherHalf 40	37
-OtherHalf 41	-1
+OtherHalf 41	12315
 OtherHalf 42	47
 OtherHalf 43	27
-OtherHalf 44	-1
+OtherHalf 44	12402
 OtherHalf 45	50
-OtherHalf 46	-1
+OtherHalf 46	12300
 OtherHalf 47	42
 OtherHalf 48	52
-OtherHalf 49	-1
+OtherHalf 49	12303
 OtherHalf 50	45
 OtherHalf 51	110
 OtherHalf 52	48
-OtherHalf 53	-1
+OtherHalf 53	12399
 OtherHalf 54	58
-OtherHalf 55	-1
-OtherHalf 56	-1
+OtherHalf 55	12333
+OtherHalf 56	12330
 OtherHalf 57	65
 OtherHalf 58	54
 OtherHalf 59	39
 OtherHalf 60	63
-OtherHalf 61	-1
-OtherHalf 62	-1
+OtherHalf 61	12312
+OtherHalf 62	12309
 OtherHalf 63	60
 OtherHalf 64	68
 OtherHalf 65	57
 OtherHalf 66	70
-OtherHalf 67	-1
+OtherHalf 67	12336
 OtherHalf 68	64
 OtherHalf 69	74
 OtherHalf 70	66
-OtherHalf 71	-1
+OtherHalf 71	12306
 OtherHalf 72	113
-OtherHalf 73	-1
+OtherHalf 73	12339
 OtherHalf 74	69
 OtherHalf 75	94
-OtherHalf 76	-1
-OtherHalf 77	-1
+OtherHalf 76	12378
+OtherHalf 77	12375
 OtherHalf 78	89
-OtherHalf 79	-1
-OtherHalf 80	-1
+OtherHalf 79	12366
+OtherHalf 80	12363
 OtherHalf 81	87
-OtherHalf 82	-1
+OtherHalf 82	12360
 OtherHalf 83	84
 OtherHalf 84	83
-OtherHalf 85	-1
+OtherHalf 85	12357
 OtherHalf 86	95
 OtherHalf 87	81
 OtherHalf 88	90
 OtherHalf 89	78
 OtherHalf 90	88
-OtherHalf 91	-1
-OtherHalf 92	-1
+OtherHalf 91	12372
+OtherHalf 92	12369
 OtherHalf 93	97
 OtherHalf 94	75
 OtherHalf 95	86
 OtherHalf 96	101
 OtherHalf 97	93
-OtherHalf 98	-1
+OtherHalf 98	12354
 OtherHalf 99	127
-OtherHalf 100	-1
+OtherHalf 100	12381
 OtherHalf 101	96
 OtherHalf 102	105
-OtherHalf 103	-1
+OtherHalf 103	12393
 OtherHalf 104	119
 OtherHalf 105	102
 OtherHalf 106	108
-OtherHalf 107	-1
+OtherHalf 107	12396
 OtherHalf 108	106
 OtherHalf 109	111
 OtherHalf 110	51
 OtherHalf 111	109
-OtherHalf 112	-1
+OtherHalf 112	12342
 OtherHalf 113	72
 OtherHalf 114	117
-OtherHalf 115	-1
+OtherHalf 115	12390
 OtherHalf 116	121
 OtherHalf 117	114
-OtherHalf 118	-1
+OtherHalf 118	12345
 OtherHalf 119	104
 OtherHalf 120	129
 OtherHalf 121	116
-OtherHalf 122	-1
+OtherHalf 122	12387
 OtherHalf 123	128
-OtherHalf 124	-1
-OtherHalf 125	-1
+OtherHalf 124	12351
+OtherHalf 125	12348
 OtherHalf 126	131
 OtherHalf 127	99
 OtherHalf 128	123
 OtherHalf 129	120
-OtherHalf 130	-1
+OtherHalf 130	12384
 OtherHalf 131	126
 OtherHalf 132	145
 OtherHalf 133	3
 OtherHalf 134	247
-OtherHalf 135	-1
+OtherHalf 135	12435
 OtherHalf 136	248
 OtherHalf 137	167
-OtherHalf 138	-1
+OtherHalf 138	12426
 OtherHalf 139	141
-OtherHalf 140	-1
+OtherHalf 140	12429
 OtherHalf 141	139
-OtherHalf 142	-1
+OtherHalf 142	12423
 OtherHalf 143	146
 OtherHalf 144	147
 OtherHalf 145	132
 OtherHalf 146	143
 OtherHalf 147	144
-OtherHalf 148	-1
+OtherHalf 148	12420
 OtherHalf 149	152
-OtherHalf 150	-1
+OtherHalf 150	12417
 OtherHalf 151	154
 OtherHalf 152	149
 OtherHalf 153	163
@@ -8744,79 +9172,79 @@ OtherHalf 154	151
 OtherHalf 155	159
 OtherHalf 156	166
 OtherHalf 157	160
-OtherHalf 158	-1
+OtherHalf 158	12414
 OtherHalf 159	155
 OtherHalf 160	157
-OtherHalf 161	-1
+OtherHalf 161	12471
 OtherHalf 162	168
 OtherHalf 163	153
-OtherHalf 164	-1
+OtherHalf 164	12468
 OtherHalf 165	203
 OtherHalf 166	156
 OtherHalf 167	137
 OtherHalf 168	162
 OtherHalf 169	175
-OtherHalf 170	-1
-OtherHalf 171	-1
+OtherHalf 170	12270
+OtherHalf 171	12462
 OtherHalf 172	178
-OtherHalf 173	-1
+OtherHalf 173	12465
 OtherHalf 174	181
 OtherHalf 175	169
 OtherHalf 176	177
 OtherHalf 177	176
 OtherHalf 178	172
-OtherHalf 179	-1
+OtherHalf 179	12459
 OtherHalf 180	184
 OtherHalf 181	174
-OtherHalf 182	-1
+OtherHalf 182	12456
 OtherHalf 183	204
 OtherHalf 184	180
 OtherHalf 185	186
 OtherHalf 186	185
 OtherHalf 187	243
-OtherHalf 188	-1
+OtherHalf 188	12507
 OtherHalf 189	198
-OtherHalf 190	-1
+OtherHalf 190	12288
 OtherHalf 191	194
 OtherHalf 192	235
-OtherHalf 193	-1
+OtherHalf 193	12450
 OtherHalf 194	191
-OtherHalf 195	-1
+OtherHalf 195	12444
 OtherHalf 196	240
-OtherHalf 197	-1
+OtherHalf 197	12447
 OtherHalf 198	189
 OtherHalf 199	242
 OtherHalf 200	201
 OtherHalf 201	200
-OtherHalf 202	-1
+OtherHalf 202	12438
 OtherHalf 203	165
 OtherHalf 204	183
-OtherHalf 205	-1
+OtherHalf 205	12504
 OtherHalf 206	211
 OtherHalf 207	213
-OtherHalf 208	-1
-OtherHalf 209	-1
+OtherHalf 208	12501
+OtherHalf 209	12498
 OtherHalf 210	217
 OtherHalf 211	206
 OtherHalf 212	215
 OtherHalf 213	207
-OtherHalf 214	-1
+OtherHalf 214	12495
 OtherHalf 215	212
 OtherHalf 216	221
 OtherHalf 217	210
-OtherHalf 218	-1
+OtherHalf 218	12492
 OtherHalf 219	224
 OtherHalf 220	9
 OtherHalf 221	216
-OtherHalf 222	-1
+OtherHalf 222	12489
 OtherHalf 223	226
 OtherHalf 224	219
 OtherHalf 225	233
 OtherHalf 226	223
-OtherHalf 227	-1
+OtherHalf 227	12486
 OtherHalf 228	249
-OtherHalf 229	-1
-OtherHalf 230	-1
+OtherHalf 229	12483
+OtherHalf 230	12480
 OtherHalf 231	251
 OtherHalf 232	237
 OtherHalf 233	225
@@ -8824,424 +9252,424 @@ OtherHalf 234	245
 OtherHalf 235	192
 OtherHalf 236	239
 OtherHalf 237	232
-OtherHalf 238	-1
+OtherHalf 238	12474
 OtherHalf 239	236
 OtherHalf 240	196
-OtherHalf 241	-1
+OtherHalf 241	12441
 OtherHalf 242	199
 OtherHalf 243	187
-OtherHalf 244	-1
+OtherHalf 244	12453
 OtherHalf 245	234
-OtherHalf 246	-1
+OtherHalf 246	12432
 OtherHalf 247	134
 OtherHalf 248	136
 OtherHalf 249	228
-OtherHalf 250	-1
+OtherHalf 250	12477
 OtherHalf 251	231
 OtherHalf 252	266
-OtherHalf 253	-1
-OtherHalf 254	-1
+OtherHalf 253	12729
+OtherHalf 254	12726
 OtherHalf 255	258
-OtherHalf 256	-1
+OtherHalf 256	12675
 OtherHalf 257	263
 OtherHalf 258	255
-OtherHalf 259	-1
-OtherHalf 260	-1
+OtherHalf 259	12681
+OtherHalf 260	12678
 OtherHalf 261	331
-OtherHalf 262	-1
+OtherHalf 262	12684
 OtherHalf 263	257
 OtherHalf 264	268
-OtherHalf 265	-1
+OtherHalf 265	12510
 OtherHalf 266	252
 OtherHalf 267	271
 OtherHalf 268	264
-OtherHalf 269	-1
+OtherHalf 269	12723
 OtherHalf 270	275
 OtherHalf 271	267
-OtherHalf 272	-1
+OtherHalf 272	12720
 OtherHalf 273	277
-OtherHalf 274	-1
+OtherHalf 274	12513
 OtherHalf 275	270
 OtherHalf 276	281
 OtherHalf 277	273
-OtherHalf 278	-1
+OtherHalf 278	12717
 OtherHalf 279	283
-OtherHalf 280	-1
+OtherHalf 280	12516
 OtherHalf 281	276
 OtherHalf 282	287
 OtherHalf 283	279
-OtherHalf 284	-1
+OtherHalf 284	12714
 OtherHalf 285	289
-OtherHalf 286	-1
+OtherHalf 286	12519
 OtherHalf 287	282
 OtherHalf 288	293
 OtherHalf 289	285
-OtherHalf 290	-1
+OtherHalf 290	12711
 OtherHalf 291	296
-OtherHalf 292	-1
+OtherHalf 292	12522
 OtherHalf 293	288
 OtherHalf 294	298
-OtherHalf 295	-1
+OtherHalf 295	12525
 OtherHalf 296	291
 OtherHalf 297	302
 OtherHalf 298	294
-OtherHalf 299	-1
+OtherHalf 299	12708
 OtherHalf 300	304
-OtherHalf 301	-1
+OtherHalf 301	12528
 OtherHalf 302	297
 OtherHalf 303	308
 OtherHalf 304	300
-OtherHalf 305	-1
+OtherHalf 305	12705
 OtherHalf 306	311
-OtherHalf 307	-1
+OtherHalf 307	12531
 OtherHalf 308	303
 OtherHalf 309	313
-OtherHalf 310	-1
+OtherHalf 310	12534
 OtherHalf 311	306
 OtherHalf 312	317
 OtherHalf 313	309
-OtherHalf 314	-1
+OtherHalf 314	12702
 OtherHalf 315	320
-OtherHalf 316	-1
+OtherHalf 316	12537
 OtherHalf 317	312
 OtherHalf 318	323
-OtherHalf 319	-1
+OtherHalf 319	12540
 OtherHalf 320	315
 OtherHalf 321	325
-OtherHalf 322	-1
+OtherHalf 322	12543
 OtherHalf 323	318
 OtherHalf 324	359
 OtherHalf 325	321
-OtherHalf 326	-1
+OtherHalf 326	12699
 OtherHalf 327	435
-OtherHalf 328	-1
-OtherHalf 329	-1
+OtherHalf 328	12663
+OtherHalf 329	12660
 OtherHalf 330	438
 OtherHalf 331	261
 OtherHalf 332	447
 OtherHalf 333	437
 OtherHalf 334	336
-OtherHalf 335	-1
+OtherHalf 335	12666
 OtherHalf 336	334
 OtherHalf 337	441
-OtherHalf 338	-1
+OtherHalf 338	12669
 OtherHalf 339	443
 OtherHalf 340	444
-OtherHalf 341	-1
+OtherHalf 341	12672
 OtherHalf 342	440
 OtherHalf 343	350
-OtherHalf 344	-1
+OtherHalf 344	12687
 OtherHalf 345	453
-OtherHalf 346	-1
+OtherHalf 346	12693
 OtherHalf 347	456
 OtherHalf 348	451
-OtherHalf 349	-1
+OtherHalf 349	12690
 OtherHalf 350	343
 OtherHalf 351	356
 OtherHalf 352	357
-OtherHalf 353	-1
+OtherHalf 353	12696
 OtherHalf 354	455
-OtherHalf 355	-1
+OtherHalf 355	12549
 OtherHalf 356	351
 OtherHalf 357	352
-OtherHalf 358	-1
+OtherHalf 358	12546
 OtherHalf 359	324
 OtherHalf 360	373
-OtherHalf 361	-1
-OtherHalf 362	-1
+OtherHalf 361	12597
+OtherHalf 362	12594
 OtherHalf 363	366
-OtherHalf 364	-1
-OtherHalf 365	-1
+OtherHalf 364	12645
+OtherHalf 365	12642
 OtherHalf 366	363
 OtherHalf 367	370
-OtherHalf 368	-1
+OtherHalf 368	12648
 OtherHalf 369	449
 OtherHalf 370	367
-OtherHalf 371	-1
+OtherHalf 371	12639
 OtherHalf 372	377
 OtherHalf 373	360
-OtherHalf 374	-1
+OtherHalf 374	12591
 OtherHalf 375	380
-OtherHalf 376	-1
+OtherHalf 376	12600
 OtherHalf 377	372
 OtherHalf 378	382
-OtherHalf 379	-1
+OtherHalf 379	12603
 OtherHalf 380	375
 OtherHalf 381	386
 OtherHalf 382	378
-OtherHalf 383	-1
+OtherHalf 383	12588
 OtherHalf 384	388
-OtherHalf 385	-1
+OtherHalf 385	12606
 OtherHalf 386	381
 OtherHalf 387	392
 OtherHalf 388	384
-OtherHalf 389	-1
+OtherHalf 389	12585
 OtherHalf 390	394
-OtherHalf 391	-1
+OtherHalf 391	12609
 OtherHalf 392	387
 OtherHalf 393	398
 OtherHalf 394	390
-OtherHalf 395	-1
+OtherHalf 395	12582
 OtherHalf 396	400
-OtherHalf 397	-1
+OtherHalf 397	12612
 OtherHalf 398	393
 OtherHalf 399	403
 OtherHalf 400	396
-OtherHalf 401	-1
+OtherHalf 401	12579
 OtherHalf 402	407
 OtherHalf 403	399
-OtherHalf 404	-1
+OtherHalf 404	12576
 OtherHalf 405	409
-OtherHalf 406	-1
+OtherHalf 406	12615
 OtherHalf 407	402
 OtherHalf 408	413
 OtherHalf 409	405
-OtherHalf 410	-1
+OtherHalf 410	12573
 OtherHalf 411	415
-OtherHalf 412	-1
+OtherHalf 412	12618
 OtherHalf 413	408
 OtherHalf 414	418
 OtherHalf 415	411
-OtherHalf 416	-1
+OtherHalf 416	12570
 OtherHalf 417	422
 OtherHalf 418	414
-OtherHalf 419	-1
+OtherHalf 419	12567
 OtherHalf 420	424
-OtherHalf 421	-1
+OtherHalf 421	12621
 OtherHalf 422	417
 OtherHalf 423	427
 OtherHalf 424	420
-OtherHalf 425	-1
+OtherHalf 425	12564
 OtherHalf 426	430
 OtherHalf 427	423
-OtherHalf 428	-1
+OtherHalf 428	12561
 OtherHalf 429	434
 OtherHalf 430	426
-OtherHalf 431	-1
+OtherHalf 431	12558
 OtherHalf 432	466
-OtherHalf 433	-1
+OtherHalf 433	12624
 OtherHalf 434	429
 OtherHalf 435	327
-OtherHalf 436	-1
+OtherHalf 436	12657
 OtherHalf 437	333
 OtherHalf 438	330
-OtherHalf 439	-1
+OtherHalf 439	12636
 OtherHalf 440	342
 OtherHalf 441	337
-OtherHalf 442	-1
+OtherHalf 442	12654
 OtherHalf 443	339
 OtherHalf 444	340
-OtherHalf 445	-1
+OtherHalf 445	12651
 OtherHalf 446	448
 OtherHalf 447	332
 OtherHalf 448	446
 OtherHalf 449	369
 OtherHalf 450	457
 OtherHalf 451	348
-OtherHalf 452	-1
+OtherHalf 452	12633
 OtherHalf 453	345
 OtherHalf 454	462
 OtherHalf 455	354
 OtherHalf 456	347
 OtherHalf 457	450
-OtherHalf 458	-1
+OtherHalf 458	12630
 OtherHalf 459	463
-OtherHalf 460	-1
+OtherHalf 460	12627
 OtherHalf 461	465
 OtherHalf 462	454
 OtherHalf 463	459
-OtherHalf 464	-1
+OtherHalf 464	12552
 OtherHalf 465	461
 OtherHalf 466	432
-OtherHalf 467	-1
+OtherHalf 467	12555
 OtherHalf 468	472
-OtherHalf 469	-1
+OtherHalf 469	12825
 OtherHalf 470	477
 OtherHalf 471	656
 OtherHalf 472	468
 OtherHalf 473	661
 OtherHalf 474	478
-OtherHalf 475	-1
+OtherHalf 475	12822
 OtherHalf 476	483
 OtherHalf 477	470
 OtherHalf 478	474
 OtherHalf 479	667
 OtherHalf 480	484
-OtherHalf 481	-1
+OtherHalf 481	12819
 OtherHalf 482	489
 OtherHalf 483	476
 OtherHalf 484	480
 OtherHalf 485	673
 OtherHalf 486	490
-OtherHalf 487	-1
+OtherHalf 487	12816
 OtherHalf 488	495
 OtherHalf 489	482
 OtherHalf 490	486
 OtherHalf 491	679
 OtherHalf 492	496
-OtherHalf 493	-1
+OtherHalf 493	12813
 OtherHalf 494	501
 OtherHalf 495	488
 OtherHalf 496	492
 OtherHalf 497	685
 OtherHalf 498	502
-OtherHalf 499	-1
+OtherHalf 499	12810
 OtherHalf 500	507
 OtherHalf 501	494
 OtherHalf 502	498
 OtherHalf 503	691
 OtherHalf 504	508
-OtherHalf 505	-1
+OtherHalf 505	12807
 OtherHalf 506	513
 OtherHalf 507	500
 OtherHalf 508	504
 OtherHalf 509	697
 OtherHalf 510	514
-OtherHalf 511	-1
+OtherHalf 511	12804
 OtherHalf 512	519
 OtherHalf 513	506
 OtherHalf 514	510
 OtherHalf 515	703
 OtherHalf 516	520
-OtherHalf 517	-1
+OtherHalf 517	12801
 OtherHalf 518	525
 OtherHalf 519	512
 OtherHalf 520	516
 OtherHalf 521	709
 OtherHalf 522	526
-OtherHalf 523	-1
+OtherHalf 523	12798
 OtherHalf 524	531
 OtherHalf 525	518
 OtherHalf 526	522
 OtherHalf 527	715
 OtherHalf 528	532
-OtherHalf 529	-1
+OtherHalf 529	12795
 OtherHalf 530	537
 OtherHalf 531	524
 OtherHalf 532	528
 OtherHalf 533	721
 OtherHalf 534	538
-OtherHalf 535	-1
+OtherHalf 535	12792
 OtherHalf 536	543
 OtherHalf 537	530
 OtherHalf 538	534
 OtherHalf 539	727
 OtherHalf 540	544
-OtherHalf 541	-1
+OtherHalf 541	12789
 OtherHalf 542	549
 OtherHalf 543	536
 OtherHalf 544	540
 OtherHalf 545	733
 OtherHalf 546	550
-OtherHalf 547	-1
+OtherHalf 547	12786
 OtherHalf 548	555
 OtherHalf 549	542
 OtherHalf 550	546
 OtherHalf 551	739
 OtherHalf 552	556
-OtherHalf 553	-1
+OtherHalf 553	12783
 OtherHalf 554	561
 OtherHalf 555	548
 OtherHalf 556	552
 OtherHalf 557	745
 OtherHalf 558	562
-OtherHalf 559	-1
+OtherHalf 559	12780
 OtherHalf 560	567
 OtherHalf 561	554
 OtherHalf 562	558
 OtherHalf 563	751
 OtherHalf 564	568
-OtherHalf 565	-1
+OtherHalf 565	12777
 OtherHalf 566	573
 OtherHalf 567	560
 OtherHalf 568	564
 OtherHalf 569	757
 OtherHalf 570	574
-OtherHalf 571	-1
+OtherHalf 571	12774
 OtherHalf 572	579
 OtherHalf 573	566
 OtherHalf 574	570
 OtherHalf 575	763
 OtherHalf 576	580
-OtherHalf 577	-1
+OtherHalf 577	12771
 OtherHalf 578	585
 OtherHalf 579	572
 OtherHalf 580	576
 OtherHalf 581	769
 OtherHalf 582	586
-OtherHalf 583	-1
+OtherHalf 583	12768
 OtherHalf 584	591
 OtherHalf 585	578
 OtherHalf 586	582
 OtherHalf 587	775
 OtherHalf 588	592
-OtherHalf 589	-1
+OtherHalf 589	12765
 OtherHalf 590	597
 OtherHalf 591	584
 OtherHalf 592	588
 OtherHalf 593	781
 OtherHalf 594	598
-OtherHalf 595	-1
+OtherHalf 595	12762
 OtherHalf 596	603
 OtherHalf 597	590
 OtherHalf 598	594
 OtherHalf 599	787
 OtherHalf 600	604
-OtherHalf 601	-1
+OtherHalf 601	12759
 OtherHalf 602	609
 OtherHalf 603	596
 OtherHalf 604	600
 OtherHalf 605	793
 OtherHalf 606	610
-OtherHalf 607	-1
+OtherHalf 607	12756
 OtherHalf 608	615
 OtherHalf 609	602
 OtherHalf 610	606
 OtherHalf 611	799
 OtherHalf 612	616
-OtherHalf 613	-1
+OtherHalf 613	12753
 OtherHalf 614	621
 OtherHalf 615	608
 OtherHalf 616	612
 OtherHalf 617	805
 OtherHalf 618	622
-OtherHalf 619	-1
+OtherHalf 619	12750
 OtherHalf 620	627
 OtherHalf 621	614
 OtherHalf 622	618
 OtherHalf 623	811
 OtherHalf 624	628
-OtherHalf 625	-1
+OtherHalf 625	12747
 OtherHalf 626	633
 OtherHalf 627	620
 OtherHalf 628	624
 OtherHalf 629	817
 OtherHalf 630	634
-OtherHalf 631	-1
+OtherHalf 631	12744
 OtherHalf 632	639
 OtherHalf 633	626
 OtherHalf 634	630
 OtherHalf 635	823
 OtherHalf 636	640
-OtherHalf 637	-1
+OtherHalf 637	12741
 OtherHalf 638	645
 OtherHalf 639	632
 OtherHalf 640	636
 OtherHalf 641	829
 OtherHalf 642	646
-OtherHalf 643	-1
+OtherHalf 643	12738
 OtherHalf 644	651
 OtherHalf 645	638
 OtherHalf 646	642
 OtherHalf 647	835
 OtherHalf 648	652
-OtherHalf 649	-1
+OtherHalf 649	12735
 OtherHalf 650	657
 OtherHalf 651	644
 OtherHalf 652	648
 OtherHalf 653	841
 OtherHalf 654	658
-OtherHalf 655	-1
+OtherHalf 655	12732
 OtherHalf 656	471
 OtherHalf 657	650
 OtherHalf 658	654
@@ -11288,193 +11716,193 @@ OtherHalf 2698	2579
 OtherHalf 2699	2580
 OtherHalf 2700	2705
 OtherHalf 2701	2709
-OtherHalf 2702	-1
+OtherHalf 2702	12921
 OtherHalf 2703	2887
 OtherHalf 2704	2894
 OtherHalf 2705	2700
 OtherHalf 2706	2711
 OtherHalf 2707	2715
-OtherHalf 2708	-1
+OtherHalf 2708	12828
 OtherHalf 2709	2701
 OtherHalf 2710	2900
 OtherHalf 2711	2706
 OtherHalf 2712	2717
 OtherHalf 2713	2721
-OtherHalf 2714	-1
+OtherHalf 2714	12831
 OtherHalf 2715	2707
 OtherHalf 2716	2906
 OtherHalf 2717	2712
 OtherHalf 2718	2723
 OtherHalf 2719	2727
-OtherHalf 2720	-1
+OtherHalf 2720	12834
 OtherHalf 2721	2713
 OtherHalf 2722	2912
 OtherHalf 2723	2718
 OtherHalf 2724	2729
 OtherHalf 2725	2733
-OtherHalf 2726	-1
+OtherHalf 2726	12837
 OtherHalf 2727	2719
 OtherHalf 2728	2918
 OtherHalf 2729	2724
 OtherHalf 2730	2735
 OtherHalf 2731	2739
-OtherHalf 2732	-1
+OtherHalf 2732	12840
 OtherHalf 2733	2725
 OtherHalf 2734	2924
 OtherHalf 2735	2730
 OtherHalf 2736	2741
 OtherHalf 2737	2745
-OtherHalf 2738	-1
+OtherHalf 2738	12843
 OtherHalf 2739	2731
 OtherHalf 2740	2930
 OtherHalf 2741	2736
 OtherHalf 2742	2747
 OtherHalf 2743	2751
-OtherHalf 2744	-1
+OtherHalf 2744	12846
 OtherHalf 2745	2737
 OtherHalf 2746	2936
 OtherHalf 2747	2742
 OtherHalf 2748	2753
 OtherHalf 2749	2757
-OtherHalf 2750	-1
+OtherHalf 2750	12849
 OtherHalf 2751	2743
 OtherHalf 2752	2942
 OtherHalf 2753	2748
 OtherHalf 2754	2759
 OtherHalf 2755	2763
-OtherHalf 2756	-1
+OtherHalf 2756	12852
 OtherHalf 2757	2749
 OtherHalf 2758	2948
 OtherHalf 2759	2754
 OtherHalf 2760	2765
 OtherHalf 2761	2769
-OtherHalf 2762	-1
+OtherHalf 2762	12855
 OtherHalf 2763	2755
 OtherHalf 2764	2954
 OtherHalf 2765	2760
 OtherHalf 2766	2771
 OtherHalf 2767	2775
-OtherHalf 2768	-1
+OtherHalf 2768	12858
 OtherHalf 2769	2761
 OtherHalf 2770	2960
 OtherHalf 2771	2766
 OtherHalf 2772	2777
 OtherHalf 2773	2781
-OtherHalf 2774	-1
+OtherHalf 2774	12861
 OtherHalf 2775	2767
 OtherHalf 2776	2966
 OtherHalf 2777	2772
 OtherHalf 2778	2783
 OtherHalf 2779	2787
-OtherHalf 2780	-1
+OtherHalf 2780	12864
 OtherHalf 2781	2773
 OtherHalf 2782	2972
 OtherHalf 2783	2778
 OtherHalf 2784	2789
 OtherHalf 2785	2793
-OtherHalf 2786	-1
+OtherHalf 2786	12867
 OtherHalf 2787	2779
 OtherHalf 2788	2978
 OtherHalf 2789	2784
 OtherHalf 2790	2795
 OtherHalf 2791	2799
-OtherHalf 2792	-1
+OtherHalf 2792	12870
 OtherHalf 2793	2785
 OtherHalf 2794	2984
 OtherHalf 2795	2790
 OtherHalf 2796	2801
 OtherHalf 2797	2805
-OtherHalf 2798	-1
+OtherHalf 2798	12873
 OtherHalf 2799	2791
 OtherHalf 2800	2990
 OtherHalf 2801	2796
 OtherHalf 2802	2807
 OtherHalf 2803	2811
-OtherHalf 2804	-1
+OtherHalf 2804	12876
 OtherHalf 2805	2797
 OtherHalf 2806	2996
 OtherHalf 2807	2802
 OtherHalf 2808	2813
 OtherHalf 2809	2817
-OtherHalf 2810	-1
+OtherHalf 2810	12879
 OtherHalf 2811	2803
 OtherHalf 2812	3002
 OtherHalf 2813	2808
 OtherHalf 2814	2819
 OtherHalf 2815	2823
-OtherHalf 2816	-1
+OtherHalf 2816	12882
 OtherHalf 2817	2809
 OtherHalf 2818	3008
 OtherHalf 2819	2814
 OtherHalf 2820	2825
 OtherHalf 2821	2829
-OtherHalf 2822	-1
+OtherHalf 2822	12885
 OtherHalf 2823	2815
 OtherHalf 2824	3014
 OtherHalf 2825	2820
 OtherHalf 2826	2831
 OtherHalf 2827	2835
-OtherHalf 2828	-1
+OtherHalf 2828	12888
 OtherHalf 2829	2821
 OtherHalf 2830	3020
 OtherHalf 2831	2826
 OtherHalf 2832	2837
 OtherHalf 2833	2841
-OtherHalf 2834	-1
+OtherHalf 2834	12891
 OtherHalf 2835	2827
 OtherHalf 2836	3026
 OtherHalf 2837	2832
 OtherHalf 2838	2843
 OtherHalf 2839	2847
-OtherHalf 2840	-1
+OtherHalf 2840	12894
 OtherHalf 2841	2833
 OtherHalf 2842	3032
 OtherHalf 2843	2838
 OtherHalf 2844	2849
 OtherHalf 2845	2853
-OtherHalf 2846	-1
+OtherHalf 2846	12897
 OtherHalf 2847	2839
 OtherHalf 2848	3038
 OtherHalf 2849	2844
 OtherHalf 2850	2855
 OtherHalf 2851	2859
-OtherHalf 2852	-1
+OtherHalf 2852	12900
 OtherHalf 2853	2845
 OtherHalf 2854	3044
 OtherHalf 2855	2850
 OtherHalf 2856	2861
 OtherHalf 2857	2865
-OtherHalf 2858	-1
+OtherHalf 2858	12903
 OtherHalf 2859	2851
 OtherHalf 2860	3050
 OtherHalf 2861	2856
 OtherHalf 2862	2867
 OtherHalf 2863	2871
-OtherHalf 2864	-1
+OtherHalf 2864	12906
 OtherHalf 2865	2857
 OtherHalf 2866	3056
 OtherHalf 2867	2862
 OtherHalf 2868	2873
 OtherHalf 2869	2877
-OtherHalf 2870	-1
+OtherHalf 2870	12909
 OtherHalf 2871	2863
 OtherHalf 2872	3062
 OtherHalf 2873	2868
 OtherHalf 2874	2879
 OtherHalf 2875	2883
-OtherHalf 2876	-1
+OtherHalf 2876	12912
 OtherHalf 2877	2869
 OtherHalf 2878	3068
 OtherHalf 2879	2874
 OtherHalf 2880	2885
 OtherHalf 2881	2889
-OtherHalf 2882	-1
+OtherHalf 2882	12915
 OtherHalf 2883	2875
 OtherHalf 2884	3074
 OtherHalf 2885	2880
 OtherHalf 2886	2891
 OtherHalf 2887	2703
-OtherHalf 2888	-1
+OtherHalf 2888	12918
 OtherHalf 2889	2881
 OtherHalf 2890	3080
 OtherHalf 2891	2886
@@ -14628,7 +15056,7 @@ OtherHalf 6038	6442
 OtherHalf 6039	6051
 OtherHalf 6040	6073
 OtherHalf 6041	6821
-OtherHalf 6042	-1
+OtherHalf 6042	12987
 OtherHalf 6043	6032
 OtherHalf 6044	6454
 OtherHalf 6045	6031
@@ -14759,7 +15187,7 @@ OtherHalf 6169	6952
 OtherHalf 6170	6959
 OtherHalf 6171	6175
 OtherHalf 6172	8606
-OtherHalf 6173	-1
+OtherHalf 6173	12999
 OtherHalf 6174	6167
 OtherHalf 6175	6171
 OtherHalf 6176	6148
@@ -14959,7 +15387,7 @@ OtherHalf 6369	8138
 OtherHalf 6370	6365
 OtherHalf 6371	8128
 OtherHalf 6372	6376
-OtherHalf 6373	-1
+OtherHalf 6373	13011
 OtherHalf 6374	8806
 OtherHalf 6375	6350
 OtherHalf 6376	6372
@@ -15202,7 +15630,7 @@ OtherHalf 6612	6648
 OtherHalf 6613	7110
 OtherHalf 6614	6398
 OtherHalf 6615	7203
-OtherHalf 6616	-1
+OtherHalf 6616	13059
 OtherHalf 6617	6693
 OtherHalf 6618	7353
 OtherHalf 6619	7258
@@ -15251,12 +15679,12 @@ OtherHalf 6661	7593
 OtherHalf 6662	7708
 OtherHalf 6663	7740
 OtherHalf 6664	7693
-OtherHalf 6665	-1
+OtherHalf 6665	13050
 OtherHalf 6666	7476
 OtherHalf 6667	7471
 OtherHalf 6668	7926
 OtherHalf 6669	7519
-OtherHalf 6670	-1
+OtherHalf 6670	13023
 OtherHalf 6671	7516
 OtherHalf 6672	7193
 OtherHalf 6673	7100
@@ -15265,7 +15693,7 @@ OtherHalf 6675	7726
 OtherHalf 6676	7729
 OtherHalf 6677	7702
 OtherHalf 6678	7741
-OtherHalf 6679	-1
+OtherHalf 6679	13047
 OtherHalf 6680	7738
 OtherHalf 6681	7587
 OtherHalf 6682	7920
@@ -15412,7 +15840,7 @@ OtherHalf 6822	6825
 OtherHalf 6823	8311
 OtherHalf 6824	6201
 OtherHalf 6825	6822
-OtherHalf 6826	-1
+OtherHalf 6826	12984
 OtherHalf 6827	8307
 OtherHalf 6828	6831
 OtherHalf 6829	8305
@@ -15443,10 +15871,10 @@ OtherHalf 6853	8213
 OtherHalf 6854	8275
 OtherHalf 6855	8215
 OtherHalf 6856	6851
-OtherHalf 6857	-1
+OtherHalf 6857	12933
 OtherHalf 6858	8227
 OtherHalf 6859	8216
-OtherHalf 6860	-1
+OtherHalf 6860	12930
 OtherHalf 6861	8287
 OtherHalf 6862	8291
 OtherHalf 6863	6580
@@ -15454,7 +15882,7 @@ OtherHalf 6864	8233
 OtherHalf 6865	8289
 OtherHalf 6866	8228
 OtherHalf 6867	8232
-OtherHalf 6868	-1
+OtherHalf 6868	12924
 OtherHalf 6869	6586
 OtherHalf 6870	6783
 OtherHalf 6871	6911
@@ -15584,13 +16012,13 @@ OtherHalf 6994	9428
 OtherHalf 6995	6511
 OtherHalf 6996	7524
 OtherHalf 6997	7517
-OtherHalf 6998	-1
+OtherHalf 6998	13020
 OtherHalf 6999	8190
 OtherHalf 7000	7420
 OtherHalf 7001	7264
 OtherHalf 7002	7785
 OtherHalf 7003	7739
-OtherHalf 7004	-1
+OtherHalf 7004	13044
 OtherHalf 7005	7753
 OtherHalf 7006	7576
 OtherHalf 7007	7750
@@ -15872,10 +16300,10 @@ OtherHalf 7282	7514
 OtherHalf 7283	7323
 OtherHalf 7284	7518
 OtherHalf 7285	7474
-OtherHalf 7286	-1
+OtherHalf 7286	13026
 OtherHalf 7287	7473
 OtherHalf 7288	7542
-OtherHalf 7289	-1
+OtherHalf 7289	13029
 OtherHalf 7290	7325
 OtherHalf 7291	7407
 OtherHalf 7292	7927
@@ -16109,7 +16537,7 @@ OtherHalf 7519	6669
 OtherHalf 7520	7295
 OtherHalf 7521	7206
 OtherHalf 7522	7525
-OtherHalf 7523	-1
+OtherHalf 7523	13017
 OtherHalf 7524	6996
 OtherHalf 7525	7522
 OtherHalf 7526	7187
@@ -16130,10 +16558,10 @@ OtherHalf 7540	7417
 OtherHalf 7541	7421
 OtherHalf 7542	7288
 OtherHalf 7543	7478
-OtherHalf 7544	-1
+OtherHalf 7544	13032
 OtherHalf 7545	7205
 OtherHalf 7546	7207
-OtherHalf 7547	-1
+OtherHalf 7547	13014
 OtherHalf 7548	7560
 OtherHalf 7549	6406
 OtherHalf 7550	7586
@@ -16418,7 +16846,7 @@ OtherHalf 7828	7651
 OtherHalf 7829	7654
 OtherHalf 7830	7918
 OtherHalf 7831	7642
-OtherHalf 7832	-1
+OtherHalf 7832	13035
 OtherHalf 7833	7917
 OtherHalf 7834	7588
 OtherHalf 7835	7606
@@ -16786,16 +17214,16 @@ OtherHalf 8196	7512
 OtherHalf 8197	7293
 OtherHalf 8198	7278
 OtherHalf 8199	8210
-OtherHalf 8200	-1
+OtherHalf 8200	13038
 OtherHalf 8201	7826
 OtherHalf 8202	7692
 OtherHalf 8203	8205
-OtherHalf 8204	-1
+OtherHalf 8204	13053
 OtherHalf 8205	8203
 OtherHalf 8206	6632
-OtherHalf 8207	-1
+OtherHalf 8207	13056
 OtherHalf 8208	7581
-OtherHalf 8209	-1
+OtherHalf 8209	13041
 OtherHalf 8210	8199
 OtherHalf 8211	6578
 OtherHalf 8212	8240
@@ -16820,7 +17248,7 @@ OtherHalf 8230	8252
 OtherHalf 8231	8290
 OtherHalf 8232	6867
 OtherHalf 8233	6864
-OtherHalf 8234	-1
+OtherHalf 8234	12927
 OtherHalf 8235	6548
 OtherHalf 8236	10670
 OtherHalf 8237	6571
@@ -16859,7 +17287,7 @@ OtherHalf 8269	8276
 OtherHalf 8270	6568
 OtherHalf 8271	6850
 OtherHalf 8272	6848
-OtherHalf 8273	-1
+OtherHalf 8273	12936
 OtherHalf 8274	6849
 OtherHalf 8275	6854
 OtherHalf 8276	8269
@@ -16879,22 +17307,22 @@ OtherHalf 8289	6865
 OtherHalf 8290	8231
 OtherHalf 8291	6862
 OtherHalf 8292	6845
-OtherHalf 8293	-1
+OtherHalf 8293	12972
 OtherHalf 8294	10726
 OtherHalf 8295	6839
-OtherHalf 8296	-1
+OtherHalf 8296	12975
 OtherHalf 8297	6844
 OtherHalf 8298	6219
 OtherHalf 8299	6835
 OtherHalf 8300	6842
 OtherHalf 8301	6833
-OtherHalf 8302	-1
+OtherHalf 8302	12978
 OtherHalf 8303	6838
 OtherHalf 8304	6213
 OtherHalf 8305	6829
 OtherHalf 8306	6836
 OtherHalf 8307	6827
-OtherHalf 8308	-1
+OtherHalf 8308	12981
 OtherHalf 8309	6832
 OtherHalf 8310	6207
 OtherHalf 8311	6823
@@ -17061,7 +17489,7 @@ OtherHalf 8471	8486
 OtherHalf 8472	8484
 OtherHalf 8473	9253
 OtherHalf 8474	8507
-OtherHalf 8475	-1
+OtherHalf 8475	12954
 OtherHalf 8476	8888
 OtherHalf 8477	8464
 OtherHalf 8478	8465
@@ -17191,7 +17619,7 @@ OtherHalf 8601	8593
 OtherHalf 8602	9391
 OtherHalf 8603	9386
 OtherHalf 8604	8609
-OtherHalf 8605	-1
+OtherHalf 8605	12990
 OtherHalf 8606	6172
 OtherHalf 8607	8599
 OtherHalf 8608	8582
@@ -17393,7 +17821,7 @@ OtherHalf 8803	10562
 OtherHalf 8804	8797
 OtherHalf 8805	8810
 OtherHalf 8806	6374
-OtherHalf 8807	-1
+OtherHalf 8807	13008
 OtherHalf 8808	8782
 OtherHalf 8809	8813
 OtherHalf 8810	8805
@@ -17636,7 +18064,7 @@ OtherHalf 9046	8830
 OtherHalf 9047	9543
 OtherHalf 9048	9636
 OtherHalf 9049	9126
-OtherHalf 9050	-1
+OtherHalf 9050	13107
 OtherHalf 9051	9786
 OtherHalf 9052	9796
 OtherHalf 9053	9692
@@ -17683,14 +18111,14 @@ OtherHalf 9093	10153
 OtherHalf 9094	10142
 OtherHalf 9095	10026
 OtherHalf 9096	10173
-OtherHalf 9097	-1
+OtherHalf 9097	13068
 OtherHalf 9098	10127
 OtherHalf 9099	9909
 OtherHalf 9100	10359
 OtherHalf 9101	9905
 OtherHalf 9102	9953
 OtherHalf 9103	9950
-OtherHalf 9104	-1
+OtherHalf 9104	13095
 OtherHalf 9105	9625
 OtherHalf 9106	9119
 OtherHalf 9107	9532
@@ -17699,7 +18127,7 @@ OtherHalf 9109	10136
 OtherHalf 9110	10163
 OtherHalf 9111	10175
 OtherHalf 9112	10172
-OtherHalf 9113	-1
+OtherHalf 9113	13071
 OtherHalf 9114	10020
 OtherHalf 9115	10073
 OtherHalf 9116	10353
@@ -17846,7 +18274,7 @@ OtherHalf 9256	8634
 OtherHalf 9257	10745
 OtherHalf 9258	9255
 OtherHalf 9259	10740
-OtherHalf 9260	-1
+OtherHalf 9260	12957
 OtherHalf 9261	9264
 OtherHalf 9262	10744
 OtherHalf 9263	10739
@@ -17875,10 +18303,10 @@ OtherHalf 9285	10711
 OtherHalf 9286	10709
 OtherHalf 9287	10645
 OtherHalf 9288	10649
-OtherHalf 9289	-1
+OtherHalf 9289	12942
 OtherHalf 9290	9283
 OtherHalf 9291	10661
-OtherHalf 9292	-1
+OtherHalf 9292	12945
 OtherHalf 9293	10648
 OtherHalf 9294	10721
 OtherHalf 9295	9014
@@ -17888,7 +18316,7 @@ OtherHalf 9298	10660
 OtherHalf 9299	10722
 OtherHalf 9300	10665
 OtherHalf 9301	9020
-OtherHalf 9302	-1
+OtherHalf 9302	12951
 OtherHalf 9303	9216
 OtherHalf 9304	9330
 OtherHalf 9305	9343
@@ -18016,13 +18444,13 @@ OtherHalf 9426	8950
 OtherHalf 9427	8945
 OtherHalf 9428	6994
 OtherHalf 9429	9957
-OtherHalf 9430	-1
+OtherHalf 9430	13098
 OtherHalf 9431	9949
 OtherHalf 9432	10623
 OtherHalf 9433	9698
 OtherHalf 9434	9854
 OtherHalf 9435	10218
-OtherHalf 9436	-1
+OtherHalf 9436	13074
 OtherHalf 9437	10171
 OtherHalf 9438	10187
 OtherHalf 9439	10184
@@ -18304,10 +18732,10 @@ OtherHalf 9714	10627
 OtherHalf 9715	9756
 OtherHalf 9716	9946
 OtherHalf 9717	9951
-OtherHalf 9718	-1
+OtherHalf 9718	13092
 OtherHalf 9719	9908
 OtherHalf 9720	9906
-OtherHalf 9721	-1
+OtherHalf 9721	13089
 OtherHalf 9722	9975
 OtherHalf 9723	9757
 OtherHalf 9724	10361
@@ -18541,7 +18969,7 @@ OtherHalf 9951	9717
 OtherHalf 9952	9727
 OtherHalf 9953	9102
 OtherHalf 9954	9639
-OtherHalf 9955	-1
+OtherHalf 9955	13101
 OtherHalf 9956	9959
 OtherHalf 9957	9429
 OtherHalf 9958	9619
@@ -18562,10 +18990,10 @@ OtherHalf 9972	9615
 OtherHalf 9973	9853
 OtherHalf 9974	9851
 OtherHalf 9975	9722
-OtherHalf 9976	-1
+OtherHalf 9976	13086
 OtherHalf 9977	9910
 OtherHalf 9978	9637
-OtherHalf 9979	-1
+OtherHalf 9979	13104
 OtherHalf 9980	9641
 OtherHalf 9981	9993
 OtherHalf 9982	10018
@@ -18850,7 +19278,7 @@ OtherHalf 10260	10016
 OtherHalf 10261	10088
 OtherHalf 10262	10085
 OtherHalf 10263	10352
-OtherHalf 10264	-1
+OtherHalf 10264	13083
 OtherHalf 10265	10076
 OtherHalf 10266	10350
 OtherHalf 10267	10040
@@ -19220,16 +19648,16 @@ OtherHalf 10630	9711
 OtherHalf 10631	9726
 OtherHalf 10632	10642
 OtherHalf 10633	10258
-OtherHalf 10634	-1
+OtherHalf 10634	13080
 OtherHalf 10635	10125
-OtherHalf 10636	-1
+OtherHalf 10636	13065
 OtherHalf 10637	10638
 OtherHalf 10638	10637
-OtherHalf 10639	-1
+OtherHalf 10639	13062
 OtherHalf 10640	9064
 OtherHalf 10641	10014
 OtherHalf 10642	10632
-OtherHalf 10643	-1
+OtherHalf 10643	13077
 OtherHalf 10644	9010
 OtherHalf 10645	9287
 OtherHalf 10646	10672
@@ -19252,7 +19680,7 @@ OtherHalf 10662	9022
 OtherHalf 10663	10724
 OtherHalf 10664	10684
 OtherHalf 10665	9300
-OtherHalf 10666	-1
+OtherHalf 10666	12948
 OtherHalf 10667	9297
 OtherHalf 10668	8980
 OtherHalf 10669	9005
@@ -19291,7 +19719,7 @@ OtherHalf 10701	10655
 OtherHalf 10702	9002
 OtherHalf 10703	10708
 OtherHalf 10704	9284
-OtherHalf 10705	-1
+OtherHalf 10705	12939
 OtherHalf 10706	9280
 OtherHalf 10707	9282
 OtherHalf 10708	10703
@@ -19313,22 +19741,22 @@ OtherHalf 10723	9296
 OtherHalf 10724	10663
 OtherHalf 10725	9277
 OtherHalf 10726	8294
-OtherHalf 10727	-1
+OtherHalf 10727	12969
 OtherHalf 10728	9271
 OtherHalf 10729	9278
-OtherHalf 10730	-1
+OtherHalf 10730	12966
 OtherHalf 10731	8652
 OtherHalf 10732	9274
 OtherHalf 10733	9269
 OtherHalf 10734	9265
 OtherHalf 10735	9272
-OtherHalf 10736	-1
+OtherHalf 10736	12963
 OtherHalf 10737	8646
 OtherHalf 10738	9268
 OtherHalf 10739	9263
 OtherHalf 10740	9259
 OtherHalf 10741	9266
-OtherHalf 10742	-1
+OtherHalf 10742	12960
 OtherHalf 10743	8640
 OtherHalf 10744	9262
 OtherHalf 10745	9257
@@ -19679,7 +20107,7 @@ OtherHalf 11089	11087
 OtherHalf 11090	11470
 OtherHalf 11091	11030
 OtherHalf 11092	11088
-OtherHalf 11093	-1
+OtherHalf 11093	13002
 OtherHalf 11094	11103
 OtherHalf 11095	11026
 OtherHalf 11096	11021
@@ -20059,7 +20487,7 @@ OtherHalf 11469	11474
 OtherHalf 11470	11090
 OtherHalf 11471	11467
 OtherHalf 11472	11410
-OtherHalf 11473	-1
+OtherHalf 11473	13005
 OtherHalf 11474	11469
 OtherHalf 11475	11484
 OtherHalf 11476	11401
@@ -20094,67 +20522,67 @@ OtherHalf 11504	11385
 OtherHalf 11505	11478
 OtherHalf 11506	11407
 OtherHalf 11507	11414
-OtherHalf 11508	-1
+OtherHalf 11508	13197
 OtherHalf 11509	11513
 OtherHalf 11510	11593
 OtherHalf 11511	11516
 OtherHalf 11512	5903
 OtherHalf 11513	11509
-OtherHalf 11514	-1
+OtherHalf 11514	13194
 OtherHalf 11515	11558
 OtherHalf 11516	11511
 OtherHalf 11517	11522
 OtherHalf 11518	6002
 OtherHalf 11519	11536
-OtherHalf 11520	-1
+OtherHalf 11520	13116
 OtherHalf 11521	11525
 OtherHalf 11522	11517
 OtherHalf 11523	11528
 OtherHalf 11524	6008
 OtherHalf 11525	11521
-OtherHalf 11526	-1
+OtherHalf 11526	13113
 OtherHalf 11527	11530
 OtherHalf 11528	11523
 OtherHalf 11529	11592
 OtherHalf 11530	11527
-OtherHalf 11531	-1
+OtherHalf 11531	13110
 OtherHalf 11532	11537
 OtherHalf 11533	6101
 OtherHalf 11534	11542
-OtherHalf 11535	-1
+OtherHalf 11535	13119
 OtherHalf 11536	11519
 OtherHalf 11537	11532
 OtherHalf 11538	11543
 OtherHalf 11539	6125
 OtherHalf 11540	11548
-OtherHalf 11541	-1
+OtherHalf 11541	13122
 OtherHalf 11542	11534
 OtherHalf 11543	11538
 OtherHalf 11544	11549
 OtherHalf 11545	6149
 OtherHalf 11546	11554
-OtherHalf 11547	-1
+OtherHalf 11547	13125
 OtherHalf 11548	11540
 OtherHalf 11549	11544
 OtherHalf 11550	11555
-OtherHalf 11551	-1
+OtherHalf 11551	12996
 OtherHalf 11552	11638
-OtherHalf 11553	-1
+OtherHalf 11553	13128
 OtherHalf 11554	11546
 OtherHalf 11555	11550
 OtherHalf 11556	11561
 OtherHalf 11557	10748
 OtherHalf 11558	11515
-OtherHalf 11559	-1
+OtherHalf 11559	13191
 OtherHalf 11560	11564
 OtherHalf 11561	11556
 OtherHalf 11562	11567
 OtherHalf 11563	10754
 OtherHalf 11564	11560
-OtherHalf 11565	-1
+OtherHalf 11565	13188
 OtherHalf 11566	11570
 OtherHalf 11567	11562
-OtherHalf 11568	-1
+OtherHalf 11568	13185
 OtherHalf 11569	11571
 OtherHalf 11570	11566
 OtherHalf 11571	11569
@@ -20164,84 +20592,84 @@ OtherHalf 11574	11579
 OtherHalf 11575	11583
 OtherHalf 11576	10915
 OtherHalf 11577	11572
-OtherHalf 11578	-1
+OtherHalf 11578	13182
 OtherHalf 11579	11574
 OtherHalf 11580	11585
 OtherHalf 11581	11589
 OtherHalf 11582	10975
 OtherHalf 11583	11575
-OtherHalf 11584	-1
+OtherHalf 11584	13179
 OtherHalf 11585	11580
 OtherHalf 11586	11591
 OtherHalf 11587	11675
 OtherHalf 11588	11035
 OtherHalf 11589	11581
-OtherHalf 11590	-1
+OtherHalf 11590	13176
 OtherHalf 11591	11586
 OtherHalf 11592	11529
 OtherHalf 11593	11510
 OtherHalf 11594	6070
-OtherHalf 11595	-1
+OtherHalf 11595	13152
 OtherHalf 11596	11681
 OtherHalf 11597	11599
 OtherHalf 11598	11602
 OtherHalf 11599	11597
 OtherHalf 11600	8335
-OtherHalf 11601	-1
+OtherHalf 11601	13155
 OtherHalf 11602	11598
 OtherHalf 11603	11644
 OtherHalf 11604	11608
 OtherHalf 11605	11624
 OtherHalf 11606	8434
-OtherHalf 11607	-1
+OtherHalf 11607	13143
 OtherHalf 11608	11604
 OtherHalf 11609	11611
 OtherHalf 11610	11614
 OtherHalf 11611	11609
 OtherHalf 11612	8440
-OtherHalf 11613	-1
+OtherHalf 11613	13146
 OtherHalf 11614	11610
 OtherHalf 11615	11618
 OtherHalf 11616	11679
-OtherHalf 11617	-1
+OtherHalf 11617	13149
 OtherHalf 11618	11615
 OtherHalf 11619	11623
 OtherHalf 11620	11630
 OtherHalf 11621	8533
-OtherHalf 11622	-1
+OtherHalf 11622	13140
 OtherHalf 11623	11619
 OtherHalf 11624	11605
 OtherHalf 11625	11629
 OtherHalf 11626	11636
 OtherHalf 11627	8557
-OtherHalf 11628	-1
+OtherHalf 11628	13137
 OtherHalf 11629	11625
 OtherHalf 11630	11620
 OtherHalf 11631	11635
 OtherHalf 11632	11642
 OtherHalf 11633	8581
-OtherHalf 11634	-1
+OtherHalf 11634	13134
 OtherHalf 11635	11631
 OtherHalf 11636	11626
 OtherHalf 11637	11641
 OtherHalf 11638	11552
-OtherHalf 11639	-1
-OtherHalf 11640	-1
+OtherHalf 11639	12993
+OtherHalf 11640	13131
 OtherHalf 11641	11637
 OtherHalf 11642	11632
 OtherHalf 11643	11647
 OtherHalf 11644	11603
 OtherHalf 11645	11128
-OtherHalf 11646	-1
+OtherHalf 11646	13158
 OtherHalf 11647	11643
 OtherHalf 11648	11650
 OtherHalf 11649	11653
 OtherHalf 11650	11648
 OtherHalf 11651	11134
-OtherHalf 11652	-1
+OtherHalf 11652	13161
 OtherHalf 11653	11649
 OtherHalf 11654	11656
-OtherHalf 11655	-1
+OtherHalf 11655	13164
 OtherHalf 11656	11654
 OtherHalf 11657	11658
 OtherHalf 11658	11657
@@ -20252,38 +20680,38 @@ OtherHalf 11662	11297
 OtherHalf 11663	11670
 OtherHalf 11664	11660
 OtherHalf 11665	11661
-OtherHalf 11666	-1
+OtherHalf 11666	13167
 OtherHalf 11667	11671
 OtherHalf 11668	11357
 OtherHalf 11669	11676
 OtherHalf 11670	11663
 OtherHalf 11671	11667
-OtherHalf 11672	-1
+OtherHalf 11672	13170
 OtherHalf 11673	11677
 OtherHalf 11674	11417
 OtherHalf 11675	11587
 OtherHalf 11676	11669
 OtherHalf 11677	11673
-OtherHalf 11678	-1
+OtherHalf 11678	13173
 OtherHalf 11679	11616
 OtherHalf 11680	8504
 OtherHalf 11681	11596
 OtherHalf 11682	11686
 OtherHalf 11683	11708
 OtherHalf 11684	11703
-OtherHalf 11685	-1
+OtherHalf 11685	13215
 OtherHalf 11686	11682
 OtherHalf 11687	11689
 OtherHalf 11688	11692
 OtherHalf 11689	11687
 OtherHalf 11690	11705
-OtherHalf 11691	-1
+OtherHalf 11691	13200
 OtherHalf 11692	11688
 OtherHalf 11693	11695
 OtherHalf 11694	11698
 OtherHalf 11695	11693
 OtherHalf 11696	11702
-OtherHalf 11697	-1
+OtherHalf 11697	13203
 OtherHalf 11698	11694
 OtherHalf 11699	11722
 OtherHalf 11700	11704
@@ -20295,19 +20723,19 @@ OtherHalf 11705	11690
 OtherHalf 11706	11711
 OtherHalf 11707	11727
 OtherHalf 11708	11683
-OtherHalf 11709	-1
+OtherHalf 11709	13212
 OtherHalf 11710	11714
 OtherHalf 11711	11706
 OtherHalf 11712	11717
 OtherHalf 11713	11728
 OtherHalf 11714	11710
-OtherHalf 11715	-1
+OtherHalf 11715	13209
 OtherHalf 11716	11720
 OtherHalf 11717	11712
 OtherHalf 11718	11723
 OtherHalf 11719	11725
 OtherHalf 11720	11716
-OtherHalf 11721	-1
+OtherHalf 11721	13206
 OtherHalf 11722	11699
 OtherHalf 11723	11718
 OtherHalf 11724	11729
@@ -20336,37 +20764,37 @@ OtherHalf 11746	11781
 OtherHalf 11747	11730
 OtherHalf 11748	11752
 OtherHalf 11749	11783
-OtherHalf 11750	-1
+OtherHalf 11750	13233
 OtherHalf 11751	11731
 OtherHalf 11752	11748
 OtherHalf 11753	11755
 OtherHalf 11754	11758
 OtherHalf 11755	11753
-OtherHalf 11756	-1
+OtherHalf 11756	13230
 OtherHalf 11757	11734
 OtherHalf 11758	11754
 OtherHalf 11759	11761
 OtherHalf 11760	11764
 OtherHalf 11761	11759
-OtherHalf 11762	-1
+OtherHalf 11762	13227
 OtherHalf 11763	11737
 OtherHalf 11764	11760
 OtherHalf 11765	11767
 OtherHalf 11766	11770
 OtherHalf 11767	11765
-OtherHalf 11768	-1
+OtherHalf 11768	13224
 OtherHalf 11769	11740
 OtherHalf 11770	11766
 OtherHalf 11771	11773
 OtherHalf 11772	11776
 OtherHalf 11773	11771
-OtherHalf 11774	-1
+OtherHalf 11774	13221
 OtherHalf 11775	11743
 OtherHalf 11776	11772
 OtherHalf 11777	11779
 OtherHalf 11778	11782
 OtherHalf 11779	11777
-OtherHalf 11780	-1
+OtherHalf 11780	13218
 OtherHalf 11781	11746
 OtherHalf 11782	11778
 OtherHalf 11783	11749
@@ -20390,37 +20818,37 @@ OtherHalf 11800	11835
 OtherHalf 11801	11784
 OtherHalf 11802	11806
 OtherHalf 11803	11837
-OtherHalf 11804	-1
+OtherHalf 11804	13251
 OtherHalf 11805	11785
 OtherHalf 11806	11802
 OtherHalf 11807	11809
 OtherHalf 11808	11812
 OtherHalf 11809	11807
-OtherHalf 11810	-1
+OtherHalf 11810	13248
 OtherHalf 11811	11788
 OtherHalf 11812	11808
 OtherHalf 11813	11815
 OtherHalf 11814	11818
 OtherHalf 11815	11813
-OtherHalf 11816	-1
+OtherHalf 11816	13245
 OtherHalf 11817	11791
 OtherHalf 11818	11814
 OtherHalf 11819	11821
 OtherHalf 11820	11824
 OtherHalf 11821	11819
-OtherHalf 11822	-1
+OtherHalf 11822	13242
 OtherHalf 11823	11794
 OtherHalf 11824	11820
 OtherHalf 11825	11827
 OtherHalf 11826	11830
 OtherHalf 11827	11825
-OtherHalf 11828	-1
+OtherHalf 11828	13239
 OtherHalf 11829	11797
 OtherHalf 11830	11826
 OtherHalf 11831	11833
 OtherHalf 11832	11836
 OtherHalf 11833	11831
-OtherHalf 11834	-1
+OtherHalf 11834	13236
 OtherHalf 11835	11800
 OtherHalf 11836	11832
 OtherHalf 11837	11803
@@ -20444,37 +20872,37 @@ OtherHalf 11854	11889
 OtherHalf 11855	11838
 OtherHalf 11856	11860
 OtherHalf 11857	11891
-OtherHalf 11858	-1
+OtherHalf 11858	13269
 OtherHalf 11859	11839
 OtherHalf 11860	11856
 OtherHalf 11861	11863
 OtherHalf 11862	11866
 OtherHalf 11863	11861
-OtherHalf 11864	-1
+OtherHalf 11864	13266
 OtherHalf 11865	11842
 OtherHalf 11866	11862
 OtherHalf 11867	11869
 OtherHalf 11868	11872
 OtherHalf 11869	11867
-OtherHalf 11870	-1
+OtherHalf 11870	13263
 OtherHalf 11871	11845
 OtherHalf 11872	11868
 OtherHalf 11873	11875
 OtherHalf 11874	11878
 OtherHalf 11875	11873
-OtherHalf 11876	-1
+OtherHalf 11876	13260
 OtherHalf 11877	11848
 OtherHalf 11878	11874
 OtherHalf 11879	11881
 OtherHalf 11880	11884
 OtherHalf 11881	11879
-OtherHalf 11882	-1
+OtherHalf 11882	13257
 OtherHalf 11883	11851
 OtherHalf 11884	11880
 OtherHalf 11885	11887
 OtherHalf 11886	11890
 OtherHalf 11887	11885
-OtherHalf 11888	-1
+OtherHalf 11888	13254
 OtherHalf 11889	11854
 OtherHalf 11890	11886
 OtherHalf 11891	11857
@@ -20498,37 +20926,37 @@ OtherHalf 11908	11943
 OtherHalf 11909	11892
 OtherHalf 11910	11914
 OtherHalf 11911	11945
-OtherHalf 11912	-1
+OtherHalf 11912	13287
 OtherHalf 11913	11893
 OtherHalf 11914	11910
 OtherHalf 11915	11917
 OtherHalf 11916	11920
 OtherHalf 11917	11915
-OtherHalf 11918	-1
+OtherHalf 11918	13284
 OtherHalf 11919	11896
 OtherHalf 11920	11916
 OtherHalf 11921	11923
 OtherHalf 11922	11926
 OtherHalf 11923	11921
-OtherHalf 11924	-1
+OtherHalf 11924	13281
 OtherHalf 11925	11899
 OtherHalf 11926	11922
 OtherHalf 11927	11929
 OtherHalf 11928	11932
 OtherHalf 11929	11927
-OtherHalf 11930	-1
+OtherHalf 11930	13278
 OtherHalf 11931	11902
 OtherHalf 11932	11928
 OtherHalf 11933	11935
 OtherHalf 11934	11938
 OtherHalf 11935	11933
-OtherHalf 11936	-1
+OtherHalf 11936	13275
 OtherHalf 11937	11905
 OtherHalf 11938	11934
 OtherHalf 11939	11941
 OtherHalf 11940	11944
 OtherHalf 11941	11939
-OtherHalf 11942	-1
+OtherHalf 11942	13272
 OtherHalf 11943	11908
 OtherHalf 11944	11940
 OtherHalf 11945	11911
@@ -20552,37 +20980,37 @@ OtherHalf 11962	11997
 OtherHalf 11963	11946
 OtherHalf 11964	11968
 OtherHalf 11965	11999
-OtherHalf 11966	-1
+OtherHalf 11966	13305
 OtherHalf 11967	11947
 OtherHalf 11968	11964
 OtherHalf 11969	11971
 OtherHalf 11970	11974
 OtherHalf 11971	11969
-OtherHalf 11972	-1
+OtherHalf 11972	13302
 OtherHalf 11973	11950
 OtherHalf 11974	11970
 OtherHalf 11975	11977
 OtherHalf 11976	11980
 OtherHalf 11977	11975
-OtherHalf 11978	-1
+OtherHalf 11978	13299
 OtherHalf 11979	11953
 OtherHalf 11980	11976
 OtherHalf 11981	11983
 OtherHalf 11982	11986
 OtherHalf 11983	11981
-OtherHalf 11984	-1
+OtherHalf 11984	13296
 OtherHalf 11985	11956
 OtherHalf 11986	11982
 OtherHalf 11987	11989
 OtherHalf 11988	11992
 OtherHalf 11989	11987
-OtherHalf 11990	-1
+OtherHalf 11990	13293
 OtherHalf 11991	11959
 OtherHalf 11992	11988
 OtherHalf 11993	11995
 OtherHalf 11994	11998
 OtherHalf 11995	11993
-OtherHalf 11996	-1
+OtherHalf 11996	13290
 OtherHalf 11997	11962
 OtherHalf 11998	11994
 OtherHalf 11999	11965
@@ -20605,37 +21033,37 @@ OtherHalf 12015	12013
 OtherHalf 12016	12000
 OtherHalf 12017	12051
 OtherHalf 12018	12023
-OtherHalf 12019	-1
+OtherHalf 12019	13323
 OtherHalf 12020	12052
 OtherHalf 12021	12002
 OtherHalf 12022	12026
 OtherHalf 12023	12018
 OtherHalf 12024	12029
-OtherHalf 12025	-1
+OtherHalf 12025	13308
 OtherHalf 12026	12022
 OtherHalf 12027	12005
 OtherHalf 12028	12032
 OtherHalf 12029	12024
 OtherHalf 12030	12035
-OtherHalf 12031	-1
+OtherHalf 12031	13311
 OtherHalf 12032	12028
 OtherHalf 12033	12008
 OtherHalf 12034	12038
 OtherHalf 12035	12030
 OtherHalf 12036	12041
-OtherHalf 12037	-1
+OtherHalf 12037	13314
 OtherHalf 12038	12034
 OtherHalf 12039	12011
 OtherHalf 12040	12044
 OtherHalf 12041	12036
 OtherHalf 12042	12047
-OtherHalf 12043	-1
+OtherHalf 12043	13317
 OtherHalf 12044	12040
 OtherHalf 12045	12014
 OtherHalf 12046	12050
 OtherHalf 12047	12042
 OtherHalf 12048	12053
-OtherHalf 12049	-1
+OtherHalf 12049	13320
 OtherHalf 12050	12046
 OtherHalf 12051	12017
 OtherHalf 12052	12020
@@ -20659,37 +21087,37 @@ OtherHalf 12069	12067
 OtherHalf 12070	12054
 OtherHalf 12071	12105
 OtherHalf 12072	12077
-OtherHalf 12073	-1
+OtherHalf 12073	13341
 OtherHalf 12074	12106
 OtherHalf 12075	12056
 OtherHalf 12076	12080
 OtherHalf 12077	12072
 OtherHalf 12078	12083
-OtherHalf 12079	-1
+OtherHalf 12079	13326
 OtherHalf 12080	12076
 OtherHalf 12081	12059
 OtherHalf 12082	12086
 OtherHalf 12083	12078
 OtherHalf 12084	12089
-OtherHalf 12085	-1
+OtherHalf 12085	13329
 OtherHalf 12086	12082
 OtherHalf 12087	12062
 OtherHalf 12088	12092
 OtherHalf 12089	12084
 OtherHalf 12090	12095
-OtherHalf 12091	-1
+OtherHalf 12091	13332
 OtherHalf 12092	12088
 OtherHalf 12093	12065
 OtherHalf 12094	12098
 OtherHalf 12095	12090
 OtherHalf 12096	12101
-OtherHalf 12097	-1
+OtherHalf 12097	13335
 OtherHalf 12098	12094
 OtherHalf 12099	12068
 OtherHalf 12100	12104
 OtherHalf 12101	12096
 OtherHalf 12102	12107
-OtherHalf 12103	-1
+OtherHalf 12103	13338
 OtherHalf 12104	12100
 OtherHalf 12105	12071
 OtherHalf 12106	12074
@@ -20713,37 +21141,37 @@ OtherHalf 12123	12121
 OtherHalf 12124	12108
 OtherHalf 12125	12159
 OtherHalf 12126	12131
-OtherHalf 12127	-1
+OtherHalf 12127	13359
 OtherHalf 12128	12160
 OtherHalf 12129	12110
 OtherHalf 12130	12134
 OtherHalf 12131	12126
 OtherHalf 12132	12137
-OtherHalf 12133	-1
+OtherHalf 12133	13344
 OtherHalf 12134	12130
 OtherHalf 12135	12113
 OtherHalf 12136	12140
 OtherHalf 12137	12132
 OtherHalf 12138	12143
-OtherHalf 12139	-1
+OtherHalf 12139	13347
 OtherHalf 12140	12136
 OtherHalf 12141	12116
 OtherHalf 12142	12146
 OtherHalf 12143	12138
 OtherHalf 12144	12149
-OtherHalf 12145	-1
+OtherHalf 12145	13350
 OtherHalf 12146	12142
 OtherHalf 12147	12119
 OtherHalf 12148	12152
 OtherHalf 12149	12144
 OtherHalf 12150	12155
-OtherHalf 12151	-1
+OtherHalf 12151	13353
 OtherHalf 12152	12148
 OtherHalf 12153	12122
 OtherHalf 12154	12158
 OtherHalf 12155	12150
 OtherHalf 12156	12161
-OtherHalf 12157	-1
+OtherHalf 12157	13356
 OtherHalf 12158	12154
 OtherHalf 12159	12125
 OtherHalf 12160	12128
@@ -20767,37 +21195,37 @@ OtherHalf 12177	12175
 OtherHalf 12178	12162
 OtherHalf 12179	12213
 OtherHalf 12180	12185
-OtherHalf 12181	-1
+OtherHalf 12181	13377
 OtherHalf 12182	12214
 OtherHalf 12183	12164
 OtherHalf 12184	12188
 OtherHalf 12185	12180
 OtherHalf 12186	12191
-OtherHalf 12187	-1
+OtherHalf 12187	13362
 OtherHalf 12188	12184
 OtherHalf 12189	12167
 OtherHalf 12190	12194
 OtherHalf 12191	12186
 OtherHalf 12192	12197
-OtherHalf 12193	-1
+OtherHalf 12193	13365
 OtherHalf 12194	12190
 OtherHalf 12195	12170
 OtherHalf 12196	12200
 OtherHalf 12197	12192
 OtherHalf 12198	12203
-OtherHalf 12199	-1
+OtherHalf 12199	13368
 OtherHalf 12200	12196
 OtherHalf 12201	12173
 OtherHalf 12202	12206
 OtherHalf 12203	12198
 OtherHalf 12204	12209
-OtherHalf 12205	-1
+OtherHalf 12205	13371
 OtherHalf 12206	12202
 OtherHalf 12207	12176
 OtherHalf 12208	12212
 OtherHalf 12209	12204
 OtherHalf 12210	12215
-OtherHalf 12211	-1
+OtherHalf 12211	13374
 OtherHalf 12212	12208
 OtherHalf 12213	12179
 OtherHalf 12214	12182
@@ -20821,38 +21249,1166 @@ OtherHalf 12231	12229
 OtherHalf 12232	12216
 OtherHalf 12233	12267
 OtherHalf 12234	12239
-OtherHalf 12235	-1
+OtherHalf 12235	13395
 OtherHalf 12236	12268
 OtherHalf 12237	12218
 OtherHalf 12238	12242
 OtherHalf 12239	12234
 OtherHalf 12240	12245
-OtherHalf 12241	-1
+OtherHalf 12241	13380
 OtherHalf 12242	12238
 OtherHalf 12243	12221
 OtherHalf 12244	12248
 OtherHalf 12245	12240
 OtherHalf 12246	12251
-OtherHalf 12247	-1
+OtherHalf 12247	13383
 OtherHalf 12248	12244
 OtherHalf 12249	12224
 OtherHalf 12250	12254
 OtherHalf 12251	12246
 OtherHalf 12252	12257
-OtherHalf 12253	-1
+OtherHalf 12253	13386
 OtherHalf 12254	12250
 OtherHalf 12255	12227
 OtherHalf 12256	12260
 OtherHalf 12257	12252
 OtherHalf 12258	12263
-OtherHalf 12259	-1
+OtherHalf 12259	13389
 OtherHalf 12260	12256
 OtherHalf 12261	12230
 OtherHalf 12262	12266
 OtherHalf 12263	12258
 OtherHalf 12264	12269
-OtherHalf 12265	-1
+OtherHalf 12265	13392
 OtherHalf 12266	12262
 OtherHalf 12267	12233
 OtherHalf 12268	12236
 OtherHalf 12269	12264
+OtherHalf 12270	170
+OtherHalf 12271	12275
+OtherHalf 12272	12280
+OtherHalf 12273	11
+OtherHalf 12274	12278
+OtherHalf 12275	12271
+OtherHalf 12276	15
+OtherHalf 12277	12281
+OtherHalf 12278	12274
+OtherHalf 12279	1
+OtherHalf 12280	12272
+OtherHalf 12281	12277
+OtherHalf 12282	14
+OtherHalf 12283	12287
+OtherHalf 12284	12292
+OtherHalf 12285	7
+OtherHalf 12286	12290
+OtherHalf 12287	12283
+OtherHalf 12288	190
+OtherHalf 12289	12293
+OtherHalf 12290	12286
+OtherHalf 12291	5
+OtherHalf 12292	12284
+OtherHalf 12293	12289
+OtherHalf 12294	25
+OtherHalf 12295	12299
+OtherHalf 12296	12412
+OtherHalf 12297	28
+OtherHalf 12298	12302
+OtherHalf 12299	12295
+OtherHalf 12300	46
+OtherHalf 12301	12305
+OtherHalf 12302	12298
+OtherHalf 12303	49
+OtherHalf 12304	12308
+OtherHalf 12305	12301
+OtherHalf 12306	71
+OtherHalf 12307	12311
+OtherHalf 12308	12304
+OtherHalf 12309	62
+OtherHalf 12310	12314
+OtherHalf 12311	12307
+OtherHalf 12312	61
+OtherHalf 12313	12317
+OtherHalf 12314	12310
+OtherHalf 12315	41
+OtherHalf 12316	12320
+OtherHalf 12317	12313
+OtherHalf 12318	35
+OtherHalf 12319	12323
+OtherHalf 12320	12316
+OtherHalf 12321	32
+OtherHalf 12322	12326
+OtherHalf 12323	12319
+OtherHalf 12324	31
+OtherHalf 12325	12329
+OtherHalf 12326	12322
+OtherHalf 12327	38
+OtherHalf 12328	12332
+OtherHalf 12329	12325
+OtherHalf 12330	56
+OtherHalf 12331	12335
+OtherHalf 12332	12328
+OtherHalf 12333	55
+OtherHalf 12334	12338
+OtherHalf 12335	12331
+OtherHalf 12336	67
+OtherHalf 12337	12341
+OtherHalf 12338	12334
+OtherHalf 12339	73
+OtherHalf 12340	12344
+OtherHalf 12341	12337
+OtherHalf 12342	112
+OtherHalf 12343	12347
+OtherHalf 12344	12340
+OtherHalf 12345	118
+OtherHalf 12346	12350
+OtherHalf 12347	12343
+OtherHalf 12348	125
+OtherHalf 12349	12353
+OtherHalf 12350	12346
+OtherHalf 12351	124
+OtherHalf 12352	12356
+OtherHalf 12353	12349
+OtherHalf 12354	98
+OtherHalf 12355	12359
+OtherHalf 12356	12352
+OtherHalf 12357	85
+OtherHalf 12358	12362
+OtherHalf 12359	12355
+OtherHalf 12360	82
+OtherHalf 12361	12365
+OtherHalf 12362	12358
+OtherHalf 12363	80
+OtherHalf 12364	12368
+OtherHalf 12365	12361
+OtherHalf 12366	79
+OtherHalf 12367	12371
+OtherHalf 12368	12364
+OtherHalf 12369	92
+OtherHalf 12370	12374
+OtherHalf 12371	12367
+OtherHalf 12372	91
+OtherHalf 12373	12377
+OtherHalf 12374	12370
+OtherHalf 12375	77
+OtherHalf 12376	12380
+OtherHalf 12377	12373
+OtherHalf 12378	76
+OtherHalf 12379	12383
+OtherHalf 12380	12376
+OtherHalf 12381	100
+OtherHalf 12382	12386
+OtherHalf 12383	12379
+OtherHalf 12384	130
+OtherHalf 12385	12389
+OtherHalf 12386	12382
+OtherHalf 12387	122
+OtherHalf 12388	12392
+OtherHalf 12389	12385
+OtherHalf 12390	115
+OtherHalf 12391	12395
+OtherHalf 12392	12388
+OtherHalf 12393	103
+OtherHalf 12394	12398
+OtherHalf 12395	12391
+OtherHalf 12396	107
+OtherHalf 12397	12401
+OtherHalf 12398	12394
+OtherHalf 12399	53
+OtherHalf 12400	12404
+OtherHalf 12401	12397
+OtherHalf 12402	44
+OtherHalf 12403	12407
+OtherHalf 12404	12400
+OtherHalf 12405	23
+OtherHalf 12406	12410
+OtherHalf 12407	12403
+OtherHalf 12408	20
+OtherHalf 12409	12413
+OtherHalf 12410	12406
+OtherHalf 12411	19
+OtherHalf 12412	12296
+OtherHalf 12413	12409
+OtherHalf 12414	158
+OtherHalf 12415	12419
+OtherHalf 12416	12436
+OtherHalf 12417	150
+OtherHalf 12418	12422
+OtherHalf 12419	12415
+OtherHalf 12420	148
+OtherHalf 12421	12425
+OtherHalf 12422	12418
+OtherHalf 12423	142
+OtherHalf 12424	12428
+OtherHalf 12425	12421
+OtherHalf 12426	138
+OtherHalf 12427	12431
+OtherHalf 12428	12424
+OtherHalf 12429	140
+OtherHalf 12430	12434
+OtherHalf 12431	12427
+OtherHalf 12432	246
+OtherHalf 12433	12437
+OtherHalf 12434	12430
+OtherHalf 12435	135
+OtherHalf 12436	12416
+OtherHalf 12437	12433
+OtherHalf 12438	202
+OtherHalf 12439	12443
+OtherHalf 12440	12472
+OtherHalf 12441	241
+OtherHalf 12442	12446
+OtherHalf 12443	12439
+OtherHalf 12444	195
+OtherHalf 12445	12449
+OtherHalf 12446	12442
+OtherHalf 12447	197
+OtherHalf 12448	12452
+OtherHalf 12449	12445
+OtherHalf 12450	193
+OtherHalf 12451	12455
+OtherHalf 12452	12448
+OtherHalf 12453	244
+OtherHalf 12454	12458
+OtherHalf 12455	12451
+OtherHalf 12456	182
+OtherHalf 12457	12461
+OtherHalf 12458	12454
+OtherHalf 12459	179
+OtherHalf 12460	12464
+OtherHalf 12461	12457
+OtherHalf 12462	171
+OtherHalf 12463	12467
+OtherHalf 12464	12460
+OtherHalf 12465	173
+OtherHalf 12466	12470
+OtherHalf 12467	12463
+OtherHalf 12468	164
+OtherHalf 12469	12473
+OtherHalf 12470	12466
+OtherHalf 12471	161
+OtherHalf 12472	12440
+OtherHalf 12473	12469
+OtherHalf 12474	238
+OtherHalf 12475	12479
+OtherHalf 12476	12508
+OtherHalf 12477	250
+OtherHalf 12478	12482
+OtherHalf 12479	12475
+OtherHalf 12480	230
+OtherHalf 12481	12485
+OtherHalf 12482	12478
+OtherHalf 12483	229
+OtherHalf 12484	12488
+OtherHalf 12485	12481
+OtherHalf 12486	227
+OtherHalf 12487	12491
+OtherHalf 12488	12484
+OtherHalf 12489	222
+OtherHalf 12490	12494
+OtherHalf 12491	12487
+OtherHalf 12492	218
+OtherHalf 12493	12497
+OtherHalf 12494	12490
+OtherHalf 12495	214
+OtherHalf 12496	12500
+OtherHalf 12497	12493
+OtherHalf 12498	209
+OtherHalf 12499	12503
+OtherHalf 12500	12496
+OtherHalf 12501	208
+OtherHalf 12502	12506
+OtherHalf 12503	12499
+OtherHalf 12504	205
+OtherHalf 12505	12509
+OtherHalf 12506	12502
+OtherHalf 12507	188
+OtherHalf 12508	12476
+OtherHalf 12509	12505
+OtherHalf 12510	265
+OtherHalf 12511	12515
+OtherHalf 12512	12730
+OtherHalf 12513	274
+OtherHalf 12514	12518
+OtherHalf 12515	12511
+OtherHalf 12516	280
+OtherHalf 12517	12521
+OtherHalf 12518	12514
+OtherHalf 12519	286
+OtherHalf 12520	12524
+OtherHalf 12521	12517
+OtherHalf 12522	292
+OtherHalf 12523	12527
+OtherHalf 12524	12520
+OtherHalf 12525	295
+OtherHalf 12526	12530
+OtherHalf 12527	12523
+OtherHalf 12528	301
+OtherHalf 12529	12533
+OtherHalf 12530	12526
+OtherHalf 12531	307
+OtherHalf 12532	12536
+OtherHalf 12533	12529
+OtherHalf 12534	310
+OtherHalf 12535	12539
+OtherHalf 12536	12532
+OtherHalf 12537	316
+OtherHalf 12538	12542
+OtherHalf 12539	12535
+OtherHalf 12540	319
+OtherHalf 12541	12545
+OtherHalf 12542	12538
+OtherHalf 12543	322
+OtherHalf 12544	12548
+OtherHalf 12545	12541
+OtherHalf 12546	358
+OtherHalf 12547	12551
+OtherHalf 12548	12544
+OtherHalf 12549	355
+OtherHalf 12550	12554
+OtherHalf 12551	12547
+OtherHalf 12552	464
+OtherHalf 12553	12557
+OtherHalf 12554	12550
+OtherHalf 12555	467
+OtherHalf 12556	12560
+OtherHalf 12557	12553
+OtherHalf 12558	431
+OtherHalf 12559	12563
+OtherHalf 12560	12556
+OtherHalf 12561	428
+OtherHalf 12562	12566
+OtherHalf 12563	12559
+OtherHalf 12564	425
+OtherHalf 12565	12569
+OtherHalf 12566	12562
+OtherHalf 12567	419
+OtherHalf 12568	12572
+OtherHalf 12569	12565
+OtherHalf 12570	416
+OtherHalf 12571	12575
+OtherHalf 12572	12568
+OtherHalf 12573	410
+OtherHalf 12574	12578
+OtherHalf 12575	12571
+OtherHalf 12576	404
+OtherHalf 12577	12581
+OtherHalf 12578	12574
+OtherHalf 12579	401
+OtherHalf 12580	12584
+OtherHalf 12581	12577
+OtherHalf 12582	395
+OtherHalf 12583	12587
+OtherHalf 12584	12580
+OtherHalf 12585	389
+OtherHalf 12586	12590
+OtherHalf 12587	12583
+OtherHalf 12588	383
+OtherHalf 12589	12593
+OtherHalf 12590	12586
+OtherHalf 12591	374
+OtherHalf 12592	12596
+OtherHalf 12593	12589
+OtherHalf 12594	362
+OtherHalf 12595	12599
+OtherHalf 12596	12592
+OtherHalf 12597	361
+OtherHalf 12598	12602
+OtherHalf 12599	12595
+OtherHalf 12600	376
+OtherHalf 12601	12605
+OtherHalf 12602	12598
+OtherHalf 12603	379
+OtherHalf 12604	12608
+OtherHalf 12605	12601
+OtherHalf 12606	385
+OtherHalf 12607	12611
+OtherHalf 12608	12604
+OtherHalf 12609	391
+OtherHalf 12610	12614
+OtherHalf 12611	12607
+OtherHalf 12612	397
+OtherHalf 12613	12617
+OtherHalf 12614	12610
+OtherHalf 12615	406
+OtherHalf 12616	12620
+OtherHalf 12617	12613
+OtherHalf 12618	412
+OtherHalf 12619	12623
+OtherHalf 12620	12616
+OtherHalf 12621	421
+OtherHalf 12622	12626
+OtherHalf 12623	12619
+OtherHalf 12624	433
+OtherHalf 12625	12629
+OtherHalf 12626	12622
+OtherHalf 12627	460
+OtherHalf 12628	12632
+OtherHalf 12629	12625
+OtherHalf 12630	458
+OtherHalf 12631	12635
+OtherHalf 12632	12628
+OtherHalf 12633	452
+OtherHalf 12634	12638
+OtherHalf 12635	12631
+OtherHalf 12636	439
+OtherHalf 12637	12641
+OtherHalf 12638	12634
+OtherHalf 12639	371
+OtherHalf 12640	12644
+OtherHalf 12641	12637
+OtherHalf 12642	365
+OtherHalf 12643	12647
+OtherHalf 12644	12640
+OtherHalf 12645	364
+OtherHalf 12646	12650
+OtherHalf 12647	12643
+OtherHalf 12648	368
+OtherHalf 12649	12653
+OtherHalf 12650	12646
+OtherHalf 12651	445
+OtherHalf 12652	12656
+OtherHalf 12653	12649
+OtherHalf 12654	442
+OtherHalf 12655	12659
+OtherHalf 12656	12652
+OtherHalf 12657	436
+OtherHalf 12658	12662
+OtherHalf 12659	12655
+OtherHalf 12660	329
+OtherHalf 12661	12665
+OtherHalf 12662	12658
+OtherHalf 12663	328
+OtherHalf 12664	12668
+OtherHalf 12665	12661
+OtherHalf 12666	335
+OtherHalf 12667	12671
+OtherHalf 12668	12664
+OtherHalf 12669	338
+OtherHalf 12670	12674
+OtherHalf 12671	12667
+OtherHalf 12672	341
+OtherHalf 12673	12677
+OtherHalf 12674	12670
+OtherHalf 12675	256
+OtherHalf 12676	12680
+OtherHalf 12677	12673
+OtherHalf 12678	260
+OtherHalf 12679	12683
+OtherHalf 12680	12676
+OtherHalf 12681	259
+OtherHalf 12682	12686
+OtherHalf 12683	12679
+OtherHalf 12684	262
+OtherHalf 12685	12689
+OtherHalf 12686	12682
+OtherHalf 12687	344
+OtherHalf 12688	12692
+OtherHalf 12689	12685
+OtherHalf 12690	349
+OtherHalf 12691	12695
+OtherHalf 12692	12688
+OtherHalf 12693	346
+OtherHalf 12694	12698
+OtherHalf 12695	12691
+OtherHalf 12696	353
+OtherHalf 12697	12701
+OtherHalf 12698	12694
+OtherHalf 12699	326
+OtherHalf 12700	12704
+OtherHalf 12701	12697
+OtherHalf 12702	314
+OtherHalf 12703	12707
+OtherHalf 12704	12700
+OtherHalf 12705	305
+OtherHalf 12706	12710
+OtherHalf 12707	12703
+OtherHalf 12708	299
+OtherHalf 12709	12713
+OtherHalf 12710	12706
+OtherHalf 12711	290
+OtherHalf 12712	12716
+OtherHalf 12713	12709
+OtherHalf 12714	284
+OtherHalf 12715	12719
+OtherHalf 12716	12712
+OtherHalf 12717	278
+OtherHalf 12718	12722
+OtherHalf 12719	12715
+OtherHalf 12720	272
+OtherHalf 12721	12725
+OtherHalf 12722	12718
+OtherHalf 12723	269
+OtherHalf 12724	12728
+OtherHalf 12725	12721
+OtherHalf 12726	254
+OtherHalf 12727	12731
+OtherHalf 12728	12724
+OtherHalf 12729	253
+OtherHalf 12730	12512
+OtherHalf 12731	12727
+OtherHalf 12732	655
+OtherHalf 12733	12737
+OtherHalf 12734	12826
+OtherHalf 12735	649
+OtherHalf 12736	12740
+OtherHalf 12737	12733
+OtherHalf 12738	643
+OtherHalf 12739	12743
+OtherHalf 12740	12736
+OtherHalf 12741	637
+OtherHalf 12742	12746
+OtherHalf 12743	12739
+OtherHalf 12744	631
+OtherHalf 12745	12749
+OtherHalf 12746	12742
+OtherHalf 12747	625
+OtherHalf 12748	12752
+OtherHalf 12749	12745
+OtherHalf 12750	619
+OtherHalf 12751	12755
+OtherHalf 12752	12748
+OtherHalf 12753	613
+OtherHalf 12754	12758
+OtherHalf 12755	12751
+OtherHalf 12756	607
+OtherHalf 12757	12761
+OtherHalf 12758	12754
+OtherHalf 12759	601
+OtherHalf 12760	12764
+OtherHalf 12761	12757
+OtherHalf 12762	595
+OtherHalf 12763	12767
+OtherHalf 12764	12760
+OtherHalf 12765	589
+OtherHalf 12766	12770
+OtherHalf 12767	12763
+OtherHalf 12768	583
+OtherHalf 12769	12773
+OtherHalf 12770	12766
+OtherHalf 12771	577
+OtherHalf 12772	12776
+OtherHalf 12773	12769
+OtherHalf 12774	571
+OtherHalf 12775	12779
+OtherHalf 12776	12772
+OtherHalf 12777	565
+OtherHalf 12778	12782
+OtherHalf 12779	12775
+OtherHalf 12780	559
+OtherHalf 12781	12785
+OtherHalf 12782	12778
+OtherHalf 12783	553
+OtherHalf 12784	12788
+OtherHalf 12785	12781
+OtherHalf 12786	547
+OtherHalf 12787	12791
+OtherHalf 12788	12784
+OtherHalf 12789	541
+OtherHalf 12790	12794
+OtherHalf 12791	12787
+OtherHalf 12792	535
+OtherHalf 12793	12797
+OtherHalf 12794	12790
+OtherHalf 12795	529
+OtherHalf 12796	12800
+OtherHalf 12797	12793
+OtherHalf 12798	523
+OtherHalf 12799	12803
+OtherHalf 12800	12796
+OtherHalf 12801	517
+OtherHalf 12802	12806
+OtherHalf 12803	12799
+OtherHalf 12804	511
+OtherHalf 12805	12809
+OtherHalf 12806	12802
+OtherHalf 12807	505
+OtherHalf 12808	12812
+OtherHalf 12809	12805
+OtherHalf 12810	499
+OtherHalf 12811	12815
+OtherHalf 12812	12808
+OtherHalf 12813	493
+OtherHalf 12814	12818
+OtherHalf 12815	12811
+OtherHalf 12816	487
+OtherHalf 12817	12821
+OtherHalf 12818	12814
+OtherHalf 12819	481
+OtherHalf 12820	12824
+OtherHalf 12821	12817
+OtherHalf 12822	475
+OtherHalf 12823	12827
+OtherHalf 12824	12820
+OtherHalf 12825	469
+OtherHalf 12826	12734
+OtherHalf 12827	12823
+OtherHalf 12828	2708
+OtherHalf 12829	12833
+OtherHalf 12830	12922
+OtherHalf 12831	2714
+OtherHalf 12832	12836
+OtherHalf 12833	12829
+OtherHalf 12834	2720
+OtherHalf 12835	12839
+OtherHalf 12836	12832
+OtherHalf 12837	2726
+OtherHalf 12838	12842
+OtherHalf 12839	12835
+OtherHalf 12840	2732
+OtherHalf 12841	12845
+OtherHalf 12842	12838
+OtherHalf 12843	2738
+OtherHalf 12844	12848
+OtherHalf 12845	12841
+OtherHalf 12846	2744
+OtherHalf 12847	12851
+OtherHalf 12848	12844
+OtherHalf 12849	2750
+OtherHalf 12850	12854
+OtherHalf 12851	12847
+OtherHalf 12852	2756
+OtherHalf 12853	12857
+OtherHalf 12854	12850
+OtherHalf 12855	2762
+OtherHalf 12856	12860
+OtherHalf 12857	12853
+OtherHalf 12858	2768
+OtherHalf 12859	12863
+OtherHalf 12860	12856
+OtherHalf 12861	2774
+OtherHalf 12862	12866
+OtherHalf 12863	12859
+OtherHalf 12864	2780
+OtherHalf 12865	12869
+OtherHalf 12866	12862
+OtherHalf 12867	2786
+OtherHalf 12868	12872
+OtherHalf 12869	12865
+OtherHalf 12870	2792
+OtherHalf 12871	12875
+OtherHalf 12872	12868
+OtherHalf 12873	2798
+OtherHalf 12874	12878
+OtherHalf 12875	12871
+OtherHalf 12876	2804
+OtherHalf 12877	12881
+OtherHalf 12878	12874
+OtherHalf 12879	2810
+OtherHalf 12880	12884
+OtherHalf 12881	12877
+OtherHalf 12882	2816
+OtherHalf 12883	12887
+OtherHalf 12884	12880
+OtherHalf 12885	2822
+OtherHalf 12886	12890
+OtherHalf 12887	12883
+OtherHalf 12888	2828
+OtherHalf 12889	12893
+OtherHalf 12890	12886
+OtherHalf 12891	2834
+OtherHalf 12892	12896
+OtherHalf 12893	12889
+OtherHalf 12894	2840
+OtherHalf 12895	12899
+OtherHalf 12896	12892
+OtherHalf 12897	2846
+OtherHalf 12898	12902
+OtherHalf 12899	12895
+OtherHalf 12900	2852
+OtherHalf 12901	12905
+OtherHalf 12902	12898
+OtherHalf 12903	2858
+OtherHalf 12904	12908
+OtherHalf 12905	12901
+OtherHalf 12906	2864
+OtherHalf 12907	12911
+OtherHalf 12908	12904
+OtherHalf 12909	2870
+OtherHalf 12910	12914
+OtherHalf 12911	12907
+OtherHalf 12912	2876
+OtherHalf 12913	12917
+OtherHalf 12914	12910
+OtherHalf 12915	2882
+OtherHalf 12916	12920
+OtherHalf 12917	12913
+OtherHalf 12918	2888
+OtherHalf 12919	12923
+OtherHalf 12920	12916
+OtherHalf 12921	2702
+OtherHalf 12922	12830
+OtherHalf 12923	12919
+OtherHalf 12924	6868
+OtherHalf 12925	12929
+OtherHalf 12926	12988
+OtherHalf 12927	8234
+OtherHalf 12928	12932
+OtherHalf 12929	12925
+OtherHalf 12930	6860
+OtherHalf 12931	12935
+OtherHalf 12932	12928
+OtherHalf 12933	6857
+OtherHalf 12934	12938
+OtherHalf 12935	12931
+OtherHalf 12936	8273
+OtherHalf 12937	12941
+OtherHalf 12938	12934
+OtherHalf 12939	10705
+OtherHalf 12940	12944
+OtherHalf 12941	12937
+OtherHalf 12942	9289
+OtherHalf 12943	12947
+OtherHalf 12944	12940
+OtherHalf 12945	9292
+OtherHalf 12946	12950
+OtherHalf 12947	12943
+OtherHalf 12948	10666
+OtherHalf 12949	12953
+OtherHalf 12950	12946
+OtherHalf 12951	9302
+OtherHalf 12952	12956
+OtherHalf 12953	12949
+OtherHalf 12954	8475
+OtherHalf 12955	12959
+OtherHalf 12956	12952
+OtherHalf 12957	9260
+OtherHalf 12958	12962
+OtherHalf 12959	12955
+OtherHalf 12960	10742
+OtherHalf 12961	12965
+OtherHalf 12962	12958
+OtherHalf 12963	10736
+OtherHalf 12964	12968
+OtherHalf 12965	12961
+OtherHalf 12966	10730
+OtherHalf 12967	12971
+OtherHalf 12968	12964
+OtherHalf 12969	10727
+OtherHalf 12970	12974
+OtherHalf 12971	12967
+OtherHalf 12972	8293
+OtherHalf 12973	12977
+OtherHalf 12974	12970
+OtherHalf 12975	8296
+OtherHalf 12976	12980
+OtherHalf 12977	12973
+OtherHalf 12978	8302
+OtherHalf 12979	12983
+OtherHalf 12980	12976
+OtherHalf 12981	8308
+OtherHalf 12982	12986
+OtherHalf 12983	12979
+OtherHalf 12984	6826
+OtherHalf 12985	12989
+OtherHalf 12986	12982
+OtherHalf 12987	6042
+OtherHalf 12988	12926
+OtherHalf 12989	12985
+OtherHalf 12990	8605
+OtherHalf 12991	12995
+OtherHalf 12992	13000
+OtherHalf 12993	11639
+OtherHalf 12994	12998
+OtherHalf 12995	12991
+OtherHalf 12996	11551
+OtherHalf 12997	13001
+OtherHalf 12998	12994
+OtherHalf 12999	6173
+OtherHalf 13000	12992
+OtherHalf 13001	12997
+OtherHalf 13002	11093
+OtherHalf 13003	13007
+OtherHalf 13004	13012
+OtherHalf 13005	11473
+OtherHalf 13006	13010
+OtherHalf 13007	13003
+OtherHalf 13008	8807
+OtherHalf 13009	13013
+OtherHalf 13010	13006
+OtherHalf 13011	6373
+OtherHalf 13012	13004
+OtherHalf 13013	13009
+OtherHalf 13014	7547
+OtherHalf 13015	13019
+OtherHalf 13016	13060
+OtherHalf 13017	7523
+OtherHalf 13018	13022
+OtherHalf 13019	13015
+OtherHalf 13020	6998
+OtherHalf 13021	13025
+OtherHalf 13022	13018
+OtherHalf 13023	6670
+OtherHalf 13024	13028
+OtherHalf 13025	13021
+OtherHalf 13026	7286
+OtherHalf 13027	13031
+OtherHalf 13028	13024
+OtherHalf 13029	7289
+OtherHalf 13030	13034
+OtherHalf 13031	13027
+OtherHalf 13032	7544
+OtherHalf 13033	13037
+OtherHalf 13034	13030
+OtherHalf 13035	7832
+OtherHalf 13036	13040
+OtherHalf 13037	13033
+OtherHalf 13038	8200
+OtherHalf 13039	13043
+OtherHalf 13040	13036
+OtherHalf 13041	8209
+OtherHalf 13042	13046
+OtherHalf 13043	13039
+OtherHalf 13044	7004
+OtherHalf 13045	13049
+OtherHalf 13046	13042
+OtherHalf 13047	6679
+OtherHalf 13048	13052
+OtherHalf 13049	13045
+OtherHalf 13050	6665
+OtherHalf 13051	13055
+OtherHalf 13052	13048
+OtherHalf 13053	8204
+OtherHalf 13054	13058
+OtherHalf 13055	13051
+OtherHalf 13056	8207
+OtherHalf 13057	13061
+OtherHalf 13058	13054
+OtherHalf 13059	6616
+OtherHalf 13060	13016
+OtherHalf 13061	13057
+OtherHalf 13062	10639
+OtherHalf 13063	13067
+OtherHalf 13064	13108
+OtherHalf 13065	10636
+OtherHalf 13066	13070
+OtherHalf 13067	13063
+OtherHalf 13068	9097
+OtherHalf 13069	13073
+OtherHalf 13070	13066
+OtherHalf 13071	9113
+OtherHalf 13072	13076
+OtherHalf 13073	13069
+OtherHalf 13074	9436
+OtherHalf 13075	13079
+OtherHalf 13076	13072
+OtherHalf 13077	10643
+OtherHalf 13078	13082
+OtherHalf 13079	13075
+OtherHalf 13080	10634
+OtherHalf 13081	13085
+OtherHalf 13082	13078
+OtherHalf 13083	10264
+OtherHalf 13084	13088
+OtherHalf 13085	13081
+OtherHalf 13086	9976
+OtherHalf 13087	13091
+OtherHalf 13088	13084
+OtherHalf 13089	9721
+OtherHalf 13090	13094
+OtherHalf 13091	13087
+OtherHalf 13092	9718
+OtherHalf 13093	13097
+OtherHalf 13094	13090
+OtherHalf 13095	9104
+OtherHalf 13096	13100
+OtherHalf 13097	13093
+OtherHalf 13098	9430
+OtherHalf 13099	13103
+OtherHalf 13100	13096
+OtherHalf 13101	9955
+OtherHalf 13102	13106
+OtherHalf 13103	13099
+OtherHalf 13104	9979
+OtherHalf 13105	13109
+OtherHalf 13106	13102
+OtherHalf 13107	9050
+OtherHalf 13108	13064
+OtherHalf 13109	13105
+OtherHalf 13110	11531
+OtherHalf 13111	13115
+OtherHalf 13112	13198
+OtherHalf 13113	11526
+OtherHalf 13114	13118
+OtherHalf 13115	13111
+OtherHalf 13116	11520
+OtherHalf 13117	13121
+OtherHalf 13118	13114
+OtherHalf 13119	11535
+OtherHalf 13120	13124
+OtherHalf 13121	13117
+OtherHalf 13122	11541
+OtherHalf 13123	13127
+OtherHalf 13124	13120
+OtherHalf 13125	11547
+OtherHalf 13126	13130
+OtherHalf 13127	13123
+OtherHalf 13128	11553
+OtherHalf 13129	13133
+OtherHalf 13130	13126
+OtherHalf 13131	11640
+OtherHalf 13132	13136
+OtherHalf 13133	13129
+OtherHalf 13134	11634
+OtherHalf 13135	13139
+OtherHalf 13136	13132
+OtherHalf 13137	11628
+OtherHalf 13138	13142
+OtherHalf 13139	13135
+OtherHalf 13140	11622
+OtherHalf 13141	13145
+OtherHalf 13142	13138
+OtherHalf 13143	11607
+OtherHalf 13144	13148
+OtherHalf 13145	13141
+OtherHalf 13146	11613
+OtherHalf 13147	13151
+OtherHalf 13148	13144
+OtherHalf 13149	11617
+OtherHalf 13150	13154
+OtherHalf 13151	13147
+OtherHalf 13152	11595
+OtherHalf 13153	13157
+OtherHalf 13154	13150
+OtherHalf 13155	11601
+OtherHalf 13156	13160
+OtherHalf 13157	13153
+OtherHalf 13158	11646
+OtherHalf 13159	13163
+OtherHalf 13160	13156
+OtherHalf 13161	11652
+OtherHalf 13162	13166
+OtherHalf 13163	13159
+OtherHalf 13164	11655
+OtherHalf 13165	13169
+OtherHalf 13166	13162
+OtherHalf 13167	11666
+OtherHalf 13168	13172
+OtherHalf 13169	13165
+OtherHalf 13170	11672
+OtherHalf 13171	13175
+OtherHalf 13172	13168
+OtherHalf 13173	11678
+OtherHalf 13174	13178
+OtherHalf 13175	13171
+OtherHalf 13176	11590
+OtherHalf 13177	13181
+OtherHalf 13178	13174
+OtherHalf 13179	11584
+OtherHalf 13180	13184
+OtherHalf 13181	13177
+OtherHalf 13182	11578
+OtherHalf 13183	13187
+OtherHalf 13184	13180
+OtherHalf 13185	11568
+OtherHalf 13186	13190
+OtherHalf 13187	13183
+OtherHalf 13188	11565
+OtherHalf 13189	13193
+OtherHalf 13190	13186
+OtherHalf 13191	11559
+OtherHalf 13192	13196
+OtherHalf 13193	13189
+OtherHalf 13194	11514
+OtherHalf 13195	13199
+OtherHalf 13196	13192
+OtherHalf 13197	11508
+OtherHalf 13198	13112
+OtherHalf 13199	13195
+OtherHalf 13200	11691
+OtherHalf 13201	13205
+OtherHalf 13202	13216
+OtherHalf 13203	11697
+OtherHalf 13204	13208
+OtherHalf 13205	13201
+OtherHalf 13206	11721
+OtherHalf 13207	13211
+OtherHalf 13208	13204
+OtherHalf 13209	11715
+OtherHalf 13210	13214
+OtherHalf 13211	13207
+OtherHalf 13212	11709
+OtherHalf 13213	13217
+OtherHalf 13214	13210
+OtherHalf 13215	11685
+OtherHalf 13216	13202
+OtherHalf 13217	13213
+OtherHalf 13218	11780
+OtherHalf 13219	13223
+OtherHalf 13220	13234
+OtherHalf 13221	11774
+OtherHalf 13222	13226
+OtherHalf 13223	13219
+OtherHalf 13224	11768
+OtherHalf 13225	13229
+OtherHalf 13226	13222
+OtherHalf 13227	11762
+OtherHalf 13228	13232
+OtherHalf 13229	13225
+OtherHalf 13230	11756
+OtherHalf 13231	13235
+OtherHalf 13232	13228
+OtherHalf 13233	11750
+OtherHalf 13234	13220
+OtherHalf 13235	13231
+OtherHalf 13236	11834
+OtherHalf 13237	13241
+OtherHalf 13238	13252
+OtherHalf 13239	11828
+OtherHalf 13240	13244
+OtherHalf 13241	13237
+OtherHalf 13242	11822
+OtherHalf 13243	13247
+OtherHalf 13244	13240
+OtherHalf 13245	11816
+OtherHalf 13246	13250
+OtherHalf 13247	13243
+OtherHalf 13248	11810
+OtherHalf 13249	13253
+OtherHalf 13250	13246
+OtherHalf 13251	11804
+OtherHalf 13252	13238
+OtherHalf 13253	13249
+OtherHalf 13254	11888
+OtherHalf 13255	13259
+OtherHalf 13256	13270
+OtherHalf 13257	11882
+OtherHalf 13258	13262
+OtherHalf 13259	13255
+OtherHalf 13260	11876
+OtherHalf 13261	13265
+OtherHalf 13262	13258
+OtherHalf 13263	11870
+OtherHalf 13264	13268
+OtherHalf 13265	13261
+OtherHalf 13266	11864
+OtherHalf 13267	13271
+OtherHalf 13268	13264
+OtherHalf 13269	11858
+OtherHalf 13270	13256
+OtherHalf 13271	13267
+OtherHalf 13272	11942
+OtherHalf 13273	13277
+OtherHalf 13274	13288
+OtherHalf 13275	11936
+OtherHalf 13276	13280
+OtherHalf 13277	13273
+OtherHalf 13278	11930
+OtherHalf 13279	13283
+OtherHalf 13280	13276
+OtherHalf 13281	11924
+OtherHalf 13282	13286
+OtherHalf 13283	13279
+OtherHalf 13284	11918
+OtherHalf 13285	13289
+OtherHalf 13286	13282
+OtherHalf 13287	11912
+OtherHalf 13288	13274
+OtherHalf 13289	13285
+OtherHalf 13290	11996
+OtherHalf 13291	13295
+OtherHalf 13292	13306
+OtherHalf 13293	11990
+OtherHalf 13294	13298
+OtherHalf 13295	13291
+OtherHalf 13296	11984
+OtherHalf 13297	13301
+OtherHalf 13298	13294
+OtherHalf 13299	11978
+OtherHalf 13300	13304
+OtherHalf 13301	13297
+OtherHalf 13302	11972
+OtherHalf 13303	13307
+OtherHalf 13304	13300
+OtherHalf 13305	11966
+OtherHalf 13306	13292
+OtherHalf 13307	13303
+OtherHalf 13308	12025
+OtherHalf 13309	13313
+OtherHalf 13310	13324
+OtherHalf 13311	12031
+OtherHalf 13312	13316
+OtherHalf 13313	13309
+OtherHalf 13314	12037
+OtherHalf 13315	13319
+OtherHalf 13316	13312
+OtherHalf 13317	12043
+OtherHalf 13318	13322
+OtherHalf 13319	13315
+OtherHalf 13320	12049
+OtherHalf 13321	13325
+OtherHalf 13322	13318
+OtherHalf 13323	12019
+OtherHalf 13324	13310
+OtherHalf 13325	13321
+OtherHalf 13326	12079
+OtherHalf 13327	13331
+OtherHalf 13328	13342
+OtherHalf 13329	12085
+OtherHalf 13330	13334
+OtherHalf 13331	13327
+OtherHalf 13332	12091
+OtherHalf 13333	13337
+OtherHalf 13334	13330
+OtherHalf 13335	12097
+OtherHalf 13336	13340
+OtherHalf 13337	13333
+OtherHalf 13338	12103
+OtherHalf 13339	13343
+OtherHalf 13340	13336
+OtherHalf 13341	12073
+OtherHalf 13342	13328
+OtherHalf 13343	13339
+OtherHalf 13344	12133
+OtherHalf 13345	13349
+OtherHalf 13346	13360
+OtherHalf 13347	12139
+OtherHalf 13348	13352
+OtherHalf 13349	13345
+OtherHalf 13350	12145
+OtherHalf 13351	13355
+OtherHalf 13352	13348
+OtherHalf 13353	12151
+OtherHalf 13354	13358
+OtherHalf 13355	13351
+OtherHalf 13356	12157
+OtherHalf 13357	13361
+OtherHalf 13358	13354
+OtherHalf 13359	12127
+OtherHalf 13360	13346
+OtherHalf 13361	13357
+OtherHalf 13362	12187
+OtherHalf 13363	13367
+OtherHalf 13364	13378
+OtherHalf 13365	12193
+OtherHalf 13366	13370
+OtherHalf 13367	13363
+OtherHalf 13368	12199
+OtherHalf 13369	13373
+OtherHalf 13370	13366
+OtherHalf 13371	12205
+OtherHalf 13372	13376
+OtherHalf 13373	13369
+OtherHalf 13374	12211
+OtherHalf 13375	13379
+OtherHalf 13376	13372
+OtherHalf 13377	12181
+OtherHalf 13378	13364
+OtherHalf 13379	13375
+OtherHalf 13380	12241
+OtherHalf 13381	13385
+OtherHalf 13382	13396
+OtherHalf 13383	12247
+OtherHalf 13384	13388
+OtherHalf 13385	13381
+OtherHalf 13386	12253
+OtherHalf 13387	13391
+OtherHalf 13388	13384
+OtherHalf 13389	12259
+OtherHalf 13390	13394
+OtherHalf 13391	13387
+OtherHalf 13392	12265
+OtherHalf 13393	13397
+OtherHalf 13394	13390
+OtherHalf 13395	12235
+OtherHalf 13396	13382
+OtherHalf 13397	13393
