@@ -32,7 +32,7 @@ int oneBoundary(std::vector<DirectedEdge> dirEdgeInput, int startID) {
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
-    std::cout << "Usage: ./meshRepair <filepath>" << std::endl;
+    std::cout << "Usage: ./meshRepair <file_path>" << std::endl;
     return 0;
   }
 

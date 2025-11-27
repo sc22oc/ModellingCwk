@@ -11,16 +11,13 @@
 int main(int argc, char *argv[]) {
   // no arguments provided
   if (argc != 2) {
-    std::cout << "Usage: ./face2faceindex <filepath>" << std::endl;
+    std::cout << "Usage: ./face2faceindex <file_path>" << std::endl;
     return 0;
   }
 
-  // PHASE 1: Reading the file and storing the data, we'll want these as their
-  // own structs / classes most likely Error checks: not a .tri file
+  // PHASE 1: Reading the file and storing the data
 
-  // Required data:
-  // - Vertex
-  // - Face
+  // keep track of vertex and face count to write to file output
   int vertices = 0;
   int faces = 0;
 
@@ -29,6 +26,11 @@ int main(int argc, char *argv[]) {
 
   if(inputFile.fail()){
     std::cout << "Error: invalid file" << std::endl;
+  }
+  // check for .tri extension, as that should be the only file type we need to convert
+  if(filepath.extension().compare(".tri") != 0){
+    std::cout << "Error: .tri file type required for conversion" << std::endl;
+    return 1;
   }
 
   std::vector<Vertex> vertexInput;
@@ -51,14 +53,15 @@ int main(int argc, char *argv[]) {
       // for error checking
       currentLine++;
 
+      // map the input onto a Cartesian3 to represent the vertices' point
       Cartesian3 currentVertex(v1, v2, v3);
 
+      // as faces share a vertex, we only want to keep track of the unique vertices in the mesh
       bool vertexUnique = true;
       for (auto v : vertexInput) {
         if (v.point == currentVertex)
           vertexUnique = false;
       }
-
       if (vertexUnique) {
         Vertex vertexBuffer;
 
@@ -71,17 +74,19 @@ int main(int argc, char *argv[]) {
     }
 
     // reset to beginning of the ifstream
+    // now we have an id for each vertex, we can assign them to faces
     inputFile.clear();
     inputFile.seekg(0);
 
     int currentFace = 1;
 
-    // skip first line
+    // skip first line (we don't need the face count this time)
     inputFile >> faces;
     faces = 0;
 
     Face faceBuffer;
 
+    // second pass to generate the required faces
     while (!inputFile.eof()) {
       inputFile >> v1 >> v2 >> v3;
 
@@ -93,6 +98,7 @@ int main(int argc, char *argv[]) {
         }
       }
 
+      // as we can assume the mesh has been triangulated, we can now move onto the next face
       if (currentFace % 3 == 0) {
         faceBuffer.id = faces;
         faceInput.push_back(faceBuffer);
@@ -112,7 +118,8 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // PHASE 2: Writing to the file using the custom data parameters
+  // PHASE 2: Writing to the file using the stored faces and vertices
+
   std::string objectName = (std::string)filePath.stem();
   std::string outputFileName = objectName + ".face";
   std::ofstream outputFile(outputFileName, std::ios::out);
