@@ -170,16 +170,23 @@ int main(int argc, char* argv[]){
       totalAngle += std::acos( v1.dot(v2) / ( std::sqrt(v1.length()) * std::sqrt(v2.length()) ) );
 
       /*
+      std::cout << "Current vertex " << vertexInput[ringVertices[i].id].id << " | " << vertexInput[ringVertices[i].id].point << std::endl;
+      std::cout << "------------------------" << std::endl;
       std::cout << "Vector: " << v.id << ", " << vertexInput[ringVertices[i].id].id << std::endl;
       std::cout << "Vector: " << v.id << ", " << vertexInput[ringVertices[(i+1) % ringVertices.size()].id].id << std::endl;
+      std::cout << "Centre point: " << v.point << std::endl;
+      std::cout << "Point 1: " << vertexInput[ringVertices[i].id].point << std::endl;
+      std::cout << "Point 2: " << vertexInput[ringVertices[(i+1) % ringVertices.size()].id].point << std::endl;
       std::cout << "dot: " << v1.dot(v2) << std::endl;
+      std::cout << "v1: " << v1 << std::endl;
+      std::cout << "v2: " << v2 << std::endl;
       std::cout << "v1 length: " << std::sqrt(v1.length()) << std::endl;
       std::cout << "v2 length: " << std::sqrt(v2.length()) << std::endl;
       std::cout << "angle: " <<  std::acos(v1.dot(v2) / (std::sqrt(v1.length()) * std::sqrt(v2.length()))) << std::endl; 
       */
     }
 
-    float gaussCurvature = (2 * M_PI - totalAngle) / totalArea;
+    float gaussCurvature = std::abs((2 * M_PI - totalAngle) / totalArea);
 
     std::cout << "total area: " << totalArea << std::endl;
     std::cout << "total angle: " << totalAngle << std::endl;
@@ -197,22 +204,39 @@ int main(int argc, char* argv[]){
   // now that we've found the vertex with least curvature, choose the vertex to delete
   std::vector<Vertex> ringFromGauss = oneRing(dirEdgeInput, vertexInput, vertexInput[minCurveID].fdeID);
 
-  int deletionIndex = 0;
+  int deletionID = -1;
+
+  std::cout << "size of gauss: " << ringFromGauss.size() << std::endl;
+
   for(auto v1 : ringFromGauss){
 
     std::vector<Vertex> ringVertices = oneRing(dirEdgeInput, vertexInput, v1.fdeID);
-
     int sharedValues = 0;
+
     for(auto v2 : ringFromGauss){
+
+      if(v2.id == minCurveID) continue;
+
       for(auto v3 : ringVertices){
-	if(v2.id == v3.id) sharedValues++;
+
+	if(v3.id == v1.id) continue;
+
+	if(v2.id == v3.id) {
+	  sharedValues++;
+	}
+
       }
     }
 
-    if(sharedValues == 2) break;
+    std::cout << "Vertex: " << v1.id << " | " << "sharedValues: " << sharedValues << std::endl;
 
-    deletionIndex++;
+    if(sharedValues == 2){
+      deletionID = v1.id;
+      break;
+    }
   }
+
+  std::cout << "Vertex to delete: " << deletionID << std::endl;
 
   // re-arrange the entire mesh (please i do not want to re-arrange the edge to collapse)
 
