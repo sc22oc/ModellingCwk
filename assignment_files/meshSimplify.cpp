@@ -39,7 +39,7 @@ std::vector<Vertex> oneRing(std::vector<DirectedEdge> dirEdgeInput, std::vector<
 
 int main(int argc, char* argv[]){
   if (argc != 3) {
-    std::cout << "Usage: ./meshSimplify <filepath> <face_percentage>" << std::endl;
+    std::cout << "Usage: ./meshSimplify <file_path> <face_percentage>" << std::endl;
     return 0;
   }
   

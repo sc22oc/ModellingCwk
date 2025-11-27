@@ -1,0 +1,71 @@
+
+# Table of Contents
+
+1.  [New Additions](#orgcfb350e)
+    1.  [triangle<sub>renderer</sub>](#org6b1a031)
+    2.  [handout<sub>models</sub>](#orge066e38)
+2.  [Usage](#org866aba6)
+    1.  [face2faceindex](#orgf2baa54)
+    2.  [faceindex2directedge](#org8a8d881)
+    3.  [manifoldTest](#org610cffc)
+    4.  [meshRepair](#orgcedd066)
+    5.  [meshSimplify](#orgaf04f40)
+
+
+<a id="orgcfb350e"></a>
+
+# New Additions
+
+-   New files have been added to the triangle_renderer and handout_models
+-   assignmentfiles</sub> has also been added, containing the required solutions to the coursework
+-   new content for triangle<sub>renderer</sub> and handout<sub>models</sub> is specified below
+
+
+<a id="org6b1a031"></a>
+
+## triangle<sub>renderer</sub>
+
+-   DirectedEdge class (a "to" half edge)
+-   Face class
+-   Vertex class
+-   The Cartesian3 class has also been changed to include the dot product, this was needed for the mesh simplification
+
+
+<a id="orge066e38"></a>
+
+## handout<sub>models</sub>
+
+-   cube<sub>bad.tri</sub>: a cube missing one of its faces (to test mesh repair)
+-   tetrahedron<sub>hole.tri</sub>: a tetrahedron missing one of its faces (to also test repair)
+-   pinchtetra.tri: two tetrahedra joined by a single vertex (to test pinch point)
+
+
+<a id="org866aba6"></a>
+
+# Usage
+
+
+<a id="orgf2baa54"></a>
+
+## face2faceindex
+
+
+<a id="org8a8d881"></a>
+
+## faceindex2directedge
+
+
+<a id="org610cffc"></a>
+
+## manifoldTest
+
+
+<a id="orgcedd066"></a>
+
+## meshRepair
+
+
+<a id="orgaf04f40"></a>
+
+## meshSimplify
+

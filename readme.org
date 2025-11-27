@@ -9,14 +9,37 @@
 - Face class
 - Vertex class
 - The Cartesian3 class has also been changed to include the dot product, this was needed for the mesh simplification
+- should still compile as usual, under:
+  #+BEGIN_SRC c++
+./compile.sh
+  #+END_SRC
 ** handout_models
 - cube_bad.tri: a cube missing one of its faces (to test mesh repair)
 - tetrahedron_hole.tri: a tetrahedron missing one of its faces (to also test repair)
 - pinchtetra.tri: two tetrahedra joined by a single vertex (to test pinch point)
 * Usage
 ** face2faceindex
+#+BEGIN_SRC c++
+./face2faceindex <file path>
+#+END_SRC
 ** faceindex2directedge
+#+BEGIN_SRC c++
+./faceindex2directedge <file path>
+#+END_SRC
 ** manifoldTest
+#+BEGIN_SRC c++
+./manifoldTest <directory_path>
+#+END_SRC
 ** meshRepair
+#+BEGIN_SRC c++
+./meshRepair <file path>
+#+END_SRC
 ** meshSimplify
+#+BEGIN_SRC c++
+./meshSimplify <file path> <face percentage>
+#+END_SRC
+- *file path*: path to file to simplify
+- *face percentage*: the percentage of the original edge count to simplify to
+  - must be in range between 0.1 and 1
+  - e.g. 0.5 will perform mesh simplification until 50% of the original edges remain
 
