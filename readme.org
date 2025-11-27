@@ -56,7 +56,7 @@ The output of the file "manifold_results.txt" will be in the same directory the 
 - *file path* path to file to repair
 - expects input to be the ".diredge" format
 #+BEGIN_QUOTE
-The output of the file will be prefixed with "_fixed", in the same directory the script is ran
+The output of the file will be appended with "_fixed", in the same directory the script is ran
 #+END_QUOTE
 ** meshSimplify
 #+BEGIN_SRC c++
@@ -67,6 +67,6 @@ The output of the file will be prefixed with "_fixed", in the same directory the
   - must be in range between 0.1 and 1
   - e.g. 0.5 will perform mesh simplification until 50% of the original edges remain
 #+BEGIN_QUOTE
-The output of the file will be prefixed with "_simplified", in the same directory the script is ran
+The output of the file will be appended with "_simplified", in the same directory the script is ran
 #+END_QUOTE
 
