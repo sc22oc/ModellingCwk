@@ -1,0 +1,42 @@
+# University of Leeds 2022-2023
+# COMP 5812 Assignment 1
+# Oliver Cheung 
+# 201597566
+#
+# Object Name: cube
+# Vertices=5 Faces=6
+#
+Vertex 0	0 1 1
+Vertex 1	1 0 0
+Vertex 2	1 0 1
+Vertex 3	0 0 1
+Vertex 4	0 1 0
+FirstDirectedEdge 0	4
+FirstDirectedEdge 1	2
+FirstDirectedEdge 2	0
+FirstDirectedEdge 3	1
+FirstDirectedEdge 4	3
+Face 0	3 1 2 
+Face 1	0 1 4 
+Face 2	3 4 1 
+Face 3	3 2 0 
+Face 4	2 1 0 
+Face 5	3 0 4 
+OtherHalf 0	10
+OtherHalf 1	6
+OtherHalf 2	13
+OtherHalf 3	17
+OtherHalf 4	14
+OtherHalf 5	8
+OtherHalf 6	1
+OtherHalf 7	15
+OtherHalf 8	5
+OtherHalf 9	16
+OtherHalf 10	0
+OtherHalf 11	12
+OtherHalf 12	11
+OtherHalf 13	2
+OtherHalf 14	4
+OtherHalf 15	7
+OtherHalf 16	9
+OtherHalf 17	3

@@ -1,0 +1,22 @@
+# University of Leeds 2022-2023
+# COMP 5812 Assignment 1
+# Oliver Cheung 
+# 201597566
+#
+# Object Name: tetrahedron
+# Vertices=3 Faces=2
+#
+Vertex 0	1 1 -1
+Vertex 1	1 -1 1
+Vertex 2	-1 1 1
+FirstDirectedEdge 0	1
+FirstDirectedEdge 1	0
+FirstDirectedEdge 2	2
+Face 0	0 2 1 
+Face 1	2 0 1 
+OtherHalf 0	5
+OtherHalf 1	4
+OtherHalf 2	3
+OtherHalf 3	2
+OtherHalf 4	1
+OtherHalf 5	0

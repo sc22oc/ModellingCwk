@@ -1,0 +1,168 @@
+# University of Leeds 2022-2023
+# COMP 5812 Assignment 1
+# Oliver Cheung 
+# 201597566
+#
+# Object Name: torus
+# Vertices=16 Faces=32
+#
+Vertex 0	1 3 3.5
+Vertex 1	1 0.5 3
+Vertex 2	1 3.5 3
+Vertex 3	1 2 1.5
+Vertex 4	1.5 1 1
+Vertex 5	1 0.5 1
+Vertex 6	1 1 0.5
+Vertex 7	1 1.5 2
+Vertex 8	1 3 0.5
+Vertex 9	0.5 3 2
+Vertex 10	1 2.5 2
+Vertex 11	1 2 2.5
+Vertex 12	0.5 1 3
+Vertex 13	1 1 3.5
+Vertex 14	1 3.5 1
+Vertex 15	1.5 3 1
+FirstDirectedEdge 0	24
+FirstDirectedEdge 1	12
+FirstDirectedEdge 2	26
+FirstDirectedEdge 3	6
+FirstDirectedEdge 4	11
+FirstDirectedEdge 5	9
+FirstDirectedEdge 6	10
+FirstDirectedEdge 7	0
+FirstDirectedEdge 8	5
+FirstDirectedEdge 9	3
+FirstDirectedEdge 10	27
+FirstDirectedEdge 11	2
+FirstDirectedEdge 12	1
+FirstDirectedEdge 13	31
+FirstDirectedEdge 14	4
+FirstDirectedEdge 15	45
+Face 0	12 11 7 
+Face 1	14 8 9 
+Face 2	9 7 3 
+Face 3	6 4 5 
+Face 4	5 4 1 
+Face 5	6 3 4 
+Face 6	9 8 6 
+Face 7	9 6 5 
+Face 8	9 2 0 
+Face 9	9 3 10 
+Face 10	13 12 1 
+Face 11	0 11 10 
+Face 12	12 2 11 
+Face 13	9 5 7 
+Face 14	13 4 0 
+Face 15	14 0 15 
+Face 16	8 3 6 
+Face 17	13 2 12 
+Face 18	0 2 13 
+Face 19	1 12 5 
+Face 20	2 10 11 
+Face 21	2 9 10 
+Face 22	9 0 14 
+Face 23	8 15 3 
+Face 24	4 3 7 
+Face 25	15 10 3 
+Face 26	15 0 10 
+Face 27	4 11 0 
+Face 28	4 7 11 
+Face 29	12 7 5 
+Face 30	1 4 13 
+Face 31	14 15 8 
+OtherHalf 0	88
+OtherHalf 1	36
+OtherHalf 2	86
+OtherHalf 3	66
+OtherHalf 4	93
+OtherHalf 5	19
+OtherHalf 6	28
+OtherHalf 7	39
+OtherHalf 8	74
+OtherHalf 9	23
+OtherHalf 10	15
+OtherHalf 11	13
+OtherHalf 12	57
+OtherHalf 13	11
+OtherHalf 14	91
+OtherHalf 15	10
+OtherHalf 16	50
+OtherHalf 17	73
+OtherHalf 18	22
+OtherHalf 19	5
+OtherHalf 20	48
+OtherHalf 21	40
+OtherHalf 22	18
+OtherHalf 23	9
+OtherHalf 24	67
+OtherHalf 25	64
+OtherHalf 26	55
+OtherHalf 27	65
+OtherHalf 28	6
+OtherHalf 29	77
+OtherHalf 30	90
+OtherHalf 31	51
+OtherHalf 32	58
+OtherHalf 33	80
+OtherHalf 34	83
+OtherHalf 35	62
+OtherHalf 36	1
+OtherHalf 37	53
+OtherHalf 38	60
+OtherHalf 39	7
+OtherHalf 40	21
+OtherHalf 41	89
+OtherHalf 42	54
+OtherHalf 43	92
+OtherHalf 44	81
+OtherHalf 45	94
+OtherHalf 46	68
+OtherHalf 47	79
+OtherHalf 48	20
+OtherHalf 49	69
+OtherHalf 50	16
+OtherHalf 51	31
+OtherHalf 52	56
+OtherHalf 53	37
+OtherHalf 54	42
+OtherHalf 55	26
+OtherHalf 56	52
+OtherHalf 57	12
+OtherHalf 58	32
+OtherHalf 59	87
+OtherHalf 60	38
+OtherHalf 61	63
+OtherHalf 62	35
+OtherHalf 63	61
+OtherHalf 64	25
+OtherHalf 65	27
+OtherHalf 66	3
+OtherHalf 67	24
+OtherHalf 68	46
+OtherHalf 69	49
+OtherHalf 70	95
+OtherHalf 71	75
+OtherHalf 72	85
+OtherHalf 73	17
+OtherHalf 74	8
+OtherHalf 75	71
+OtherHalf 76	78
+OtherHalf 77	29
+OtherHalf 78	76
+OtherHalf 79	47
+OtherHalf 80	33
+OtherHalf 81	44
+OtherHalf 82	84
+OtherHalf 83	34
+OtherHalf 84	82
+OtherHalf 85	72
+OtherHalf 86	2
+OtherHalf 87	59
+OtherHalf 88	0
+OtherHalf 89	41
+OtherHalf 90	30
+OtherHalf 91	14
+OtherHalf 92	43
+OtherHalf 93	4
+OtherHalf 94	45
+OtherHalf 95	70
