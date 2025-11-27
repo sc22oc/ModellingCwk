@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Error: invalid file" << std::endl;
   }
   // check for .tri extension, as that should be the only file type we need to convert
-  if(filepath.extension().compare(".tri") != 0){
+  if(filePath.extension().compare(".tri") != 0){
     std::cout << "Error: .tri file type required for conversion" << std::endl;
     return 1;
   }
