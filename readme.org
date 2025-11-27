@@ -1,6 +1,6 @@
 #+OPTIONS: ^:{}
 * New Additions
-- New files have been added to the triangle_renderer and handout_models
+- new files have been added to the triangle_renderer and handout_models
 - assignment_files has also been added, containing the required solutions to the coursework
 - new content for triangle_renderer and handout_models is specified below
 ** triangle_renderer
