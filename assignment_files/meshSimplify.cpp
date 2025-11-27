@@ -110,7 +110,6 @@ int main(int argc, char* argv[]){
   for (size_t i = 0; i < faceInput.size(); i++) {
     std::vector<int> v = faceInput[i].vertexIDs;
 
-    // number is respect the current face
     DirectedEdge e0(j + 0, v[0], i);
     DirectedEdge e1(j + 1, v[1], i);
     DirectedEdge e2(j + 2, v[2], i);
@@ -144,8 +143,7 @@ int main(int argc, char* argv[]){
     e++;
   }
 
-
-  // this should be set by a user argument
+  // set the edge count goal to simplify towards
   int numFaceReq = faceInput.size() * faceFactor;
 
   // BEGIN COLLAPSE 
@@ -153,6 +151,7 @@ int main(int argc, char* argv[]){
   std::cout << "########################" << std::endl;
   std::cout << "NEW COLLAPSE" << std::endl;
   std::cout << "########################" << std::endl;
+
   // test the one ring of each vertex, we'll calculate curvature here
   int minCurveID = INT_MAX;
   float minCurvature = FLT_MAX;
@@ -165,7 +164,6 @@ int main(int argc, char* argv[]){
     float totalAngle = 0;
 
     std::vector<Vertex> ringVertices = oneRing(dirEdgeInput, vertexInput, v.fdeID);
-
     if(ringVertices.size() == 0) continue;
 
     std::cout << "------------------------" << std::endl;
@@ -175,10 +173,12 @@ int main(int argc, char* argv[]){
     }
     std::cout << "]" << std::endl;
 
-    // construct vectors
+    // construct vectors to find the area and angle
+    // for each vertex in the one ring
     for(size_t i = 0; i < ringVertices.size(); i++){
       Cartesian3 v1 = vertexInput[ringVertices[i].id].point - v.point;
       Cartesian3 v2 = vertexInput[ringVertices[(i+1) % ringVertices.size()].id].point - v.point;
+
       v1 = v1.normalise();
       v2 = v2.normalise();
 
@@ -189,12 +189,14 @@ int main(int argc, char* argv[]){
       totalAngle += std::acos( v1.dot(v2) / ( std::sqrt(v1.length()) * std::sqrt(v2.length()) ) );
     }
 
+    // after we have calculated the total of each, we can find the curvature
     float gaussCurvature = std::abs((2 * M_PI - totalAngle) / totalArea);
 
     std::cout << "total area: " << totalArea << std::endl;
     std::cout << "total angle: " << totalAngle << std::endl;
     std::cout << "gauss curvature (vertex " << v.id << "): " << gaussCurvature << std::endl;
 
+    // identify the vertex of least curvature based on what we currently know
     if(gaussCurvature < minCurvature){
       minCurveID = v.id;
       minCurvature = gaussCurvature;
@@ -244,6 +246,7 @@ int main(int argc, char* argv[]){
   std::cout << "------------------------" << std::endl;
 
   // STEP 1: replace every face that contains the vertex that we will delete with the new vertex
+
   std::cout << "faces before (vertex replacement): " << std::endl;
   for(auto &f : faceInput){
     std::cout << " [ ";
@@ -273,7 +276,6 @@ int main(int argc, char* argv[]){
   }
   
   // STEP 2: delete the faces that lies on the collapsed edge (if it exists)
-  
   // as the face order will be switched with swap to end, have a seperate iterator to keep track of the current face
 
   int currentFace = 0;
@@ -299,7 +301,7 @@ int main(int argc, char* argv[]){
   }
 
   // for a good mesh, the collapsed edge will be paired with two faces
-  // start with the largest ID to remove
+  // start with the largest ID to remove from the face array
   if(dupeFaceIDs[0] < dupeFaceIDs[1])
     std::swap(dupeFaceIDs[0], dupeFaceIDs[1]);
 

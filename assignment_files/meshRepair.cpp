@@ -60,6 +60,7 @@ int main(int argc, char *argv[]) {
   std::string strLine;
 
   // PHASE 1: Parse the file
+
   if (inputFile.is_open()) {
     while (std::getline(inputFile, strLine)) {
 
@@ -95,6 +96,7 @@ int main(int argc, char *argv[]) {
   }
 
   // PHASE 2: DATA CONSTRUCTION
+
   // assign the degree for each vertex
   for (auto f : faceInput) {
     for (auto vID : f.vertexIDs) {
@@ -198,15 +200,14 @@ int main(int argc, char *argv[]) {
       // we'll need this to set the FDE of the new vertex
       int startEdgeID = dirEdgeInput.size();
 
-      // construct # faces equal to the whole degree
+      // construct # faces equal to the hole degree (what shape the hole is)
       for (int i = 0; i < holeDegree; i++) {
 
-        // form the vertices of the triangle (question: how do we access the new vertices?)
+        // form the vertices of the triangle 
         int v0 = dirEdgeInput[dirEdgeInput[h[i]].prev()].vertexID;
         int v1 = centreID;
         int v2 = dirEdgeInput[h[i]].vertexID;
 
-        // note, we can't push this back yet as we still need the halfEdgeID?
         int faceID = faceInput.size();
         int edgeID = dirEdgeInput.size();
 
@@ -224,30 +225,24 @@ int main(int argc, char *argv[]) {
         dirEdgeInput.push_back(e2);
       }
 
-	  // set the twins for each of the new edges
+      // set the twins for each of the new edges
       for (auto &d1 : dirEdgeInput) {
-
         if (d1.twinID != -1)
           continue;
-
         for (auto &d2 : dirEdgeInput) {
-
           if (dirEdgeInput[d1.prev()].vertexID == d2.vertexID &&
               dirEdgeInput[d2.prev()].vertexID == d1.vertexID) {
-
             if (d2.twinID != -1) {
               continue;
             }
-
             d1.twinID = d2.id;
             d2.twinID = d1.id;
-
-            std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
             break;
           }
         }
       }
 
+      // set the FDEs for the new inserted vertex (in the baricenter)
       for(size_t i = startEdgeID; i < dirEdgeInput.size(); i++){
 	int currentVertexTo = dirEdgeInput[dirEdgeInput[i].prev()].vertexID;
 	if(currentVertexTo == centreID){
