@@ -1,2 +1,22 @@
-* test
+#+OPTIONS: ^:{}
+
+* New Additions
+- New files have been added to the triangle_renderer and handout_models
+- assignment_files has also been added, containing the required solutions to the coursework
+- new content for triangle_renderer and handout_models is specified below
+** triangle_renderer
+- DirectedEdge class (a "to" half edge) 
+- Face class
+- Vertex class
+- The Cartesian3 class has also been changed to include the dot product, this was needed for the mesh simplification
+** handout_models
+- cube_bad.tri: a cube missing one of its faces (to test mesh repair)
+- tetrahedron_hole.tri: a tetrahedron missing one of its faces (to also test repair)
+- pinchtetra.tri: two tetrahedra joined by a single vertex (to test pinch point)
+* Usage
+** face2faceindex
+** faceindex2directedge
+** manifoldTest
+** meshRepair
+** meshSimplify
 
