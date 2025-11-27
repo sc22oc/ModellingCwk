@@ -10,12 +10,14 @@
 #include "../triangle_renderer/Vertex.h"
 
 int main(int argc, char *argv[]) {
+
   if (argc != 2) {
     std::cout << "Usage: ./faceindex2directedge <filepath>" << std::endl;
     return 0;
   }
 
   // PHASE 1: Read the file and store the input
+
   std::vector<Vertex> vertexInput;
   std::vector<Face> faceInput;
   std::vector<DirectedEdge> dirEdgeInput;
@@ -24,7 +26,7 @@ int main(int argc, char *argv[]) {
   std::ifstream inputFile(filePath, std::ios::in);
   std::string inputType;
 
-  // marking as i as we are checking for input of vertices and faces
+  // marking as i as we are checking for "input" of vertices and faces
   float i1, i2, i3;
   int id;
   int currentLine = 0;
@@ -32,7 +34,11 @@ int main(int argc, char *argv[]) {
   std::string strLine;
 
   if (inputFile.is_open()) {
+    // read this line by line instead of per element
+    // this is to avoid the commented lines
     while (std::getline(inputFile, strLine)) {
+
+      // skip comments
       if (strLine[0] == '#')
         continue;
 
@@ -75,6 +81,9 @@ int main(int argc, char *argv[]) {
   }
 
   std::vector<Vertex> fdeInput;
+
+  // calculating the FDEs on some of the files takes a while
+  // indicator is to show what stage of the conversion we are at
   std::cout << "calculating fdes..." << std::endl;
 
   // first directed edge for each vertex
@@ -88,12 +97,13 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  // indicator for twinning as this also takes a while
   std::cout << "calculating other halves..." << std::endl;
 
   // find the opposing / twin vertex
   for (auto &d1 : dirEdgeInput) {
 
-    // we want to check whether d1 or d2 have been written to already
+    // checking if d1 has already been written to (an unpaired edge)
     if (d1.twinID != -1)
       continue;
 
@@ -102,10 +112,12 @@ int main(int argc, char *argv[]) {
       if (dirEdgeInput[d1.prev()].vertexID == d2.vertexID &&
           dirEdgeInput[d2.prev()].vertexID == d1.vertexID) {
 
+	// checking if d2 has also been written to (goes both ways)
         if (d2.twinID != -1) {
           continue;
         }
 
+	// set the twins for both d1 and d2 so that both can be checked if they have been written to
         d1.twinID = d2.id;
         d2.twinID = d1.id;
 
@@ -115,6 +127,7 @@ int main(int argc, char *argv[]) {
   }
 
   // PHASE 2: take the stored data as file output
+
   std::string objectName = (std::string)filePath.stem();
   std::string outputFileName = objectName + ".diredge";
   std::ofstream outputFile(outputFileName, std::ios::out);

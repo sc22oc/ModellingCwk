@@ -9,13 +9,14 @@
 #include "../triangle_renderer/Vertex.h"
 
 int main(int argc, char *argv[]) {
+
   // no arguments provided
   if (argc != 2) {
     std::cout << "Usage: ./face2faceindex <file_path>" << std::endl;
     return 0;
   }
 
-  // PHASE 1: Reading the file and storing the data
+  // PHASE 1: Read the file and store the input
 
   // keep track of vertex and face count to write to file output
   int vertices = 0;
@@ -37,7 +38,7 @@ int main(int argc, char *argv[]) {
   std::vector<Face> faceInput;
 
   if (inputFile.is_open()) {
-    // taken the first line to be the number of faces, we can just read the
+    // take the first line to be the number of faces, we can just read the
     // first input on the stream
     if (!(inputFile >> faces)) {
       std::cout << "invalid start line!" << std::endl;
@@ -118,7 +119,7 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // PHASE 2: Writing to the file using the stored faces and vertices
+  // PHASE 2: take the stored data as file output
 
   std::string objectName = (std::string)filePath.stem();
   std::string outputFileName = objectName + ".face";
