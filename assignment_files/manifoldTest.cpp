@@ -12,12 +12,12 @@
 
 struct TestOutput {
   std::string meshName;
-  int pinchID = -1;
-  int edgeID = -1;
-  int twinID = -1;
-  int genus = 0;
-  bool manifold = false;
-  bool readSuccessful = true;
+  int pinchID = -1;  // pinch test
+  int edgeID = -1; // unpaired edge test
+  int twinID = -1; // shark fin test
+  int genus = 0; // genus count (of each individual mesh defined by the .diredge file)
+  bool manifold = false; // manifold test result
+  bool readSuccessful = true; // has the file been successfully read?
 };
 
 int oneRing(std::vector<DirectedEdge> dirEdgeInput, int startID) {
@@ -61,13 +61,14 @@ int pinchTest(std::vector<Vertex> vertexInput,
   return -1;
 }
 
-// TASK 3
 int genusTest(std::vector<DirectedEdge> dirEdgeInput,
               std::vector<Vertex> vertexInput, std::vector<Face> faceInput) {
 
   std::vector<int> vertexCounts;
   std::vector<int> faceCounts;
 
+  // perform BFS on the vertices to identify individual meshes
+  // (by connected vertices)
   for (auto &v : vertexInput) {
     if (!v.isVisited) {
 
@@ -117,6 +118,7 @@ int genusTest(std::vector<DirectedEdge> dirEdgeInput,
         }
       }
 
+      // take the vertex and face count to use in Euler's formula
       vertexCounts.push_back(vertexCount);
       faceCounts.push_back(faceCount);
     }
@@ -124,8 +126,7 @@ int genusTest(std::vector<DirectedEdge> dirEdgeInput,
 
   int genus = 0;
 
-  // for each mesh, calculate the genus using Euler's formula (slide 22,
-  // meshes_euler_formula.pdf)
+  // for each mesh, calculate the genus using Euler's formula
   for (size_t i = 0; i < vertexCounts.size(); i++) {
     // 3f = 2e, so we can find the # of edges from the # of faces
     genus += 1 - 0.5f * vertexCounts[i] + 0.25f * faceCounts[i];
@@ -154,6 +155,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
   std::string strLine;
 
   // PHASE 1: Parse the file
+
   if (inputFile.is_open()) {
     while (std::getline(inputFile, strLine)) {
       if (strLine[0] == '#')
@@ -189,6 +191,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
   }
 
   // PHASE 2: DATA CONSTRUCTION
+
   // making sure things are nice and tidy to do testing
   for (auto f : faceInput) {
     for (auto vID : f.vertexIDs) {
@@ -227,6 +230,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
   }
 
   // PHASE 3: Perform each manifold test and return the result
+
   int e = 0;
   for (auto &de : dirEdgeInput) {
     de.twinID = halfInput[e];
@@ -267,6 +271,7 @@ TestOutput manifoldTest(std::filesystem::path filePath) {
     return results;
 
   results.manifold = true;
+
   return results;
 }
 
@@ -277,12 +282,10 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
-  // TODO: check if the filetype is a directory, and the user hasn't just
-  // specified a file
-
   std::vector<TestOutput> testResults;
 
   // PHASE 1: Read the file and store the input
+
   for (auto testFile : std::filesystem::directory_iterator(argv[1])) {
 
     std::string fileName = (std::string)testFile.path().filename();
@@ -307,6 +310,7 @@ int main(int argc, char *argv[]) {
   }
 
   // PHASE 2: take the stored data as file output
+
   std::string outputFileName = "manifold_results.txt";
   std::ofstream outputFile(outputFileName, std::ios::out);
 
