@@ -30,17 +30,17 @@ make
 #+BEGIN_SRC c++
 ./face2faceindex <file path>
 #+END_SRC
-- *file path* path to file to convert to ".face"
+- *file path:* path to file to convert to ".face"
 ** faceindex2directedge
 #+BEGIN_SRC c++
 ./faceindex2directedge <file path>
 #+END_SRC
-- *file path* path to file to convert to ".diredge"
+- *file path:* path to file to convert to ".diredge"
 ** manifoldTest
 #+BEGIN_SRC c++
 ./manifoldTest <directory_path>
 #+END_SRC
-- *directory path* path to the target directory to test each file as manifold
+- *directory path:* path to the target directory to test each file as manifold
 - each file within this directory should be of ".diredge" format
 #+BEGIN_SRC c++
 ./manifoldTest dirEdgeFiles/
@@ -53,7 +53,7 @@ The output of the file "manifold_results.txt" will be in the same directory the 
 #+BEGIN_SRC c++
 ./meshRepair <file path>
 #+END_SRC
-- *file path* path to file to repair
+- *file path:* path to file to repair
 - expects input to be the ".diredge" format
 #+BEGIN_QUOTE
 The output of the file will be appended with "_fixed", in the same directory the script is ran
@@ -62,8 +62,8 @@ The output of the file will be appended with "_fixed", in the same directory the
 #+BEGIN_SRC c++
 ./meshSimplify <file path> <face percentage>
 #+END_SRC
-- *file path*: path to file to simplify (must be of file type ".diredge")
-- *face percentage*: the percentage of the original mesh edge count to simplify to
+- *file path:*: path to file to simplify (must be of file type ".diredge")
+- *face percentage:* the percentage of the original mesh edge count to simplify to
   - must be in range between 0.1 and 1
   - e.g. 0.5 will perform mesh simplification until 50% of the original edges remain
 #+BEGIN_QUOTE
