@@ -23,6 +23,13 @@ int main(int argc, char *argv[]) {
   std::vector<DirectedEdge> dirEdgeInput;
 
   std::filesystem::path filePath(argv[1]);
+
+  if (filePath.extension().compare(".face") != 0) {
+    std::cout << "Error: .diredge file type required for manifold test"
+              << std::endl;
+    return 1;
+  }
+
   std::ifstream inputFile(filePath, std::ios::in);
   std::string inputType;
 

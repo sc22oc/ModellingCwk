@@ -32,7 +32,7 @@ int oneBoundary(std::vector<DirectedEdge> dirEdgeInput, int startID) {
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
-    std::cout << "Usage: ./meshRepair <filepath>" << std::endl;
+    std::cout << "Usage: ./meshRepair <file_path>" << std::endl;
     return 0;
   }
 
@@ -60,6 +60,7 @@ int main(int argc, char *argv[]) {
   std::string strLine;
 
   // PHASE 1: Parse the file
+
   if (inputFile.is_open()) {
     while (std::getline(inputFile, strLine)) {
 
@@ -95,6 +96,7 @@ int main(int argc, char *argv[]) {
   }
 
   // PHASE 2: DATA CONSTRUCTION
+
   // making sure things are nice and tidy to do testing
   for (auto f : faceInput) {
     for (auto vID : f.vertexIDs) {
@@ -161,12 +163,10 @@ int main(int argc, char *argv[]) {
         boundaryEdgeIDs.push_back(nextStartID);
       }
 
-      std::cout << "found hole: [ ";
+      // mark the edge as visited so that we don't check it again
       for (auto e : boundaryEdgeIDs) {
         dirEdgeInput[e].isVisited = true;
-        std::cout << e << " ";
       }
-      std::cout << "]" << std::endl;
 
       holes.push_back(boundaryEdgeIDs);
     }
@@ -183,8 +183,6 @@ int main(int argc, char *argv[]) {
 
       for (auto e : h) {
         vertexTotal = vertexTotal + vertexInput[dirEdgeInput[e].vertexID].point;
-        //std::cout << "Boundary point: "
-        //          << vertexInput[dirEdgeInput[e].vertexID].point << std::endl;
         holeDegree++;
       }
 
@@ -195,21 +193,18 @@ int main(int argc, char *argv[]) {
       vertexInput.push_back(
           Vertex(centreID, centreVertex.x, centreVertex.y, centreVertex.z));
 
-      // std::cout << "Average center: " << centreVertex << std::endl;
-
-	  // check the start point of the new directed edges
-	  // we'll need this to set the FDE of the new vertex
+      // check the start point of the new directed edges
+      // we'll need this to set the FDE of the new vertex
       int startEdgeID = dirEdgeInput.size();
 
-      // construct # faces equal to the whole degree
+      // construct # faces equal to the hole degree (what shape the hole is)
       for (int i = 0; i < holeDegree; i++) {
 
-        // form the vertices of the triangle (question: how do we access the new vertices?)
+        // form the vertices of the triangle 
         int v0 = dirEdgeInput[dirEdgeInput[h[i]].prev()].vertexID;
         int v1 = centreID;
         int v2 = dirEdgeInput[h[i]].vertexID;
 
-        // note, we can't push this back yet as we still need the halfEdgeID?
         int faceID = faceInput.size();
         int edgeID = dirEdgeInput.size();
 
@@ -227,39 +222,31 @@ int main(int argc, char *argv[]) {
         dirEdgeInput.push_back(e2);
       }
 
-	  // set the twins for each of the new edges
+      // set the twins for each of the new edges
       for (auto &d1 : dirEdgeInput) {
-
         if (d1.twinID != -1)
           continue;
-
         for (auto &d2 : dirEdgeInput) {
-
           if (dirEdgeInput[d1.prev()].vertexID == d2.vertexID &&
               dirEdgeInput[d2.prev()].vertexID == d1.vertexID) {
-
             if (d2.twinID != -1) {
               continue;
             }
-
             d1.twinID = d2.id;
             d2.twinID = d1.id;
-
-            // std::cout << "OtherHalf " << d1.id << " " << d1.twinID << std::endl;
             break;
           }
         }
       }
 
-	  // set the new FDE for the added vertex
-	  // vertexInput.back().fdeID 
-	  for(size_t i = startEdgeID; i < dirEdgeInput.size(); i++){
-		int currentVertexTo = dirEdgeInput[dirEdgeInput[i].prev()].vertexID;
-		if(currentVertexTo == centreID){
-		  vertexInput.back().fdeID = dirEdgeInput[i].id;
-		  break;
-		}
-	  }
+      // set the new FDE for the added vertex
+      for(size_t i = startEdgeID; i < dirEdgeInput.size(); i++){
+	int currentVertexTo = dirEdgeInput[dirEdgeInput[i].prev()].vertexID;
+	if(currentVertexTo == centreID){
+	  vertexInput.back().fdeID = dirEdgeInput[i].id;
+	  break;
+	}
+      }
     }
   }
 
@@ -282,10 +269,10 @@ int main(int argc, char *argv[]) {
       outputFile << "Vertex " << v.id << "\t" << v.point.x << " " << v.point.y << " " << v.point.z << std::endl;
     }
 
-	for (auto v : vertexInput) {
-	  outputFile << "FirstDirectedEdge " << v.id << "\t" << v.fdeID
-				 << std::endl;
-	}
+    for (auto v : vertexInput) {
+      outputFile << "FirstDirectedEdge " << v.id << "\t" << v.fdeID
+		 << std::endl;
+    }
 
     for (auto f : faceInput) {
       outputFile << "Face " << f.id << "\t";
