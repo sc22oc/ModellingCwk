@@ -72,4 +72,3 @@ The output of the file will be appended with "_fixed", in the same directory the
 #+BEGIN_QUOTE
 The output of the file will be appended with "_simplified", in the same directory the script is ran. The file output has also been left in to show the process in which the mesh is simplified.
 #+END_QUOTE
-
