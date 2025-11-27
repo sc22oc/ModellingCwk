@@ -1,5 +1,4 @@
 #+OPTIONS: ^:{}
-
 * New Additions
 - New files have been added to the triangle_renderer and handout_models
 - assignment_files has also been added, containing the required solutions to the coursework
@@ -17,29 +16,57 @@
 - cube_bad.tri: a cube missing one of its faces (to test mesh repair)
 - tetrahedron_hole.tri: a tetrahedron missing one of its faces (to also test repair)
 - pinchtetra.tri: two tetrahedra joined by a single vertex (to test pinch point)
+** assignment_files
+- To compile the files:
+#+BEGIN_SRC c++
+make
+#+END_SRC
+*** dirEdgeFiles
+- contains all the provided meshes, exported to the required ".diredge" format
+*** faceFiles
+- contains all the provided meshes, exported to the required ".face" format
 * Usage
 ** face2faceindex
 #+BEGIN_SRC c++
 ./face2faceindex <file path>
 #+END_SRC
+- *file path* path to file to convert to ".face"
 ** faceindex2directedge
 #+BEGIN_SRC c++
 ./faceindex2directedge <file path>
 #+END_SRC
+- *file path* path to file to convert to ".diredge"
 ** manifoldTest
 #+BEGIN_SRC c++
 ./manifoldTest <directory_path>
 #+END_SRC
+- *directory path* path to the target directory to test each file as manifold
+- each file within this directory should be of ".diredge" format
+#+BEGIN_SRC c++
+./manifoldTest dirEdgeFiles/
+#+END_SRC
+- should test all ".diredge" files required in the coursework
+#+BEGIN_QUOTE
+The output of the file "manifold_results.txt" will be in the same directory the script is ran
+#+END_QUOTE
 ** meshRepair
 #+BEGIN_SRC c++
 ./meshRepair <file path>
 #+END_SRC
+- *file path* path to file to repair
+- expects input to be the ".diredge" format
+#+BEGIN_QUOTE
+The output of the file will be prefixed with "_fixed", in the same directory the script is ran
+#+END_QUOTE
 ** meshSimplify
 #+BEGIN_SRC c++
 ./meshSimplify <file path> <face percentage>
 #+END_SRC
-- *file path*: path to file to simplify
-- *face percentage*: the percentage of the original edge count to simplify to
+- *file path*: path to file to simplify (must be of file type ".diredge")
+- *face percentage*: the percentage of the original mesh edge count to simplify to
   - must be in range between 0.1 and 1
   - e.g. 0.5 will perform mesh simplification until 50% of the original edges remain
+#+BEGIN_QUOTE
+The output of the file will be prefixed with "_simplified", in the same directory the script is ran
+#+END_QUOTE
 
