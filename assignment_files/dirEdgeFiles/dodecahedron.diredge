@@ -7,24 +7,24 @@
 # Vertices=20 Faces=36
 #
 Vertex 0	1 1 1
-Vertex 1	0 0 1
-Vertex 2	0 0 1
+Vertex 1	0.61803 1.61803 0
+Vertex 2	-0.61803 1.61803 0
 Vertex 3	-1 1 1
-Vertex 4	0 0 0
-Vertex 5	1 0 0
-Vertex 6	1 0 0
+Vertex 4	0 0.61803 1.61803
+Vertex 5	1.61803 0 0.61803
+Vertex 6	1.61803 0 -0.61803
 Vertex 7	1 1 -1
-Vertex 8	0 0 0
+Vertex 8	0 -0.61803 1.61803
 Vertex 9	1 -1 1
-Vertex 10	-1 0 1
+Vertex 10	-1.61803 0 0.61803
 Vertex 11	-1 -1 1
-Vertex 12	-1 0 1
+Vertex 12	-1.61803 0 -0.61803
 Vertex 13	-1 1 -1
-Vertex 14	0 0 0
-Vertex 15	0 0 0
-Vertex 16	0 0 0
+Vertex 14	0 0.61803 -1.61803
+Vertex 15	-0.61803 -1.61803 0
+Vertex 16	0.61803 -1.61803 0
 Vertex 17	1 -1 -1
-Vertex 18	0 0 0
+Vertex 18	0 -0.61803 -1.61803
 Vertex 19	-1 -1 -1
 FirstDirectedEdge 0	1
 FirstDirectedEdge 1	2

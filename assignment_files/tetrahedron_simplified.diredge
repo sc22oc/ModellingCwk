@@ -9,11 +9,11 @@
 Vertex 0	1 1 -1
 Vertex 1	1 -1 1
 Vertex 2	-1 1 1
-FirstDirectedEdge 0	1
+FirstDirectedEdge 0	2
 FirstDirectedEdge 1	0
-FirstDirectedEdge 2	2
-Face 0	0 2 1 
-Face 1	2 0 1 
+FirstDirectedEdge 2	1
+Face 0	2 0 1 
+Face 1	0 2 1 
 OtherHalf 0	5
 OtherHalf 1	4
 OtherHalf 2	3

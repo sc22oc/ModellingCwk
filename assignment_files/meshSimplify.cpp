@@ -12,7 +12,7 @@
 #include "../triangle_renderer/Face.h"
 #include "../triangle_renderer/Vertex.h"
 
-// goal of simplification
+// simplification goal
 // - keep a hold of how many faces we have to start
 // - allow the user to determine what percentage of faces will remain
 // - repeat simplification until done
@@ -21,24 +21,12 @@ std::vector<Vertex> oneRing(std::vector<DirectedEdge> dirEdgeInput, std::vector<
   std::vector<Vertex> res;
   res.clear();
 
-  // std::cout << "starting on vertex: " << startID << std::endl;
-
   DirectedEdge currentEdge = dirEdgeInput[startID];
   int currentID = -1;
 
-  std::cout << "--------------------------------" << std::endl;
+  // assuming that we have a manifold mesh, we won't need to check for boundaries this time
   while(currentID != startID){
-
     DirectedEdge prevEdge = dirEdgeInput[currentEdge.prev()];
-
-    // assuming that we have a manifold mesh, won't need to check for boundaries
-
-    /*
-    std::cout << "current id: " << currentID << std::endl;
-    std::cout << "points to: " << currentEdge.vertexID << std::endl;
-    std::cout << "twin: " << currentEdge.twinID << std::endl;
-    */
-
     currentEdge = dirEdgeInput[prevEdge.twinID];
     currentID = currentEdge.id;
     
@@ -50,9 +38,15 @@ std::vector<Vertex> oneRing(std::vector<DirectedEdge> dirEdgeInput, std::vector<
 }
 
 int main(int argc, char* argv[]){
-  if (argc != 2) {
+  if (argc != 3) {
     std::cout << "Usage: ./meshSimplify <filepath> <face_percentage>" << std::endl;
     return 0;
+  }
+  
+  float faceFactor = std::atof(argv[2]);
+  if(faceFactor < 0.1f || faceFactor >= 1.f){
+    std::cout << "Error: face_percentage out of range, (must be between 0.1 and 1)" << std::endl;
+    return 1;
   }
 
   std::vector<Vertex> vertexInput;
@@ -152,10 +146,13 @@ int main(int argc, char* argv[]){
 
 
   // this should be set by a user argument
-  int numFaceReq = faceInput.size() / 2;
+  int numFaceReq = faceInput.size() * faceFactor;
 
   // BEGIN COLLAPSE 
   while((int)faceInput.size() > numFaceReq){
+  std::cout << "########################" << std::endl;
+  std::cout << "NEW COLLAPSE" << std::endl;
+  std::cout << "########################" << std::endl;
   // test the one ring of each vertex, we'll calculate curvature here
   int minCurveID = INT_MAX;
   float minCurvature = FLT_MAX;
@@ -172,8 +169,7 @@ int main(int argc, char* argv[]){
     if(ringVertices.size() == 0) continue;
 
     std::cout << "------------------------" << std::endl;
-
-    std::cout << "Vertex: " << v.id << " " << std::endl << "[ ";
+    std::cout << "Vertex: " << v.id << " " << std::endl << "one ring: [ ";
     for(auto v2 : ringVertices){
       std::cout << v2.id << " ";
     }
@@ -191,29 +187,13 @@ int main(int argc, char* argv[]){
 
       // append the angle
       totalAngle += std::acos( v1.dot(v2) / ( std::sqrt(v1.length()) * std::sqrt(v2.length()) ) );
-
-      /*
-      std::cout << "Current vertex " << vertexInput[ringVertices[i].id].id << " | " << vertexInput[ringVertices[i].id].point << std::endl;
-      std::cout << "------------------------" << std::endl;
-      std::cout << "Vector: " << v.id << ", " << vertexInput[ringVertices[i].id].id << std::endl;
-      std::cout << "Vector: " << v.id << ", " << vertexInput[ringVertices[(i+1) % ringVertices.size()].id].id << std::endl;
-      std::cout << "Centre point: " << v.point << std::endl;
-      std::cout << "Point 1: " << vertexInput[ringVertices[i].id].point << std::endl;
-      std::cout << "Point 2: " << vertexInput[ringVertices[(i+1) % ringVertices.size()].id].point << std::endl;
-      std::cout << "dot: " << v1.dot(v2) << std::endl;
-      std::cout << "v1: " << v1 << std::endl;
-      std::cout << "v2: " << v2 << std::endl;
-      std::cout << "v1 length: " << std::sqrt(v1.length()) << std::endl;
-      std::cout << "v2 length: " << std::sqrt(v2.length()) << std::endl;
-      std::cout << "angle: " <<  std::acos(v1.dot(v2) / (std::sqrt(v1.length()) * std::sqrt(v2.length()))) << std::endl; 
-      */
     }
 
     float gaussCurvature = std::abs((2 * M_PI - totalAngle) / totalArea);
 
     std::cout << "total area: " << totalArea << std::endl;
     std::cout << "total angle: " << totalAngle << std::endl;
-    std::cout << "calc curvature vertex " << v.id << ": " << gaussCurvature << std::endl;
+    std::cout << "gauss curvature (vertex " << v.id << "): " << gaussCurvature << std::endl;
 
     if(gaussCurvature < minCurvature){
       minCurveID = v.id;
@@ -253,8 +233,6 @@ int main(int argc, char* argv[]){
       }
     }
 
-    std::cout << "Vertex: " << v1.id << " | " << "sharedValues: " << sharedValues << std::endl;
-
     if(sharedValues == 2){
       collapseID = v1.id;
       break;
@@ -262,10 +240,11 @@ int main(int argc, char* argv[]){
   }
 
   std::cout << "Vertex to collapse to: " << collapseID << std::endl;
+  std::cout << "Vertex to replace / remove: " << minCurveID << std::endl;
   std::cout << "------------------------" << std::endl;
 
   // STEP 1: replace every face that contains the vertex that we will delete with the new vertex
-  std::cout << "faces before: " << std::endl;
+  std::cout << "faces before (vertex replacement): " << std::endl;
   for(auto &f : faceInput){
     std::cout << " [ ";
     for(auto &vid: f.vertexIDs){
@@ -284,7 +263,7 @@ int main(int argc, char* argv[]){
     }
   }
 
-  std::cout << "faces after: " << std::endl;
+  std::cout << "faces after (vertex replacement): " << std::endl;
   for(auto &f : faceInput){
     std::cout << " [ ";
     for(auto &vid: f.vertexIDs){
@@ -297,7 +276,6 @@ int main(int argc, char* argv[]){
   
   // as the face order will be switched with swap to end, have a seperate iterator to keep track of the current face
 
-  std::cout << "face size: " << faceInput.size() << std::endl;
   int currentFace = 0;
   std::vector<int> dupeFaceIDs;
 
@@ -307,21 +285,13 @@ int main(int argc, char* argv[]){
       int dupe = 0;
 
       for(auto vid2 : f.vertexIDs){
-	// std::cout << "checking: " << vid1 << " against " << vid2 << std::endl;
 	if(vid1 == vid2) dupe++;
       }
 
       if(dupe > 1){
-	std::cout << "dupe face at: " << currentFace << std::endl;
-
-	// delete the face when the dupe is found
-	/*
-	std::swap(faceInput[currentFace], faceInput.back());
-	faceInput.pop_back();
-	*/
-
+	// push back instead of doing swap to end on the current array
+	// as we are currently using this for the outer loop
 	dupeFaceIDs.push_back(currentFace);
-
 	break;
       }
     }
@@ -334,7 +304,6 @@ int main(int argc, char* argv[]){
     std::swap(dupeFaceIDs[0], dupeFaceIDs[1]);
 
   for(int id : dupeFaceIDs){
-    std::cout << "delete: " << id << std::endl;
     std::swap(faceInput[id], faceInput.back());
     faceInput.pop_back();
   }
@@ -362,7 +331,7 @@ int main(int argc, char* argv[]){
   std::swap( vertexInput[minCurveID], vertexInput.back() );
   vertexInput.pop_back();
 
-  std::cout << "vertex after: [ ";
+  std::cout << "vertex after (deletion): [ ";
   for(auto &v : vertexInput){
     std::cout << v.id << " ";
   }
@@ -390,13 +359,13 @@ int main(int argc, char* argv[]){
     vertexID++;
   }
   
-  std::cout << "vertex after: [ ";
+  std::cout << "vertex after (re-assignment): [ ";
   for(auto &v : vertexInput){
     std::cout << v.id << " ";
   }
   std::cout << "] " << std::endl;
 
-  std::cout << "faces after: " << std::endl;
+  std::cout << "faces after (re-assignment): " << std::endl;
   for(auto &f : faceInput){
     std::cout << " [ ";
     for(auto &vid: f.vertexIDs){
@@ -417,18 +386,12 @@ int main(int argc, char* argv[]){
     DirectedEdge e1(j+1, v[1], f.id);
     DirectedEdge e2(j+2, v[2], f.id);
 
-    std::cout << "dirEdge: " << v[2] << " " << v[0] << std::endl;
-    std::cout << "dirEdge: " << v[0] << " " << v[1] << std::endl;
-    std::cout << "dirEdge: " << v[1] << " " << v[2] << std::endl;
-
     dirEdgeInput.push_back(e0);
     dirEdgeInput.push_back(e1);
     dirEdgeInput.push_back(e2);
 
     j += 3;
   }
-
-  std::cout << "dir edges done" << std::endl;
 
   // find the opposing / twin vertex
   for (auto &d1 : dirEdgeInput) {
@@ -447,13 +410,10 @@ int main(int argc, char* argv[]){
         d1.twinID = d2.id;
         d2.twinID = d1.id;
 
-	std::cout << d1.id << " twin " << d1.twinID << std::endl;
         break;
       }
     }
   }
-
-  std::cout << "twin assigned" << std::endl;
 
   fdeInput.clear();
   for (auto &v : vertexInput) {
@@ -466,15 +426,8 @@ int main(int argc, char* argv[]){
     }
   }
 
-  std::cout << "fde done" << std::endl;
-
   }
   // END COLLAPSE
-
-  // EXTRA: re-arrange
-  // once edge collapse has been completed, re-index and re-draw the directed edges
-  // as swap to end has been done multiple times, we need it identified 0 to edgeNum
-
 
   // write to file output
   std::string objectName = (std::string)filePath.stem();

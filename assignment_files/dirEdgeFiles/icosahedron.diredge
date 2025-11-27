@@ -6,18 +6,18 @@
 # Object Name: icosahedron
 # Vertices=12 Faces=20
 #
-Vertex 0	0 1 0
-Vertex 1	-1 0 1
-Vertex 2	1 0 1
-Vertex 3	1 0 1
-Vertex 4	0 1 0
-Vertex 5	-1 0 0
-Vertex 6	0 -1 0
-Vertex 7	1 0 0
-Vertex 8	1 0 -1
-Vertex 9	-1 0 -1
-Vertex 10	-1 0 -1
-Vertex 11	0 -1 0
+Vertex 0	0 1.61803 1
+Vertex 1	-1 0 1.61803
+Vertex 2	1 0 1.61803
+Vertex 3	1.61803 1 0
+Vertex 4	0 1.61803 -1
+Vertex 5	-1.61803 1 0
+Vertex 6	0 -1.61803 1
+Vertex 7	1.61803 -1 0
+Vertex 8	1 0 -1.61803
+Vertex 9	-1 0 -1.61803
+Vertex 10	-1.61803 -1 0
+Vertex 11	0 -1.61803 -1
 FirstDirectedEdge 0	1
 FirstDirectedEdge 1	2
 FirstDirectedEdge 2	0

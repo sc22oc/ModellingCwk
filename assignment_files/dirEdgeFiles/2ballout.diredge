@@ -6,18 +6,18 @@
 # Object Name: 2ballout
 # Vertices=12 Faces=16
 #
-Vertex 0	1 2 4
-Vertex 1	1 0 4
-Vertex 2	1 2 0
-Vertex 3	0 0 0
-Vertex 4	1 1 0
-Vertex 5	1 2 3
-Vertex 6	1 2 2
-Vertex 7	1 0 2
-Vertex 8	1 2 0
-Vertex 9	0 0 0
-Vertex 10	1 1 0
-Vertex 11	1 2 1
+Vertex 0	1 2 4.9314
+Vertex 1	1.9314 2 4
+Vertex 2	1 2.9314 4
+Vertex 3	0.0686 2 4
+Vertex 4	1 1.0686 4
+Vertex 5	1 2 3.0686
+Vertex 6	1 2 2.9314
+Vertex 7	1.9314 2 2
+Vertex 8	1 2.9314 2
+Vertex 9	0.0686 2 2
+Vertex 10	1 1.0686 2
+Vertex 11	1 2 1.0686
 FirstDirectedEdge 0	1
 FirstDirectedEdge 1	2
 FirstDirectedEdge 2	0
