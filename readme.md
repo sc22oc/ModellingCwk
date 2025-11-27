@@ -1,22 +1,22 @@
 
 # Table of Contents
 
-1.  [New Additions](#org6a48e0b)
-    1.  [triangle\_renderer](#org6e409e3)
-    2.  [handout\_models](#orga29a67f)
-    3.  [assignment\_files](#org3bb8c37)
-        1.  [dirEdgeFiles](#org104163c)
-        2.  [faceFiles](#org83774f2)
-2.  [Usage](#org3b463ba)
-    1.  [face2faceindex](#org15e7826)
-    2.  [faceindex2directedge](#orgc6870cb)
-    3.  [manifoldTest](#org685c0e0)
-    4.  [meshRepair](#org6058d64)
-    5.  [meshSimplify](#org5337591)
+1.  [New Additions](#org178f08a)
+    1.  [triangle\_renderer](#orga70ea8d)
+    2.  [handout\_models](#orgf06d03d)
+    3.  [assignment\_files](#orgf67a574)
+        1.  [dirEdgeFiles](#org413e0af)
+        2.  [faceFiles](#org5cd8c93)
+2.  [Usage](#org9dd17d7)
+    1.  [face2faceindex](#orgae69462)
+    2.  [faceindex2directedge](#orgcd2129d)
+    3.  [manifoldTest](#org5c67964)
+    4.  [meshRepair](#org998bd83)
+    5.  [meshSimplify](#org66b9ead)
 
 
 
-<a id="org6a48e0b"></a>
+<a id="org178f08a"></a>
 
 # New Additions
 
@@ -25,9 +25,11 @@
 -   new content for triangle\_renderer and handout\_models is specified below
 
 
-<a id="org6e409e3"></a>
+<a id="orga70ea8d"></a>
 
 ## triangle\_renderer
+
+> The triangle renderer has been updated to work with ".diredge" files as to test mesh repair and mesh simplification
 
 -   DirectedEdge class (a "to" half edge)
 -   Face class
@@ -38,7 +40,7 @@
         ./compile.sh
 
 
-<a id="orga29a67f"></a>
+<a id="orgf06d03d"></a>
 
 ## handout\_models
 
@@ -47,7 +49,7 @@
 -   pinchtetra.tri: two tetrahedra joined by a single vertex (to test pinch point)
 
 
-<a id="org3bb8c37"></a>
+<a id="orgf67a574"></a>
 
 ## assignment\_files
 
@@ -56,26 +58,26 @@
     make
 
 
-<a id="org104163c"></a>
+<a id="org413e0af"></a>
 
 ### dirEdgeFiles
 
 -   contains all the provided meshes, exported to the required ".diredge" format
 
 
-<a id="org83774f2"></a>
+<a id="org5cd8c93"></a>
 
 ### faceFiles
 
 -   contains all the provided meshes, exported to the required ".face" format
 
 
-<a id="org3b463ba"></a>
+<a id="org9dd17d7"></a>
 
 # Usage
 
 
-<a id="org15e7826"></a>
+<a id="orgae69462"></a>
 
 ## face2faceindex
 
@@ -84,7 +86,7 @@
 -   **file path:** path to file to convert to ".face"
 
 
-<a id="orgc6870cb"></a>
+<a id="orgcd2129d"></a>
 
 ## faceindex2directedge
 
@@ -93,7 +95,7 @@
 -   **file path:** path to file to convert to ".diredge"
 
 
-<a id="org685c0e0"></a>
+<a id="org5c67964"></a>
 
 ## manifoldTest
 
@@ -109,7 +111,7 @@
 > The output of the file "manifold\_results.txt" will be in the same directory the script is ran
 
 
-<a id="org6058d64"></a>
+<a id="org998bd83"></a>
 
 ## meshRepair
 
@@ -121,7 +123,7 @@
 > The output of the file will be appended with "\_fixed", in the same directory the script is ran
 
 
-<a id="org5337591"></a>
+<a id="org66b9ead"></a>
 
 ## meshSimplify
 
@@ -132,5 +134,5 @@
     -   must be in range between 0.1 and 1
     -   e.g. 0.5 will perform mesh simplification until 50% of the original edges remain
 
-> The output of the file will be appended with "\_simplified", in the same directory the script is ran
+> The output of the file will be appended with "\_simplified", in the same directory the script is ran. The file output has also been left in to show the process in which the mesh is simplified.
 

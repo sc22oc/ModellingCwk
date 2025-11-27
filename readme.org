@@ -4,6 +4,9 @@
 - assignment_files has also been added, containing the required solutions to the coursework
 - new content for triangle_renderer and handout_models is specified below
 ** triangle_renderer
+#+BEGIN_QUOTE
+The triangle renderer has been updated to work with ".diredge" files as to test mesh repair and mesh simplification
+#+END_QUOTE
 - DirectedEdge class (a "to" half edge) 
 - Face class
 - Vertex class
@@ -67,6 +70,6 @@ The output of the file will be appended with "_fixed", in the same directory the
   - must be in range between 0.1 and 1
   - e.g. 0.5 will perform mesh simplification until 50% of the original edges remain
 #+BEGIN_QUOTE
-The output of the file will be appended with "_simplified", in the same directory the script is ran
+The output of the file will be appended with "_simplified", in the same directory the script is ran. The file output has also been left in to show the process in which the mesh is simplified.
 #+END_QUOTE
 
